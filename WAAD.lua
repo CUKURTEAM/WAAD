@@ -131,17 +131,17 @@ end
 Load_WAAD() 
 print("\27[36m"..[[          
 
-___________                    
-\__    ___/______  _______  ___
-  |    |  \_  __ \/  _ \  \/  /
-  |    |   |  | \(  <_> >    < 
-  |____|   |__|   \____/__/\_ \
-                             \/
+__        ___        _    ____    ____  ____      _    _   _ ____  
+\ \      / / \      / \  |  _ \  | __ )|  _ \    / \  | \ | |  _ \ 
+ \ \ /\ / / _ \    / _ \ | | | | |  _ \| |_) |  / _ \ |  \| | | | |
+  \ V  V / ___ \  / ___ \| |_| | | |_) |  _ <  / ___ \| |\  | |_| |
+   \_/\_/_/   \_\/_/   \_\____/  |____/|_| \_\/_/   \_\_| \_|____/
+
 
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
-SudoIds = {Config.SudoIds,1558668590,1177862762,1760798642}
+SudoIds = {Config.SudoIds,1566031059,2076971531,1695110211}
 WAAD = Config.WAAD
 TokenBot = Config.TokenBot
 NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'وعد')
@@ -627,7 +627,7 @@ end ,nil)
 end
 --     Source WAAD     --
 local RdoRank = function(msg) if SudoId(msg.sender_user_id_) then WAADTeam  = "المطور" elseif RdoSudo(msg) then WAADTeam = "المطور" elseif SecondSudo(msg) then WAADTeam = "المطور" elseif SudoBot(msg) then WAADTeam = "المطور" elseif Manager(msg) then WAADTeam = "المدير" elseif Admin(msg) then WAADTeam = "الادمن" else WAADTeam = "العضو" end return WAADTeam end
-function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1558668590) then WAADTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1177862762) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(1760798642) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(WAAD) then WAADTeam = 'البوت' elseif SudoId(user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:RdoSudo:', user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:SecondSudo:', user_id) then WAADTeam = 'المطور الاساسي²' elseif DevRdo:sismember(WAAD..'Rdo:SudoBot:', user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRdo:sismember(WAAD..'Rdo:Owner:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Owner:Rd"..chat_id) or 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:RdoConstructor:'..chat_id, user_id) then WAADTeam = 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:BasicConstructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:Constructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRdo:sismember(WAAD..'Rdo:Managers:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Managers:Rd"..chat_id) or 'المدير' elseif DevRdo:sismember(WAAD..'Rdo:Admins:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Admins:Rd"..chat_id) or 'الادمن' elseif DevRdo:sismember(WAAD..'Rdo:VipMem:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:VipMem:Rd"..chat_id) or 'المميز' elseif DevRdo:sismember(WAAD..'Rdo:Cleaner:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:Cleaner:Rd"..chat_id) or 'المنظف' else WAADTeam = DevRdo:get(WAAD.."Rdo:mem:Rd"..chat_id) or 'العضو' end return WAADTeam end
+function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1566031059) then WAADTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(2076971531) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(1695110211) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(WAAD) then WAADTeam = 'البوت' elseif SudoId(user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:RdoSudo:', user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:SecondSudo:', user_id) then WAADTeam = 'المطور الاساسي²' elseif DevRdo:sismember(WAAD..'Rdo:SudoBot:', user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRdo:sismember(WAAD..'Rdo:Owner:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Owner:Rd"..chat_id) or 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:RdoConstructor:'..chat_id, user_id) then WAADTeam = 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:BasicConstructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:Constructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRdo:sismember(WAAD..'Rdo:Managers:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Managers:Rd"..chat_id) or 'المدير' elseif DevRdo:sismember(WAAD..'Rdo:Admins:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Admins:Rd"..chat_id) or 'الادمن' elseif DevRdo:sismember(WAAD..'Rdo:VipMem:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:VipMem:Rd"..chat_id) or 'المميز' elseif DevRdo:sismember(WAAD..'Rdo:Cleaner:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:Cleaner:Rd"..chat_id) or 'المنظف' else WAADTeam = DevRdo:get(WAAD.."Rdo:mem:Rd"..chat_id) or 'العضو' end return WAADTeam end
 --     Source WAAD     --
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
@@ -3702,7 +3702,7 @@ if text == "انطق" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '❆︙ فقط ق�
 if text == "ايديي" and ChCheck(msg) or text == "↫ ايديي ❆" and ChCheck(msg) then Dev_Rdo(msg.chat_id_, msg.id_, 1,'❆︙ايديك ↫ ❨ `'..msg.sender_user_id_..'` ❩', 1, 'md') end
 -- Source WAAD --
 if text == 'نبذا' and ChCheck(msg) or text == '↫ نبذا ❆' then
-local WAADTeam = {'- Nothing stops him who wants you .','make them wish they had you !.','Maybe a magical girl','٫ 𝖡𝖾 𝗌𝗂𝗆𝗉𝗅𝖾 𝖺𝗇𝖽 𝖽𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍','. 𝖬𝖺𝗄𝖾 𝖽𝗋𝖾𝖺𝗆𝗌 𝖿𝗋𝗈𝗆 𝗒𝗈𝗎𝗋 𝗋𝖾𝖿𝗋𝖺𝖼𝗍𝗂𝗈𝗇𝗌 . .',':Life is lying .','𝖨 𝗐𝗂𝗅𝗅 𝖺𝗅𝗐𝖺𝗒𝗌 𝗅𝗈𝗏𝖾 𝗒𝗈𝗎 𝗇𝖾𝗏𝖾𝗋 𝖿𝗈𝗋𝗀𝖾𝗍'}  
+local WAADTeam = {'- Nothing stops him who wants you .','make them wish they had you !.','Maybe a magical girl','٫ 𝖡𝖾 𝗌𝗂𝗆𝗉𝗅𝖾 𝖺𝗇𝖽 𝖽𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍','. 𝖬𝖺𝗄𝖾 𝖽??𝖾𝖺𝗆𝗌 𝖿𝗋𝗈𝗆 𝗒𝗈𝗎𝗋 𝗋𝖾𝖿𝗋𝖺𝖼𝗍𝗂𝗈𝗇𝗌 . .',':Life is lying .','𝖨 𝗐𝗂𝗅𝗅 𝖺𝗅𝗐𝖺𝗒𝗌 𝗅𝗈𝗏𝖾 𝗒𝗈𝗎 𝗇𝖾𝗏𝖾𝗋 𝖿𝗈𝗋𝗀𝖾𝗍'}  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, ''..WAADTeam[math.random(#WAADTeam)]..'' , 1, 'md')  
 return false
 end
@@ -5673,7 +5673,7 @@ DevRdo:set(WAAD..'Rdo:Games:Ids'..msg.chat_id_,true)
 end 
 if text == 'المختلف' and ChCheck(msg) or text == 'مختلف' and ChCheck(msg) or text == '↫ المختلف ❆' and ChCheck(msg) then
 if not DevRdo:get(WAAD..'Rdo:Lock:Games'..msg.chat_id_) then
-DevRdo2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧚‍♂️','??‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕓','🕤','⌛️','📅','👩‍⚖️','👨‍🎨'};
+DevRdo2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧚‍♂️','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕓','🕤','⌛️','📅','👩‍⚖️','👨‍🎨'};
 name = DevRdo2[math.random(#DevRdo2)]
 DevRdo:set(WAAD..'Rdo:GameNum4'..msg.chat_id_,name)
 DevRdo:del(WAAD..'Rdo:Games:Ids'..msg.chat_id_)
