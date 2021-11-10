@@ -20,18 +20,16 @@ Name    = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a
 Port    = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
 UpTime  = io.popen([[uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}']]):read('*a'):gsub('[\n\r]+', '')
 --     Source WAAD     --
-local AutoSet = function() 
-if not DevRdo:get(Server.."IdWAAD") then 
+ local AutoSet = function() 
+if not DevAIAN:get(Server_WAAD.."IdWAAD") then 
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
-local DevId = io.read():gsub(' ','') 
-if tostring(DevId):match('%d+') then 
-data,res = https.request("https://apiabs.ml/Api/ggfffavid/?Ban=David&Info&Id="..DevId)
-if res == 200 then
-Abs = json:decode(data)
-if Abs.Result.Info == 'Is_Spam' then
-print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nعذرا هذا الايدي محظور من تنصيب هذا السورس\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
-os.execute('lua WAAD.lua') 
-end ---ifBn
+local WAAD = io.read():gsub(' ','') 
+if tostring(WAAD):match('%d+') then 
+io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
+DevAIAN:set(Server_WAAD.."IdWAAD",WAAD) 
+else 
+print('\27[1;31mꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ') 
+end 
 if Abs.Result.Info == 'Ok' then
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
 DevRdo:set(Server.."IdWAAD",DevId) 
@@ -3701,7 +3699,7 @@ if text == "انطق" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '❆︙ فقط ق�
 if text == "ايديي" and ChCheck(msg) or text == "↫ ايديي ❆" and ChCheck(msg) then Dev_Rdo(msg.chat_id_, msg.id_, 1,'❆︙ايديك ↫ ❨ `'..msg.sender_user_id_..'` ❩', 1, 'md') end
 -- Source WAAD --
 if text == 'نبذا' and ChCheck(msg) or text == '↫ نبذا ❆' then
-local WAADTeam = {'- Nothing stops him who wants you .','make them wish they had you !.','Maybe a magical girl','٫ 𝖡𝖾 𝗌𝗂𝗆𝗉𝗅𝖾 𝖺𝗇𝖽 𝖽𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍','. 𝖬𝖺𝗄𝖾 𝖽𝗋𝖾𝖺𝗆𝗌 𝖿𝗋𝗈?? 𝗒𝗈𝗎𝗋 𝗋𝖾𝖿𝗋𝖺𝖼𝗍𝗂𝗈𝗇𝗌 . .',':Life is lying .','𝖨 𝗐𝗂𝗅𝗅 𝖺𝗅𝗐𝖺𝗒𝗌 𝗅𝗈𝗏𝖾 𝗒𝗈𝗎 𝗇𝖾𝗏𝖾𝗋 𝖿𝗈𝗋𝗀𝖾𝗍'}  
+local WAADTeam = {'- Nothing stops him who wants you .','make them wish they had you !.','Maybe a magical girl','٫ 𝖡𝖾 𝗌𝗂𝗆𝗉𝗅𝖾 𝖺𝗇𝖽 𝖽𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍','. 𝖬𝖺𝗄𝖾 𝖽𝗋𝖾𝖺𝗆𝗌 𝖿𝗋𝗈𝗆 𝗒𝗈𝗎𝗋 𝗋𝖾𝖿𝗋𝖺𝖼𝗍𝗂𝗈𝗇𝗌 . .',':Life is lying .','𝖨 𝗐𝗂𝗅𝗅 𝖺𝗅𝗐𝖺𝗒𝗌 𝗅𝗈𝗏𝖾 𝗒𝗈𝗎 𝗇𝖾𝗏𝖾𝗋 𝖿𝗈𝗋𝗀𝖾𝗍'}  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, ''..WAADTeam[math.random(#WAADTeam)]..'' , 1, 'md')  
 return false
 end
