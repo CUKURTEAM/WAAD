@@ -3707,25 +3707,25 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, ''..WAADTeam[math.random(#WAADTeam)]..'' , 1, 
 return false
 end
 --     Source WAAD     --
-if text == "المطور" or text == "مطور" or text == "↫ المطور ❆" then
+if text == "المطور" or text == "مطور" or text == "↫ المطور ᥀ " then
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..DevRdo:get(WAAD.."Rdo:ChId"))
 local GetInfo = JSON.decode(Check)
 local DevCh1 = GetInfo.result.username
 local DevText = DevRdo:get(WAAD.."DevText")
-if DevRdo:get(WAAD.."Rdo:ChId") then DevCh = '\n❆︙*Dev Ch* ↬ [@'..DevCh1..']' else DevCh = '' end
+if DevRdo:get(WAAD.."Rdo:ChId") then DevCh = '\n᥀︙*Dev Ch* ↬ [@'..DevCh1..']' else DevCh = '' end
 if DevText then
 Dev_Rdo(msg.chat_id_, msg.id_,DevText)
 else
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 tdcli_function({ID = "GetUserProfilePhotos",user_id_=DevId,offset_=0,limit_ = 1},function(arg,getpro) 
 if getpro.photos_[0] then
-Text = "*❆︙Dev Name ↬ * ["..result.first_name_.."](t.me/"..result.username_..")\n*❆︙Dev User ↬* [@"..result.username_.."]\n*❆︙Dev Ch ↬* [@"..DevCh1.."]"
+Text = "*᥀︙Dev Name ↬ * ["..result.first_name_.."](t.me/"..result.username_..")\n*᥀︙Dev User ↬* [@"..result.username_.."]\n*᥀︙Dev Ch ↬* [@"..DevCh1.."]"
 keyboard = {}
 keyboard.inline_keyboard = {{{text=''..result.first_name_..'',url="https://t.me/"..result.username_..""}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Text)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '❆︙*Dev User* ↬ ['..DevUser..']\n❆︙*Dev Id* ↬ '..DevId..DevCh, 1, "md")
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '᥀︙*Dev User* ↬ ['..DevUser..']\n᥀︙*Dev Id* ↬ '..DevId..DevCh, 1, "md")
 end
 end,nil)   
 end,nil)   
@@ -5329,7 +5329,7 @@ if text ==  'حذف نقاطي' and ChCheck(msg) or text ==  'مسح نقاطي'
 --     Source WAAD     --
 if text == 'سمايلات' and ChCheck(msg) or text == 'السمايلات' and ChCheck(msg) or text == '↫ سمايلات ❆' and ChCheck(msg) then
 if not DevRdo:get(WAAD..'Rdo:Lock:Games'..msg.chat_id_) then
-DevRdo2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','🍒','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥒','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🏆','🎻','🎸','🎺','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','📤','🎗','🏵','🎖','🏆','🥌','??','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','🚚','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
+DevRdo2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','🍒','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥒','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🏆','🎻','🎸','🎺','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','📤','🎗','🏵','🎖','🏆','🥌','??','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','??','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
 name = DevRdo2[math.random(#DevRdo2)]
 DevRdo:set(WAAD..'Rdo:GameNum'..msg.chat_id_,name)
 DevRdo:del(WAAD..'Rdo:Games:Ids'..msg.chat_id_)
