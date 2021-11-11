@@ -13033,7 +13033,7 @@ end
 send(msg.chat_id_, msg.id_,Files)
 end
 if text == "متجر الملفات" and SecondSudo(msg) and ChCheck(msg) or text == 'المتجر' and ChCheck(msg) and SecondSudo(msg) or text == '↫  المتجر ☆' and ChCheck(msg) and SecondSudo(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/WAADFiles/WAADFiles/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -13065,7 +13065,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") and ChCheck(msg) and SecondSudo(msg) then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/WAADFiles/WAADFiles/main/WAADFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
 if Res == 200 then
 os.execute("rm -fr Files/"..FileName)
 send(msg.chat_id_, msg.id_,"\n☆︙الملف ↫ *"..FileName.."*\n☆︙تم تعطيله وحذفه من البوت بنجاح") 
@@ -13077,7 +13077,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and ChCheck(msg) and SecondSudo(msg) then
 local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/WAADFiles/WAADFiles/main/WAADFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
 if Res == 200 then
 local ChekAuto = io.open("Files/"..FileName,'w+')
 ChekAuto:write(GetJson)
@@ -13089,7 +13089,7 @@ send(msg.chat_id_, msg.id_,"☆︙لا يوجد ملف بهذا الاسم")
 end
 return false
 end
---     Source WAAD     --
+--     Source WAAD    --
 if text and (text == 'حذف معلومات الترحيب' or text == 'مسح معلومات الترحيب') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حذف معلومات الترحيب', 1, 'md')   
 DevRdo:del(WAAD..'Rdo:Text:BotWelcome')
