@@ -1695,8 +1695,6 @@ DevRdo:sadd(WAAD.."Rdo:Groups",data.chat_id_)
 if not DevRdo:get(WAAD..'Rdo:SudosGp'..data.sender_user_id_..data.chat_id_) and not SecondSudo(data) then 
 DevRdo:incrby(WAAD..'Rdo:Sudos'..data.sender_user_id_,1)
 DevRdo:set(WAAD..'Rdo:SudosGp'..data.sender_user_id_..data.chat_id_,"Rdo")
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
 end
 local Name1 = result.first_name_
 local Name1 = Name1:gsub('"',"") 
@@ -3559,7 +3557,7 @@ tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp)
 tdcli_function({ID="GetUser",user_id_=WAAD},function(arg,dpbot)
 local inline = {
 {{text="☆ المطور .",url="t.me/"..(dp.username_ or "CXRCX")}},
-{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/EEEEEl"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
+{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/BBBVVBV"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
 }
 local start = DevRdo:get(WAAD.."Rdo:Start:Bot")
 if start then 
@@ -12435,6 +12433,9 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..msg.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..msg.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..msg.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..msg.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..msg.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..msg.sender_user_id_}},{{text="اوامر الرتب",callback_data="/DelList:"..msg.sender_user_id_}},{{text="التفعيل و التعطيل",callback_data="/lockorder:"..msg.sender_user_id_},{text="القفل و الفتح",callback_data="/locklist:"..msg.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..msg.sender_user_id_}}}
 Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Help or Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 if text == "تعيين امر م1" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م١" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م1) الان " ,  1, "md")
@@ -13218,14 +13219,14 @@ end
 --     Source WAAD     --
 if text == "مبرمج السورس" and ChCheck(msg) or text == "مطور السورس" and ChCheck(msg) or text == "وين المبرمج" and ChCheck(msg) or text == "المبرمج" and ChCheck(msg) or text == "↫ مبرمج السورس ☆" and ChCheck(msg) then 
 Text = [[
-☆︙[مبرمج السورس](https://t.me/EEEEEL)
+☆︙[مبرمج السورس](https://t.me/BBBVVBV)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☆ مبرمج السورس',url="t.me/EEEEEL"}},
+{{text = '☆ مبرمج السورس',url="t.me/BBBVVBV"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EEEEEL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/BBBVVBV&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source WAAD     --
