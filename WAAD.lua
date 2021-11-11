@@ -135,7 +135,7 @@ __  __ _   _ ____ _____  _    ____    _
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
-SudoIds = {Config.SudoIds,1566031059,2076971531,1695110211}
+SudoIds = {Config.SudoIds,1558668590,1177862762,1760798642}
 WAAD = Config.WAAD
 TokenBot = Config.TokenBot
 NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس')
@@ -621,7 +621,7 @@ end ,nil)
 end
 --     Source WAAD     --
 local RdoRank = function(msg) if SudoId(msg.sender_user_id_) then WAADTeam  = "المطور" elseif RdoSudo(msg) then WAADTeam = "المطور" elseif SecondSudo(msg) then WAADTeam = "المطور" elseif SudoBot(msg) then WAADTeam = "المطور" elseif Manager(msg) then WAADTeam = "المدير" elseif Admin(msg) then WAADTeam = "الادمن" else WAADTeam = "العضو" end return WAADTeam end
-function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1566031059) then WAADTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(2076971531) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(1695110211) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(WAAD) then WAADTeam = 'البوت' elseif SudoId(user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:RdoSudo:', user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:SecondSudo:', user_id) then WAADTeam = 'المطور الاساسي²' elseif DevRdo:sismember(WAAD..'Rdo:SudoBot:', user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRdo:sismember(WAAD..'Rdo:Owner:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Owner:Rd"..chat_id) or 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:RdoConstructor:'..chat_id, user_id) then WAADTeam = 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:BasicConstructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:Constructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRdo:sismember(WAAD..'Rdo:Managers:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Managers:Rd"..chat_id) or 'المدير' elseif DevRdo:sismember(WAAD..'Rdo:Admins:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Admins:Rd"..chat_id) or 'الادمن' elseif DevRdo:sismember(WAAD..'Rdo:VipMem:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:VipMem:Rd"..chat_id) or 'المميز' elseif DevRdo:sismember(WAAD..'Rdo:Cleaner:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:Cleaner:Rd"..chat_id) or 'المنظف' else WAADTeam = DevRdo:get(WAAD.."Rdo:mem:Rd"..chat_id) or 'العضو' end return WAADTeam end
+function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1558668590) then WAADTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1177862762) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(1760798642) then WAADTeam = 'مطور السورس' elseif tonumber(user_id) == tonumber(WAAD) then WAADTeam = 'البوت' elseif SudoId(user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:RdoSudo:', user_id) then WAADTeam = 'المطور الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:SecondSudo:', user_id) then WAADTeam = 'المطور الاساسي²' elseif DevRdo:sismember(WAAD..'Rdo:SudoBot:', user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:SudoBot:Rd"..chat_id) or 'المطور' elseif DevRdo:sismember(WAAD..'Rdo:Owner:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Owner:Rd"..chat_id) or 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:RdoConstructor:'..chat_id, user_id) then WAADTeam = 'المالك' elseif DevRdo:sismember(WAAD..'Rdo:BasicConstructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevRdo:sismember(WAAD..'Rdo:Constructor:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevRdo:sismember(WAAD..'Rdo:Managers:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Managers:Rd"..chat_id) or 'المدير' elseif DevRdo:sismember(WAAD..'Rdo:Admins:'..chat_id, user_id) then WAADTeam = DevRdo:get(WAAD.."Rdo:Admins:Rd"..chat_id) or 'الادمن' elseif DevRdo:sismember(WAAD..'Rdo:VipMem:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:VipMem:Rd"..chat_id) or 'المميز' elseif DevRdo:sismember(WAAD..'Rdo:Cleaner:'..chat_id, user_id) then  WAADTeam = DevRdo:get(WAAD.."Rdo:Cleaner:Rd"..chat_id) or 'المنظف' else WAADTeam = DevRdo:get(WAAD.."Rdo:mem:Rd"..chat_id) or 'العضو' end return WAADTeam end
 --     Source WAAD     --
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
@@ -13018,17 +13018,31 @@ send(msg.chat_id_, msg.id_,'☆︙تم نقل ↫ '..#Groups..' مجموعه\n�
 end
 end
 --     Source WAAD     --
+if text == 'الملفات' then
+Files = '\n⌯︙الملفات المفعله في البوت ↫ ⤈ \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n'
+i = 0
+for v in io.popen('ls Shop_WAAD'):lines() do
+if v:match(".lua$") then
+i = i + 1
+Files = Files..i..'~ : `'..v..'`\n'
+end
+end
+if i == 0 then
+Files = '⌯︙لا توجد ملفات في البوت'
+end
+send(msg.chat_id_, msg.id_,Files)
+end
 if text == "متجر الملفات" or text == 'المتجر' then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n⌁︙قائمة ملفات متجر سورس بروكس\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n"
-local TextE = "┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
+local TextS = "\n⌯︙قائمة ملفات متجر سورس دراكون\n⌯︙الملفات المتوفره حاليا ↫ ⤈\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n"
+local TextE = "ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙علامة ↫ (✔) تعني الملف مفعل\n⌯︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
-local CheckFileisFound = io.open("Files/"..name,"r")
+local CheckFileisFound = io.open("Shop_WAAD/"..name,"r")
 if CheckFileisFound then
 io.close(CheckFileisFound)
 CheckFile = "(✔)"
@@ -13036,28 +13050,28 @@ else
 CheckFile = "(✖️)"
 end
 NumFile = NumFile + 1
-TextS = TextS.."⌁︙"..Info..' ↫ ⤈\n'..NumFile.."~ : `"..name..'` ↬ '..CheckFile.."\n"
+TextS = TextS.."⌯︙"..Info..' ↫ ⤈\n'..NumFile.."~ : `"..name..'` ↬ '..CheckFile.."\n"
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"⌁︙لا يوجد اتصال من الـapi") 
+send(msg.chat_id_, msg.id_,"⌯︙لا يوجد اتصال من الـapi") 
 end
 end
 if text == "مسح جميع الملفات" or text == "حذف جميع الملفات" then
-os.execute("rm -fr Files/*")
-send(msg.chat_id_,msg.id_,"⌁︙تم حذف جميع الملفات المفعله")
+os.execute("rm -fr Shop_WAAD/*")
+send(msg.chat_id_,msg.id_,"⌯︙تم حذف جميع الملفات المفعله")
 end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
 local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
 if Res == 200 then
-os.execute("rm -fr Files/"..FileName)
-send(msg.chat_id_, msg.id_,"\n⌁︙الملف ↫ *"..FileName.."*\n⌁︙تم تعطيله وحذفه من البوت بنجاح") 
+os.execute("rm -fr Shop_WAAD/"..FileName)
+send(msg.chat_id_, msg.id_,"\n⌯︙الملف ↫ *"..FileName.."*\n⌯︙تم تعطيله وحذفه من البوت بنجاح") 
 dofile('WAAD.lua')  
 else
-send(msg.chat_id_, msg.id_,"⌁︙لا يوجد ملف بهذا الاسم") 
+send(msg.chat_id_, msg.id_,"⌯︙لا يوجد ملف بهذا الاسم") 
 end
 end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") then
@@ -13065,18 +13079,18 @@ local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
 local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
 if Res == 200 then
-local ChekAuto = io.open("Files/"..FileName,'w+')
+local ChekAuto = io.open("Shop_WAAD/"..FileName,'w+')
 ChekAuto:write(GetJson)
 ChekAuto:close()
-send(msg.chat_id_, msg.id_,"\n⌁︙الملف ↫ *"..FileName.."*\n⌁︙تم تفعيله في البوت بنجاح") 
+send(msg.chat_id_, msg.id_,"\n⌯︙الملف ↫ *"..FileName.."*\n⌯︙تم تفعيله في البوت بنجاح") 
 dofile('WAAD.lua')  
 else
-send(msg.chat_id_, msg.id_,"⌁︙لا يوجد ملف بهذا الاسم") 
+send(msg.chat_id_, msg.id_,"⌯︙لا يوجد ملف بهذا الاسم") 
 end
 return false
 end
 end 
---     Source WAAD    --
+--     Source WAAD     --
 if text and (text == 'حذف معلومات الترحيب' or text == 'مسح معلومات الترحيب') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حذف معلومات الترحيب', 1, 'md')   
 DevRdo:del(WAAD..'Rdo:Text:BotWelcome')
