@@ -13057,7 +13057,6 @@ end
 else
 send(msg.chat_id_, msg.id_,"⌁︙لا يوجد اتصال من الـapi") 
 end
-end
 if text == "مسح جميع الملفات" and ChCheck(msg) or text == "حذف جميع الملفات" and ChCheck(msg) then
 os.execute("rm -fr Files/*")
 send(msg.chat_id_,msg.id_,"☆︙تم حذف جميع الملفات المفعله")
