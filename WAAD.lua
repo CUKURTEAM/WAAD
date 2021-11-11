@@ -13050,12 +13050,12 @@ else
 CheckFile = "(✖️)"
 end
 NumFile = NumFile + 1
-TextS = TextS.."☆︙"..Info..' ↫ ⤈\n'..NumFile.."~ : `"..name..'` ↬ '..CheckFile.."\n"
+TextS = TextS.."⌁︙"..Info..' ↫ ⤈\n'..NumFile.."~ : `"..name..'` ↬ '..CheckFile.."\n"
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"☆︙لا يوجد اتصال من الـapi") 
+send(msg.chat_id_, msg.id_,"⌁︙لا يوجد اتصال من الـapi") 
 end
 end
 if text == "مسح جميع الملفات" and ChCheck(msg) or text == "حذف جميع الملفات" and ChCheck(msg) then
