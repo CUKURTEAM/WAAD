@@ -3557,7 +3557,7 @@ tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp)
 tdcli_function({ID="GetUser",user_id_=WAAD},function(arg,dpbot)
 local inline = {
 {{text="☆ المطور .",url="t.me/"..(dp.username_ or "CXRCX")}},
-{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/BBBVVBV"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
+{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/EEEEEl"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
 }
 local start = DevRdo:get(WAAD.."Rdo:Start:Bot")
 if start then 
@@ -6008,7 +6008,7 @@ return false
 end
 local Text = '☆︙قم باستعمال الازرار للتحكم العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text="رفع رتبه",callback_data=msg.sender_user_id_..":SetList:"..result.sender_user_id_},{text="تنزيل رتبه",callback_data=msg.sender_user_id_..":RemList:"..result.sender_user_id_}},{{text="كتم",callback_data=msg.sender_user_id_..":Mute:"..result.sender_user_id_},{text="الغاء كتم",callback_data=msg.sender_user_id_..":UnMute:"..result.sender_user_id_}},{{text="حظر",callback_data=msg.sender_user_id_..":Ban:"..result.sender_user_id_},{text="الغاء حظر",callback_data=msg.sender_user_id_..":UnBan:"..result.sender_user_id_}},{{text="تقيد",callback_data=msg.sender_user_id_..":Tkeed:"..result.sender_user_id_},{text="الغاء تقيد",callback_data=msg.sender_user_id_..":UnTkeed:"..result.sender_user_id_}}}
+keyboard.inline_keyboard = {{{text="رفع رتبه",callback_data=msg.sender_user_id_..":SetList:"..result.sender_user_id_},{text="تنزيل رتبه",callback_data=msg.sender_user_id_..":RemList:"..result.sender_user_id_}},{{text="كتم",callback_data=msg.sender_user_id_..":Mute:"..result.sender_user_id_},{text="الغاء كتم",callback_data=msg.sender_user_id_..":UnMute:"..result.sender_user_id_}},{{text="حظر",callback_data=msg.sender_user_id_..":Ban:"..result.sender_user_id_},{text="الغاء حظر",callback_data=msg.sender_user_id_..":UnBan:"..result.sender_user_id_}},{{text="تقيد",callback_data=msg.sender_user_id_..":Tkeed:"..result.sender_user_id_},{text="الغاء تقيد",callback_data=msg.sender_user_id_..":UnTkeed:"..result.sender_user_id_}}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..msg.sender_user_id_}}}
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text='..URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
@@ -6077,7 +6077,7 @@ keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=msg.sende
 elseif BasicConstructor(data) then
 keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..Rdo},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..Rdo}},{{text="تنزيل منشئ",callback_data=msg.sender_user_id_..":RemConstructor:"..Rdo},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..Rdo}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..Rdo}}}
 elseif Constructor(data) then
-keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..Rdo},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..Rdo}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..Rdo},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..Rdo}},{{text = '⌁ WAAD TeAM.',url="t.me/CXRCX"}}}
+keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..Rdo},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..Rdo}},{{text="تنزيل منظف",callback_data=msg.sender_user_id_..":RemCleaner:"..Rdo},{text="تنزيل مدير",callback_data=msg.sender_user_id_..":RemManager:"..Rdo}},{{text = '⌁ WAAD TeAM.',url="t.me/CXRCX"}}}, 
 elseif Manager(data) then
 keyboard.inline_keyboard = {{{text="تنزيل مميز",callback_data=msg.sender_user_id_..":RemMem:"..Rdo},{text="تنزيل ادمن",callback_data=msg.sender_user_id_..":RemAdmin:"..Rdo}}}
 elseif Admin(data) then
@@ -9044,7 +9044,7 @@ local List = {
 ゠𝙸𝙳 𖨈 #id 𖥲 .
 ]],
 [[
-➭- 𝒔𝒕??𓂅 #stast 𓍯. 💕
+➭- 𝒔𝒕𝒂𓂅 #stast 𓍯. 💕
 ➮- 𝒖𝒔𝒆𝒓𓂅 #username 𓍯. 💕
 ➭- 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯. 💕
 ➭- 𝒊𝒅 𓂅 #id 𓍯. 💕
@@ -13216,14 +13216,14 @@ end
 --     Source WAAD     --
 if text == "مبرمج السورس" and ChCheck(msg) or text == "مطور السورس" and ChCheck(msg) or text == "وين المبرمج" and ChCheck(msg) or text == "المبرمج" and ChCheck(msg) or text == "↫ مبرمج السورس ☆" and ChCheck(msg) then 
 Text = [[
-☆︙[مبرمج السورس](https://t.me/BBBVVBV)
+☆︙[مبرمج السورس](https://t.me/EEEEEL)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☆ مبرمج السورس',url="t.me/BBBVVBV"}},
+{{text = '☆ مبرمج السورس',url="t.me/EEEEEL"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/BBBVVBV&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EEEEEL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source WAAD     --
