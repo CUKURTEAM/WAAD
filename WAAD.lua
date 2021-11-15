@@ -4,11 +4,11 @@
 --                - WAAD -                 --
 --        -- https://t.me/CXRCX --         --
 ------------------------------------------------ 
-DevRdo  = dofile("./libs/redis.lua").connect("127.0.0.1", 6379)
-serpent = dofile("./libs/serpent.lua")
-JSON    = dofile("./libs/dkjson.lua")
-json    = dofile("./libs/JSON.lua")
-URL     = dofile("./libs/url.lua")
+DevRdo  = dofile("./AIAN_WAAD/redis.lua").connect("127.0.0.1", 6379)
+serpent = dofile("./AIAN_WAAD/serpent.lua")
+JSON    = dofile("./AIAN_WAAD/dkjson.lua")
+json    = dofile("./AIAN_WAAD/JSON.lua")
+URL     = dofile("./AIAN_WAAD/url.lua")
 http    = require("socket.http") 
 HTTPS   = require("ssl.https") 
 https   = require("ssl.https") 
