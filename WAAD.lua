@@ -4,11 +4,11 @@
 --                - WAAD -                 --
 --        -- https://t.me/CXRCX --         --
 ------------------------------------------------ 
-DevRdo  = dofile("./AIAN_WAAD/redis.lua").connect("127.0.0.1", 6379)
-serpent = dofile("./AIAN_WAAD/serpent.lua")
-JSON    = dofile("./AIAN_WAAD/dkjson.lua")
-json    = dofile("./AIAN_WAAD/JSON.lua")
-URL     = dofile("./AIAN_WAAD/url.lua")
+DevRdo  = dofile("./libs/redis.lua").connect("127.0.0.1", 6379)
+serpent = dofile("./libs/serpent.lua")
+JSON    = dofile("./libs/dkjson.lua")
+json    = dofile("./libs/JSON.lua")
+URL     = dofile("./libs/url.lua")
 http    = require("socket.http") 
 HTTPS   = require("ssl.https") 
 https   = require("ssl.https") 
@@ -28,7 +28,7 @@ if tostring(DevId):match('%d+') then
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
 DevRdo:set(Server.."IdWAAD",DevId) 
 else 
-print('\27[1;31m┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉') 
+print('\27[1;31m┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉') 
 end
 os.execute('lua WAAD.lua') 
 end
@@ -38,13 +38,13 @@ local TokenBot = io.read()
 if TokenBot ~= '' then 
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe') 
 if res ~= 200 then 
-print('\27[1;31m┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\nالتوكن غير صحيح تاكد منه ثم ارسله\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉') 
+print('\27[1;31m┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\nالتوكن غير صحيح تاكد منه ثم ارسله\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉') 
 else 
 io.write('\27[1;36mتم حفظ توكن البوت بنجاح\n27[0;39;49m') 
 DevRdo:set(Server.."TokenWAAD",TokenBot) 
 end  
 else 
-print('\27[1;31m┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉') 
+print('\27[1;31m┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉') 
 end  
 os.execute('lua WAAD.lua') 
 end
@@ -52,7 +52,7 @@ local Create = function(data, file, uglify)
 file = io.open(file, "w+")   
 local serialized   
 if not uglify then  
-serialized = serpent.block(data, {comment = false, name = "Config"})  
+serialized = serpent.block(data, {comment = fRdoe, name = "Config"})  
 else  
 serialized = serpent.dump(data)  
 end    
@@ -76,15 +76,15 @@ token="]]..DevRdo:get(Server.."TokenWAAD")..[["
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
-echo "┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 echo "~ The tg File Was Not Found In The Bot Files!"
-echo "┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 exit 1
 fi
 if [ ! $token ]; then
-echo "┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 echo "~ The Token Was Not Found In The config.lua File!"
-echo "┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 exit 1
 fi
 ./tg -s ./WAAD.lua -p PROFILE --bot=$token
@@ -132,15 +132,15 @@ __  __ _   _ ____ _____  _    ____    _
 | |  | | |_| |  _  |/ ___ \| |  | | |  | | |___| |_| |
 |_|  |_|\___/|_| |_/_/   \_\_|  |_|_|  |_|_____|____/
 
-]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
+]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
 SudoIds = {Config.SudoIds,1566031059,2076971531,1695110211}
 WAAD = Config.WAAD
 TokenBot = Config.TokenBot
-NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس')
+NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'يوكا')
 --     Source WAAD     --
-FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
+FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
 FilesNumber = 0
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
@@ -148,14 +148,14 @@ FilesNumber = FilesNumber + 1
 FilesPrint = FilesPrint.."\27[39m"..FilesNumber.."\27[36m".."~ : \27[10;32m"..v.."\27[m \n"
 end
 end
-FilesPrint = FilesPrint.."\27[35m".."┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n".."\27[m"
+FilesPrint = FilesPrint.."\27[35m".."┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n".."\27[m"
 if FilesNumber ~= 0 then
 print(FilesPrint)
 end
 --     Source WAAD     --
 --     Start Functions    --
 function vardump(value)
-print(serpent.block(value, {comment=false}))
+print(serpent.block(value, {comment=fRdoe}))
 end
 --     Source WAAD     --
 function dl_cb(arg, data)
@@ -163,7 +163,7 @@ end
 --     Source WAAD     --
 ----------  Sudo  ----------
 function Sudo(msg) 
-local var = false 
+local var = fRdoe 
 for k,v in pairs(SudoIds) do 
 if msg.sender_user_id_ == v then 
 var = true 
@@ -174,7 +174,7 @@ end
 return var 
 end
 function SudoId(user_id) 
-local var = false 
+local var = fRdoe 
 for k,v in pairs(SudoIds) do 
 if user_id == v then 
 var = true 
@@ -191,7 +191,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:RdoSudo:',msg.sender_user_id_)
 if Status or Sudo(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -201,13 +201,13 @@ local Status = DevRdo:sismember(WAAD..'Rdo:SecondSudo:',msg.sender_user_id_)
 if Status or RdoSudo(msg) or Sudo(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
 ----------  Bot  -----------
 function Bot(msg) 
-local var = false  
+local var = fRdoe  
 if msg.sender_user_id_ == tonumber(WAAD) then  
 var = true  
 end  
@@ -220,7 +220,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:SudoBot:',msg.sender_user_id_)
 if Status or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -230,7 +230,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:RdoConstructor:'..msg.chat_id_,msg.se
 if Status or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -240,7 +240,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:Owner:'..msg.chat_id_,msg.sender_user
 if Status or RdoConstructor(msg) or SudoBot(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -250,7 +250,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:BasicConstructor:'..msg.chat_id_,msg.
 if Status or SudoBot(msg) or Owner(msg) or RdoConstructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -260,7 +260,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:Constructor:'..msg.chat_id_,msg.sende
 if Status or SudoBot(msg) or Owner(msg) or RdoConstructor(msg) or BasicConstructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -270,7 +270,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:Managers:'..msg.chat_id_,msg.sender_u
 if Status or SudoBot(msg) or Owner(msg) or RdoConstructor(msg) or BasicConstructor(msg) or Constructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -280,7 +280,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:Admins:'..msg.chat_id_,msg.sender_use
 if Status or SudoBot(msg) or Owner(msg) or RdoConstructor(msg) or RdoConstructor(msg) or BasicConstructor(msg) or Constructor(msg) or Manager(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -290,7 +290,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:VipMem:'..msg.chat_id_,msg.sender_use
 if Status or SudoBot(msg) or Owner(msg) or RdoConstructor(msg) or RdoConstructor(msg) or BasicConstructor(msg) or Constructor(msg) or Manager(msg) or Admin(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -300,7 +300,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:Cleaner:'..msg.chat_id_,msg.sender_us
 if Status or SudoBot(msg) or RdoConstructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -310,7 +310,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:CleanerNum:'..msg.chat_id_,msg.sender
 if Status or SudoBot(msg) or Cleaner(msg) or RdoConstructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -320,7 +320,7 @@ local Status = DevRdo:sismember(WAAD..'Rdo:CleanerMusic:'..msg.chat_id_,msg.send
 if Status or SudoBot(msg) or Cleaner(msg) or RdoConstructor(msg) or RdoSudo(msg) or Sudo(msg) or SecondSudo(msg) or Bot(msg) then  
 return true  
 else  
-return false  
+return fRdoe  
 end  
 end
 --     Source WAAD     --
@@ -329,7 +329,7 @@ local function Ban(user_id, chat_id)
 if DevRdo:sismember(WAAD..'Rdo:Ban:'..chat_id, user_id) then
 var = true
 else
-var = false
+var = fRdoe
 end
 return var
 end
@@ -339,7 +339,7 @@ function BanAll(user_id)
 if DevRdo:sismember(WAAD..'Rdo:BanAll:', user_id) then
 var = true
 else
-var = false
+var = fRdoe
 end
 return var
 end
@@ -349,7 +349,7 @@ local function Muted(user_id, chat_id)
 if DevRdo:sismember(WAAD..'Rdo:Muted:'..chat_id, user_id) then
 var = true
 else
-var = false
+var = fRdoe
 end
 return var
 end
@@ -359,7 +359,7 @@ function MuteAll(user_id)
 if DevRdo:sismember(WAAD..'Rdo:MuteAll:', user_id) then
 var = true
 else
-var = false
+var = fRdoe
 end
 return var
 end
@@ -378,7 +378,7 @@ local TextParseMode = {ID = "TextParseModeMarkdown"}
 pcall(tdcli_function ({ID = "SendMessage",chat_id_ = chat_id,reply_to_message_id_ = reply_to_message_id,disable_notification_ = 1,from_background_ = 1,reply_markup_ = nil,input_message_content_ = {ID = "InputMessageText",text_ = text,disable_web_page_preview_ = 1,clear_draft_ = 0,entities_ = {},parse_mode_ = TextParseMode,},}, dl_cb, nil))
 end
 --     Source WAAD     --
-function WAADFiles(msg)
+function Files_WAAD(msg)
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
 plugin = dofile("Files/"..v)
@@ -394,12 +394,12 @@ function download_to_file(url, file_path)
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
 local response = nil 
-options.redirect = false 
+options.redirect = fRdoe 
 response = {https.request(options)} 
 local code = response[2] 
 local headers = response[3] 
 local status = response[4] 
-if code ~= 200 then return false, code 
+if code ~= 200 then return fRdoe, code 
 end 
 file = io.open(file_path, "w+") 
 file:write(table.concat(respbody)) 
@@ -409,8 +409,8 @@ end
 function AddFileSource(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.lua') then
 if File_Name ~= "WAAD.lua" then 
-send(chat,msg.id_," ☆︙هذا الملف ليس تابع لسورس تروكس")
-return false 
+send(chat,msg.id_," ☆︙هذا الملف ليس تابع لسورس يوكا")
+return fRdoe 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/getfile?file_id='..ID_FILE) ) 
 os.execute('rm -rf WAAD.lua')
@@ -425,7 +425,7 @@ function AddFile(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if File_Name:lower():match('(%d+)') ~= WAAD:lower() then 
 send(chat,msg.id_,"☆︙عذرا هذا الملف ليس تابع لهذا البوت")   
-return false 
+return fRdoe 
 end
 send(chat,msg.id_,"☆︙جاري رفع الملف ... .")
 local File = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/getfile?file_id='..ID_FILE) ) 
@@ -571,10 +571,10 @@ end
 function GetApi(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) if res ~= 200 then 
-return false 
+return fRdoe 
 end 
 if not req.ok then 
-return false 
+return fRdoe 
 end 
 return req 
 end 
@@ -598,8 +598,8 @@ local response = {}
 response.keyboard = keyboard 
 response.inline_keyboard = inline 
 response.resize_keyboard = true 
-response.one_time_keyboard = false 
-response.selective = false  
+response.one_time_keyboard = fRdoe 
+response.selective = fRdoe  
 local send_api = "https://api.telegram.org/bot"..TokenBot.."/sendMessage?chat_id="..chat_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true&reply_markup="..URL.escape(JSON.encode(response)) 
 if reply_id then 
 send_api = send_api.."&reply_to_message_id="..reply_id 
@@ -649,7 +649,7 @@ var = true
 elseif DevRdo:sismember(WAAD..'Rdo:VipMem:'..chat_id, user_id) then  
 var = true 
 else  
-var = false
+var = fRdoe
 end  
 return var
 end
@@ -693,22 +693,22 @@ end
 --     Source WAAD     --
 function ReplyStatus(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,dp) 
-if dp.first_name_ ~= false then
+if dp.first_name_ ~= fRdoe then
 local UserName = (dp.username_ or "CXRCX")
 for gmatch in string.gmatch(dp.first_name_, "[^%s]+") do
 dp.first_name_ = gmatch
 end
 if status == "WrongWay" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙عذرا عزيزي ↫ ["..dp.first_name_.."](T.me/"..UserName..")".."\n"..text, 1, 'md')
-return false
+return fRdoe
 end
 if status == "Reply" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙العضو ↫ ["..dp.first_name_.."](T.me/"..UserName..")".."\n"..text, 1, 'md')
-return false
+return fRdoe
 end
 if status == "ReplyBy" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙بواسطة ↫ ["..dp.first_name_.."](T.me/"..UserName..")".."\n"..text, 1, 'md')
-return false
+return fRdoe
 end
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الحساب محذوف قم بالتاكد واعد المحاوله", 1, 'md')
@@ -725,7 +725,7 @@ Status = "المالك"
 elseif GetInfo.result.status == "administrator" then 
 Status = "مشرف"
 else
-Status = false
+Status = fRdoe
 end
 if GetInfo.result.custom_title then 
 Rdo = GetInfo.result.custom_title
@@ -741,13 +741,13 @@ local GetInfo = JSON.decode(Check)
 if GetInfo.ok == true then
 if GetInfo.result.status == "creator" then
 send(msg.chat_id_,msg.id_,'☆︙مالك المجموعه')   
-return false  end 
+return fRdoe  end 
 if GetInfo.result.status == "member" then
 send(msg.chat_id_,msg.id_,'☆︙مجرد عضو هنا')   
-return false  end
+return fRdoe  end
 if GetInfo.result.status == 'left' then
 send(msg.chat_id_,msg.id_,'☆︙الشخص غير موجود هنا')   
-return false  end
+return fRdoe  end
 if GetInfo.result.status == "administrator" then
 if GetInfo.result.can_change_info == true then EDT = '✔️' else EDT = '✖️' end
 if GetInfo.result.can_delete_messages == true then DEL = '✔️' else DEL = '✖️' end
@@ -755,7 +755,7 @@ if GetInfo.result.can_invite_users == true then INV = '✔️' else INV = '✖�
 if GetInfo.result.can_pin_messages == true then PIN = '✔️' else PIN = '✖️' end
 if GetInfo.result.can_restrict_members == true then BAN = '✔️' else BAN = '✖️' end
 if GetInfo.result.can_promote_members == true then VIP = '✔️' else VIP = '✖️' end 
-send(msg.chat_id_,msg.id_,'☆︙صلاحيات '..GetCustomTitle(user_id,msg.chat_id_)..' هي ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙حذف الرسائل ↫ '..DEL..'\n☆︙دعوة المستخدمين ↫ '..INV..'\n☆︙حظر المستخدمين ↫ '..BAN..'\n☆︙تثبيت الرسائل ↫ '..PIN..'\n☆︙تغيير المعلومات ↫ '..EDT..'\n☆︙اضافة مشرفين ↫ '..VIP..'\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉')
+send(msg.chat_id_,msg.id_,'☆︙صلاحيات '..GetCustomTitle(user_id,msg.chat_id_)..' هي ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙حذف الرسائل ↫ '..DEL..'\n☆︙دعوة المستخدمين ↫ '..INV..'\n☆︙حظر المستخدمين ↫ '..BAN..'\n☆︙تثبيت الرسائل ↫ '..PIN..'\n☆︙تغيير المعلومات ↫ '..EDT..'\n☆︙اضافة مشرفين ↫ '..VIP..'\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉')
 end
 end
 end
@@ -833,7 +833,7 @@ if DevRdo:get(WAAD.."Rdo:ChId") then
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getchatmember?chat_id='..DevRdo:get(WAAD..'Rdo:ChId')..'&user_id='..msg.sender_user_id_)
 local data = json:decode(url)
 if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
-var = false 
+var = fRdoe 
 if DevRdo:get(WAAD..'Rdo:ChText') then
 local ChText = DevRdo:get(WAAD..'Rdo:ChText')
 send(msg.chat_id_,msg.id_,'['..ChText..']')
@@ -870,25 +870,25 @@ DevRdo:del(WAAD..'yes'..data.sender_user_id_, 'delyes')
 DevRdo:del(WAAD..'no'..data.sender_user_id_, 'delno')
 if RankChecking(data.sender_user_id_, data.chat_id_) then
 EditMsg(Chat_Id2, Msg_Id2, "☆︙لا استطيع طرد ↫ "..IdRank(data.sender_user_id_, data.chat_id_)) 
-return false
+return fRdoe
 end
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=data.chat_id_,user_id_=data.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,da) 
 if (da and da.code_ and da.code_ == 400 and da.message_ == "CHAT_ADMIN_REQUIRED") then 
 EditMsg(Chat_Id2, Msg_Id2, "☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if (da and da.code_ and da.code_ == 3) then 
 EditMsg(Chat_Id2, Msg_Id2, "☆︙البوت ليس ادمن يرجى ترقيتي !") 
-return false  
+return fRdoe  
 end
 if da and da.code_ and da.code_ == 400 and da.message_ == "USER_ADMIN_INVALID" then 
 EditMsg(Chat_Id2, Msg_Id2, "☆︙لا استطيع طرد مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 if da and da.ID and da.ID == "Ok" then
 ChatKick(data.chat_id_, data.sender_user_id_)
 EditMsg(Chat_Id2, Msg_Id2, "☆︙تم طردك من المجموعه") 
-return false
+return fRdoe
 end
 end,nil)  
 end
@@ -934,7 +934,7 @@ if DevRdo:get(WAAD.."Rdo:NewDev"..data.sender_user_id_) then
 if DataText == '/setno' then
 EditMsg(Chat_Id2, Msg_Id2, "☆︙تم الغاء امر تغير المطور الاساسي") 
 DevRdo:del(WAAD.."Rdo:NewDev"..data.sender_user_id_)
-return false
+return fRdoe
 end
 if DataText == '/setyes' then
 local NewDev = DevRdo:get(WAAD.."Rdo:NewDev"..data.sender_user_id_)
@@ -948,7 +948,7 @@ local Create = function(data, file, uglify)
 file = io.open(file, "w+")   
 local serialized   
 if not uglify then  
-serialized = serpent.block(data, {comment = false, name = "Config"})  
+serialized = serpent.block(data, {comment = fRdoe, name = "Config"})  
 else  
 serialized = serpent.dump(data)  
 end    
@@ -989,8 +989,8 @@ EditMsg(Chat_Id2, Msg_Id2, "☆︙تم الغاء اللعبه لاعادة ال
 end
 if DataText == '/ListRolet' then
 local List = DevRdo:smembers(WAAD..'Rdo:ListRolet'..data.chat_id_) 
-local Text = '☆︙قائمة الاعبين ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n' 
-local Textt = '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙تم اكتمال العدد الكلي هل انت مستعد ؟'
+local Text = '☆︙قائمة الاعبين ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n' 
+local Textt = '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙تم اكتمال العدد الكلي هل انت مستعد ؟'
 for k, v in pairs(List) do 
 Text = Text..k.."~ : [" ..v.."]\n"  
 end 
@@ -1346,9 +1346,9 @@ end
 if DataText and DataText:match(tonumber(data.sender_user_id_)..':SetList:(.*)') then
 local Rdo = DataText:match(tonumber(data.sender_user_id_)..':SetList:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = Rdo},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(data.chat_id_, data.id_, 1, "☆︙الحساب محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local Text = '☆︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
@@ -1378,9 +1378,9 @@ end
 if DataText and DataText:match(tonumber(data.sender_user_id_)..':RemList:(.*)') then
 local Rdo = DataText:match(tonumber(data.sender_user_id_)..':RemList:(.*)')
 tdcli_function ({ID = "GetUser",user_id_ = Rdo},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(data.chat_id_, data.id_, 1, "☆︙الحساب محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local Text = '☆︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
@@ -1413,9 +1413,9 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local Del = DevRdo:get(WAAD..'Rdo:Del')
 local Text = [[
 ☆︙اهلا بك في قائمة اوامر الرتب ↫ ⤈          
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 يمكنك مسح رتب المجموعه من خلال الازرار اسفل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -1662,10 +1662,10 @@ tdcli_function({ID ="GetChat",chat_id_=data.chat_id_},function(arg,dp)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = data.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,Rdo) 
 local admins = Rdo.members_
 for i=0 , #admins do
-if Rdo.members_[i].bot_info_ == false and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
+if Rdo.members_[i].bot_info_ == fRdoe and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..data.chat_id_, admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD..'Rdo:Admins:'..data.chat_id_, admins[i].user_id_)
 end
 end,nil)
@@ -1676,7 +1676,7 @@ if Rdo.members_[i].status_.ID == "ChatMemberStatusCreator" then
 DevRdo:sadd(WAAD.."Rdo:BasicConstructor:"..data.chat_id_,admins[i].user_id_)
 DevRdo:sadd(WAAD.."Rdo:RdoConstructor:"..data.chat_id_,admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD.."Rdo:BasicConstructor:"..data.chat_id_,admins[i].user_id_)
 DevRdo:srem(WAAD.."Rdo:RdoConstructor:"..data.chat_id_,admins[i].user_id_)
 end
@@ -1720,7 +1720,7 @@ LinkGroup ='لا يوجد'
 end
 DevRdo:set(WAAD.."Rdo:Groups:Links"..data.chat_id_,LinkGroup) 
 if not Sudo(data) then
-SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..data.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..data.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end
 end,nil)
@@ -1762,7 +1762,7 @@ LinkGroup ='لا يوجد'
 end
 DevRdo:set(WAAD.."Rdo:Groups:Links"..data.chat_id_,LinkGroup) 
 if not Sudo(data) then
-SendText(DevId,"☆︙تم تعطيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..data.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم تعطيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..data.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end
 end,nil)
@@ -1825,11 +1825,11 @@ tdcli_function ({ID = "GetChannelMembers",channel_id_ = data.chat_id_:gsub("-100
 local num = 0
 local admins = Rdo.members_  
 for i=0 , #admins do   
-if Rdo.members_[i].bot_info_ == false and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
+if Rdo.members_[i].bot_info_ == fRdoe and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..data.chat_id_, admins[i].user_id_)   
 num = num + 1
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 DevRdo:srem(WAAD..'Rdo:Admins:'..data.chat_id_, admins[i].user_id_)   
 end
 end,nil)   
@@ -1861,7 +1861,7 @@ Text = "☆︙تم الغاء حفظ الرد"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '☆ TeAm WAAD .',url="t.me/CXRCX"}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 if DataText and DataText:match('/CancelRed:'..tonumber(data.sender_user_id_)..'(.*)') then
 local Rdo = DataText:match('/CancelRed:'..tonumber(data.sender_user_id_)..'(.*)')
@@ -1874,7 +1874,7 @@ Text = "☆︙تم الغاء حفظ الرد"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '☆ TeAm WAAD .',url="t.me/CXRCX"}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if DataText and DataText:match('/CmdList:(.*)') then
@@ -1925,9 +1925,9 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local Filter = DevRdo:get(WAAD..'Rdo:Filter')
 local Text = [[
 ☆︙اهلا بك في قائمة المنع ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙يمكنك مسح الممنوعات من خلال الازرار اسفل*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -1986,9 +1986,9 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local locklist = DevRdo:get(WAAD..'Rdo:locklist')
 local Text = [[
 ☆︙اهلا بك في قائمة القفل والفتح ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙يمكنك فتح و قفل الاوامر من خلال الازرار اسفل*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -2003,11 +2003,11 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local LockBotList = DevRdo:get(WAAD..'Rdo:LockBotList')
 local Text = [[
 ☆︙اهلا بك في قائمة قفل البوتات  ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙بالطرد*
 *☆︙بالكتم*
 *☆︙بالتقيد*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -2022,12 +2022,12 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local LockSpamList = DevRdo:get(WAAD..'Rdo:LockSpamList')
 local Text = [[
 ☆︙اهلا بك في قائمة قفل التكرار  ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙بالطرد*
 *☆︙بالكتم*
 *☆︙بالتقيد*
 *☆︙بالحذف*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -2262,7 +2262,7 @@ Text =[[
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="♟ الشطرنج ♟",url='https://t.me/T4TTTTBOT?game=chess'}},{{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحدي الرياضيات",url='https://t.me/gamebot?game=MathBattle'}},{{text="اكس او",url='t.me/xobot?start'},{text="سباق الدراجات 🏍",url='https://t.me/gamee?game=MotoFX'}},{{text="سباق سيارات 🏎",url='https://t.me/gamee?game=F1Racer'},{text="متشابه 👾",url='https://t.me/gamee?game=DiamondRows'}},{{text="كرة قدم ⚽",url='https://t.me/gamee?game=FootballStar'}},{{text="ورق🤹‍♂",url='https://t.me/gamee?game=Hexonix'},{text="Hexonix❌",url='https://t.me/gamee?game=Hexonix'}},{{text="MotoFx🏍️",url='https://t.me/gamee?game=MotoFx'}},{{text="لعبة 2048 🎰",url='https://t.me/awesomebot?game=g2048'},{text="Squares🏁",url='https://t.me/gamee?game=Squares'}},{{text="Atomic 1▶️",url='https://t.me/gamee?game=AtomicDrop1'},{text="Corsairs",url='https://t.me/gamebot?game=Corsairs'}},{{text="LumberJack",url='https://t.me/gamebot?game=LumberJack'}},{{text="LittlePlane",url='https://t.me/gamee?game=LittlePlane'},{text="RollerDisco",url='https://t.me/gamee?game=RollerDisco'}},{{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},{{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},{{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},{{text="لعبة النينجا",url='https://t.me/gamee?game=GravityNinja21'},{text="لعبة الكرتي",url='https://t.me/gamee?game=KarateKid2'}},{{text = '☆ TeAm WAAD .', url="t.me/CXRCX"}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end end
 --     Source WAAD     -- 
 if DataText and DataText:match('/SourceList:(.*)') then
@@ -2380,7 +2380,7 @@ if DataText and DataText:match('/LeaveBot:'..tonumber(data.sender_user_id_)..'(.
 local Rdo = DataText:match('/LeaveBot:'..tonumber(data.sender_user_id_)..'(.*)')
 if DevRdo:get(WAAD.."Rdo:Left:Bot"..WAAD) then
 EditMsg(Chat_Id2, Msg_Id2,  "☆︙المغادره معطله من قبل المطور الاساسي", 'md')
-return false  
+return fRdoe  
 end
 EditMsg(Chat_Id2, Msg_Id2,  "*☆︙تم مغادرة المجموعه \n☆︙تم حذف جميع بياناتها*", 'md')
 ChatLeave(data.chat_id_, WAAD) 
@@ -2401,7 +2401,7 @@ if not DevRdo:get(WAAD.."Rdo:Lock:GpLinksinline"..data.chat_id_) then
 tdcli_function({ID ="GetChat",chat_id_=data.chat_id_},function(arg,ta) 
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/exportChatInviteLink?chat_id='..data.chat_id_)) or DevRdo:get(WAAD.."Private:Group:Link"..data.chat_id_) 
 if linkgpp.ok == true then 
-local Text ='☆︙𝖫𝗂𝗇𝗄 𝖦𝗋𝗈𝗎𝗉 ↬ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n['..ta.title_..']('..linkgpp.result..')'
+local Text ='☆︙𝖫𝗂𝗇𝗄 𝖦𝗋𝗈𝗎𝗉 ↬ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n['..ta.title_..']('..linkgpp.result..')'
 keyboard = {} 
 keyboard.inline_keyboard = {{{text= ta.title_, url=linkgpp.result}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -2414,7 +2414,7 @@ if DataText and DataText:match('/LinkText:'..tonumber(data.sender_user_id_)..'(.
 local Rdo = DataText:match('/LinkText:'..tonumber(data.sender_user_id_)..'(.*)')
 if not DevRdo:get(WAAD..'Rdo:Lock:GpLinks'..data.chat_id_) then 
 if DevRdo:get(WAAD.."Rdo:Groups:Links"..data.chat_id_) then
-EditMsg(Chat_Id2, Msg_Id2, "☆︙Group Link ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"..DevRdo:get(WAAD.."Rdo:Groups:Links"..data.chat_id_), 1, "html")
+EditMsg(Chat_Id2, Msg_Id2, "☆︙Group Link ↬ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"..DevRdo:get(WAAD.."Rdo:Groups:Links"..data.chat_id_), 1, "html")
 else 
 EditMsg(Chat_Id2, Msg_Id2, '☆︙لايوجد رابط ارسل ↫ ضع رابط او ارسل ↫ انشاء رابط للانشاء')
 end
@@ -2428,9 +2428,9 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local order = DevRdo:get(WAAD..'Rdo:order')
 local Text = [[
 ☆︙اهلا بك في قائمة اوامر التعطيل والتفعيل ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙يمكنك التعطيل والتفعيل عن طريق الازرار بلاسفل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -2634,7 +2634,7 @@ end
 if DataText and DataText:match('/HideHelpList:(.*)') then
 local Rdo = DataText:match('/HideHelpList:(.*)')
 if tonumber(Rdo) == tonumber(data.sender_user_id_) then
-EditMsg(Chat_Id2, Msg_Id2, "☆︙تم اخفاء كليشة الاوامر") 
+EditMsg(Chat_Id2, Msg_Id2, "☆︙برو تم خفيت الكليشه ") 
 else
 return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("☆ عذرا الامر ليس لك .")..'&show_alert=true')
 end
@@ -2645,14 +2645,14 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local Help = DevRdo:get(WAAD..'Rdo:Help')
 local Text = [[
 ☆︙اهلا بك في قائمة الاوامر ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙م1 ↫ اوامر الحمايه
 ☆︙م2 ↫ اوامر الادمنيه
 ☆︙م3 ↫ اوامر المدراء
 ☆︙م4 ↫ اوامر المنشئين
 ☆︙م5 ↫ اوامر المطورين
 ☆︙م6 ↫ اوامر الاعضاء
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -2671,7 +2671,7 @@ end
 local Help = DevRdo:get(WAAD..'Rdo:Help1')
 local Text = [[
 ☆︙اوامر حماية المجموعه ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙قفل • فتح ↫ الروابط
 ☆︙قفل • فتح ↫ المعرفات
 ☆︙قفل • فتح ↫ البوتات
@@ -2704,9 +2704,9 @@ local Text = [[
 ☆︙قفل • فتح ↫ الانكليزيه
 ☆︙قفل • فتح ↫ الفارسيه
 ☆︙قفل • فتح ↫ التفليش
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر حمايه اخرى ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙قفل • فتح + الامر ↫ ⤈
 ☆︙التكرار بالطرد
 ☆︙التكرار بالكتم
@@ -2714,7 +2714,7 @@ local Text = [[
 ☆︙الفارسيه بالطرد
 ☆︙البوتات بالطرد
 ☆︙البوتات بالتقيد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -2733,7 +2733,7 @@ end
 local Help = DevRdo:get(WAAD..'Rdo:Help2')
 local Text = [[
 ☆︙اوامر الادمنيه ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙الاعدادت
 ☆︙تاك للكل 
 ☆︙انشاء رابط
@@ -2751,25 +2751,25 @@ local Text = [[
 ☆︙ضع • حذف ↫ قوانين
 ☆︙اضف • حذف ↫ صلاحيه
 ☆︙الصلاحيات • حذف الصلاحيات
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙ضع سبام + العدد
 ☆︙ضع تكرار + العدد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع مميز • تنزيل مميز
 ☆︙المميزين • حذف المميزين
 ☆︙كشف القيود • رفع القيود
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙حذف • مسح + بالرد
 ☆︙منع • الغاء منع
 ☆︙قائمه المنع
 ☆︙حذف قائمه المنع
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل • تعطيل ↫ الرابط
 ☆︙تفعيل • تعطيل ↫ الالعاب
 ☆︙تفعيل • تعطيل ↫ الترحيب
 ☆︙تفعيل • تعطيل ↫ التاك للكل
 ☆︙تفعيل • تعطيل ↫ كشف الاعدادات
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙طرد المحذوفين
 ☆︙طرد ↫ بالرد • بالمعرف • بالايدي
 ☆︙كتم • الغاء كتم
@@ -2778,12 +2778,12 @@ local Text = [[
 ☆︙المكتومين • حذف المكتومين
 ☆︙المقيدين • حذف المقيدين
 ☆︙المحظورين • حذف المحظورين
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تقييد دقيقه + عدد الدقائق
 ☆︙تقييد ساعه + عدد الساعات
 ☆︙تقييد يوم + عدد الايام
 ☆︙الغاء تقييد ↫ لالغاء التقييد بالوقت
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -2802,7 +2802,7 @@ end
 local Help = DevRdo:get(WAAD..'Rdo:Help3')
 local Text = [[
 ☆︙اوامر المدراء ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙فحص البوت
 ☆︙ضع اسم + الاسم
 ☆︙اضف • حذف ↫ رد
@@ -2816,33 +2816,33 @@ local Text = [[
 ☆︙منع ↫ بالرد على ( ملصق • صوره • متحركه )
 ☆︙حذف قائمه منع + ↫ ⤈
 ( الصور • المتحركات • الملصقات )
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تنزيل الكل
 ☆︙رفع ادمن • تنزيل ادمن
 ☆︙الادمنيه • حذف الادمنيه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تثبيت
 ☆︙الغاء التثبيت
 ☆︙اعاده التثبيت
 ☆︙الغاء تثبيت الكل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تغير رد + اسم الرتبه + النص ↫ ⤈
 ☆︙المطور • منشئ الاساسي
 ☆︙المنشئ • المدير • الادمن
 ☆︙المميز • المنظف • العضو
 ☆︙حذف ردود الرتب
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تغيير الايدي ↫ لتغيير الكليشه
 ☆︙تعيين الايدي ↫ لتعيين الكليشه
 ☆︙حذف الايدي ↫ لحذف الكليشه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙اطردني • الايدي بالصوره • الابراج
 ☆︙معاني الاسماء • اوامر النسب • انطق
 ☆︙الايدي • تحويل الصيغ • اوامر التحشيش
 ☆︙ردود المدير • ردود المطور • التحقق
 ☆︙ضافني • حساب العمر • الزخرفه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -2861,7 +2861,7 @@ end
 local Help = DevRdo:get(WAAD..'Rdo:Help4')
 local Text = [[
 ☆︙اوامر المنشئين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تنزيل الكل
 ☆︙الميديا • امسح
 ☆︙تعين عدد الحذف
@@ -2878,9 +2878,9 @@ local Text = [[
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙نزلني • امسح
 ☆︙الحظر • الكتم
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المنشئين الاساسيين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙وضع لقب + اللقب
 ☆︙تفعيل • تعطيل ↫ الرفع
 ☆︙رفع منشئ • تنزيل منشئ
@@ -2888,14 +2888,14 @@ local Text = [[
 ☆︙رفع • تنزيل ↫ مشرف
 ☆︙رفع بكل الصلاحيات
 ☆︙حذف القوائم
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المالكين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع • تنزيل ↫ منشئ اساسي
 ☆︙حذف المنشئين الاساسيين 
 ☆︙المنشئين الاساسيين 
 ☆︙حذف جميع الرتب
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -2914,7 +2914,7 @@ end
 local Help = DevRdo:get(WAAD..'Rdo:Help5')
 local Text = [[
 ☆︙اوامر المطورين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙الكروبات
 ☆︙المطورين
 ☆︙المشتركين
@@ -2925,16 +2925,16 @@ local Text = [[
 ☆︙كشف + -ايدي المجموعه
 ☆︙رفع مالك • تنزيل مالك
 ☆︙المالكين • حذف المالكين
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع • تنزيل ↫ مدير عام
 ☆︙حذف • المدراء العامين 
 ☆︙رفع • تنزيل ↫ ادمن عام
 ☆︙حذف • الادمنيه العامين 
 ☆︙رفع • تنزيل ↫ مميز عام
 ☆︙حذف • المميزين عام 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المطور الاساسي ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تحديث
 ☆︙السيرفر
 ☆︙روابط الكروبات
@@ -2966,14 +2966,14 @@ local Text = [[
 ☆︙الثانويين • حذف الثانويين
 ☆︙تعيين • حذف ↫ كليشة الايدي
 ☆︙اذاعه للكل بالتوجيه ↫ بالرد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل ملف + اسم الملف
 ☆︙تعطيل ملف + اسم الملف
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙الاذاعه • الاشتراك الاجباري
 ☆︙ترحيب البوت • المغادره
 ☆︙البوت الخدمي • التواصل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -2989,7 +2989,7 @@ if tonumber(Rdo) == tonumber(data.sender_user_id_) then
 local Help = DevRdo:get(WAAD..'Rdo:Help6')
 local Text = [[
 ☆︙اوامر الاعضاء ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙السورس • موقعي • رتبتي • معلوماتي 
 ☆︙رقمي • لقبي • نبذتي • صلاحياتي • غنيلي
 ☆︙ميمز • متحركه • صوره • ريمكس • فلم • مسلسل • انمي
@@ -3001,7 +3001,7 @@ local Text = [[
 ☆︙ايدي المجموعه • معلومات المجموعه 
 ☆︙نسبه الحب • نسبه الكره • نسبه الغباء 
 ☆︙نسبه الرجوله • نسبه الانوثه • التفاعل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙لقبه + بالرد
 ☆︙كول + الكلمه
 ☆︙زخرفه + اسمك
@@ -3013,7 +3013,7 @@ local Text = [[
 ☆︙ايدي • كشف  ↫ بالرد • بالمعرف • بالايدي
 ☆︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ☆︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -3039,10 +3039,10 @@ else
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لايوجد امر بهذا الاسم", 1, 'html')
 end
 DevRdo:del(WAAD.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
-return false
+return fRdoe
 end
-if text and text:match('^'..(DevRdo:get(WAAD..'Rdo:NameBot') or "تروكس")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevRdo:get(WAAD..'Rdo:NameBot') or "تروكس")..' ','')
+if text and text:match('^'..(DevRdo:get(WAAD..'Rdo:NameBot') or "يوكا")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevRdo:get(WAAD..'Rdo:NameBot') or "يوكا")..' ','')
 end
 if data.message_.content_.text_ then
 local NewCmmd = DevRdo:get(WAAD.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -3055,7 +3055,7 @@ DevRdo:set(WAAD.."Set:Cmd:Group:New"..msg.chat_id_,text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل الامر الجديد", 1, 'html')
 DevRdo:del(WAAD.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 DevRdo:set(WAAD.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_,"true1") 
-return false
+return fRdoe
 end
 if text and DevRdo:get(WAAD.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_) == "true1" then
 local NewCmd = DevRdo:get(WAAD.."Set:Cmd:Group:New"..msg.chat_id_)
@@ -3063,12 +3063,12 @@ DevRdo:set(WAAD.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text,NewCmd)
 DevRdo:sadd(WAAD.."List:Cmd:Group:New"..msg.chat_id_,text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الامر", 1, 'html')
 DevRdo:del(WAAD.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_)
-return false
+return fRdoe
 end
 if Constructor(msg) then
 if text == "الاوامر المضافه" and ChCheck(msg) then
 local List = DevRdo:smembers(WAAD.."List:Cmd:Group:New"..msg.chat_id_.."") 
-t = "☆︙قائمة الاوامر المضافه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+t = "☆︙قائمة الاوامر المضافه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 Cmds = DevRdo:get(WAAD.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
@@ -3145,12 +3145,12 @@ end
 if text == "اضف امر" and ChCheck(msg) or text == "اضافة امر" and ChCheck(msg) or text == "اضافه امر" and ChCheck(msg) then
 DevRdo:set(WAAD.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل الامر القديم", 1, 'html')
-return false
+return fRdoe
 end
 if text == "حذف امر" and ChCheck(msg) or text == "مسح امر" and ChCheck(msg) then 
 DevRdo:set(WAAD.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل الامر الذي قمت باضافته يدويا", 1, 'html')
-return false
+return fRdoe
 end
 end
 --     Source WAAD     --
@@ -3158,9 +3158,9 @@ if text == "الصلاحيات" and ChCheck(msg) or text == "صلاحيات" and
 local List = DevRdo:smembers(WAAD.."Coomds"..msg.chat_id_)
 if #List == 0 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لاتوجد صلاحيات مضافه", 1, 'html')
-return false
+return fRdoe
 end
-t = "☆︙قائمة الصلاحيات المضافه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+t = "☆︙قائمة الصلاحيات المضافه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 var = DevRdo:get(WAAD.."Comd:New:rt:Rdo:"..v..msg.chat_id_)
 if var then
@@ -3197,24 +3197,24 @@ if DevRdo:get(WAAD.."Comd:New"..msg.chat_id_..msg.sender_user_id_) then
 if text and text:match("^↫ الغاء ☆$") then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر", 1, 'html')
 DevRdo:del(WAAD.."Comd:New"..msg.chat_id_..msg.sender_user_id_) 
-return false  
+return fRdoe  
 end 
 if text == "مدير" then
 if not Constructor(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تستطيع اضافة صلاحية ( عضو • مميز  • ادمن )\n☆︙ارسال نوع الصلاحيه مره اخرى", 1, 'html')
-return false
+return fRdoe
 end
 end
 if text == "ادمن" then
 if not Manager(msg) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تستطيع اضافة صلاحية ( عضو • مميز )\n☆︙ارسال نوع الصلاحيه مره اخرى", 1, 'html')
-return false
+return fRdoe
 end
 end
 if text == "مميز" then
 if not Admin(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تستطيع اضافة صلاحية ( عضو )\n☆︙ارسال نوع الصلاحيه مره اخرى", 1, 'html')
-return false
+return fRdoe
 end
 end
 if text == "مدير" or text == "ادمن" or text == "مميز" or text == "عضو" then
@@ -3222,7 +3222,7 @@ local textn = DevRdo:get(WAAD.."Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)
 DevRdo:set(WAAD.."Comd:New:rt:Rdo:"..textn..msg.chat_id_,text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم اضافة الصلاحيه", 1, 'html')
 DevRdo:del(WAAD.."Comd:New"..msg.chat_id_..msg.sender_user_id_) 
-return false  
+return fRdoe  
 end 
 end
 
@@ -3355,7 +3355,7 @@ end
 if ChatType == 'pv' then 
 if text == '/start' or text == '↫ رجوع ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙مرحبا عزيزي المطور \n☆︙انت المطور الاساسي هنا \n☆︙اليك ازرار سورس تروكس \n☆︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙مرحبا عزيزي المطور \n☆︙انت المطور الاساسي هنا \n☆︙اليك ازرار سورس يوكا \n☆︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ السورس ☆','وضع اسم البوت'},
 {'↫  المطورين ☆','↫ الاحصائيات ☆'},
@@ -3364,11 +3364,11 @@ local key = {
 {'↫ الاشتراك الاجباري ☆','↫ الاوامر الخدميه ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ تعيين كلايش الاوامر ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'تغير معلومات الترحيب'},
 {'حذف كليشة الايدي','تعيين كليشة الايدي'},
@@ -3379,11 +3379,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ السورس ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بتحديث  سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بتحديث  سورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تحديث السورس ☆','↫ تحديث ☆'},
 {'↫ السيرفر ☆'},
@@ -3392,11 +3392,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ الاحصائيات ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب أحصائيات  سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب أحصائيات  سورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  الاحصائيات ☆'},
 {'↫ المشتركين ☆','↫ المجموعات ☆'},
@@ -3406,11 +3406,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫  المطورين ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب المطورين لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب المطورين لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الاساسيين ☆','مسح الاساسيين'},
 {'↫ الثانويين ☆','مسح الثانويين'},
@@ -3419,11 +3419,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ التفعيل والتعطيل ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعطيل التواصل ☆','↫ تفعيل التواصل ☆'},
 {'↫ تعطيل ترحيب البوت ☆','↫ تفعيل ترحيب البوت ☆'},
@@ -3434,11 +3434,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ الاذاعه ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالاذاعه لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالاذاعه لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اذاعه بالتثبيت ☆'},
 {'↫ اذاعه خاص ☆','↫ اذاعه عام ☆'},
@@ -3447,11 +3447,11 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ العام ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالعام لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالعام لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اضف رد عام ☆','↫ حذف رد عام ☆'},
 {'↫ ردود العام ☆','↫ مسح ردود العام ☆'},
@@ -3459,22 +3459,22 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ ردود الخاص ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بردود الخاص لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بردود الخاص لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعيين رد الخاص ☆','↫ حذف رد الخاص ☆'},
 {'↫ جلب رد الخاص ☆'},
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ الاشتراك الاجباري ☆' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي المطور \n☆︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  تفعيل الاشتراك الاجباري ☆','↫  تعطيل الاشتراك الاجباري ☆'},
 {'↫ تعيين قناة الاشتراك ☆',' ↫ حذف قناة الاشتراك ☆'},
@@ -3483,10 +3483,10 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end end
 if text == '↫ الاوامر الخدميه ☆' or text == '/play' or text == '↫  رجوع  ☆' or text == 'اوامر الخدميه' or text == '/free' then
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اوامر التسليه ☆','↫ الاوامر الخدميه  ☆'},
 {'↫ اوامر النسب ☆'},
@@ -3495,10 +3495,10 @@ local key = {
 {'↫ رجوع ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end
 if text == '↫ اوامر التسليه ☆' then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ غنيلي ☆','↫ اغنيه ☆'},
 {'↫ ميمز ☆','↫ ريمكس ☆'},
@@ -3507,10 +3507,10 @@ local key = {
 {'↫  رجوع  ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end
 if text == '↫ الاوامر الخدميه  ☆' then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الابراج ☆','↫ حساب العمر ☆'},
 {'↫ الزخرفه ☆','↫ معاني الاسماء ☆'},
@@ -3520,10 +3520,10 @@ local key = {
 {'↫  رجوع  ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end
 if text == '↫ اوامر النسب ☆' then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس يوكا فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ نسبه الكره ☆','↫ نسبه الحب ☆'},
 {'↫ نسبه الرجوله ☆','↫ نسبه الانوثه ☆'},
@@ -3532,10 +3532,10 @@ local key = {
 {'↫  رجوع  ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end
 if text == '↫ العاب ☆' then 
-local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بألعاب سورس تروكس فقط اضغط على اللعبه الذي تريد لعبها'
+local Sudo_Welcome = '☆︙اهلا بك مجددا عزيزي \n☆︙اليك الازرار الخاصه بألعاب سورس يوكا فقط اضغط على اللعبه الذي تريد لعبها'
 local key = {
 {'↫ الالعاب ☆','↫ الالعاب المتطوره ☆'},
 {'↫ كت ☆'},
@@ -3548,7 +3548,7 @@ local key = {
 {'↫  رجوع  ☆'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text == '/start' and ChCheck(msg) then  
@@ -3557,7 +3557,7 @@ tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp)
 tdcli_function({ID="GetUser",user_id_=WAAD},function(arg,dpbot)
 local inline = {
 {{text="☆ المطور .",url="t.me/"..(dp.username_ or "CXRCX")}},
-{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/EEEEEl"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
+{{text="☆ السورس .",url="https://t.me/CXRCX"},{text="☆ لتنصيب بوت .",url="https://t.me/BBBVVBV"}},{{text="☆ اضفني في مجموعتك .",url="t.me/"..dpbot.username_.."?startgroup=botstart"}}
 }
 local start = DevRdo:get(WAAD.."Rdo:Start:Bot")
 if start then 
@@ -3570,7 +3570,7 @@ end,nil)
 end,nil)
 end
 DevRdo:setex(WAAD..'Rdo:Start:Time'..msg.sender_user_id_,300,true)
-return false
+return fRdoe
 end 
 --     Source WAAD     --
 if not SecondSudo(msg) and not DevRdo:sismember(WAAD..'Rdo:Ban:Pv',msg.sender_user_id_) and not DevRdo:get(WAAD..'Rdo:Texting:Pv') then
@@ -3578,10 +3578,10 @@ tdcli_function({ID="GetUser",user_id_=DevId},function(arg,chat)
 Dev_Rdo(msg.sender_user_id_, msg.id_, 1, '☆︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "CXRCX")..')', 1, 'md') 
 tdcli_function({ID="ForwardMessages",chat_id_=DevId,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(arg,dp) 
-if data and data.messages_ and data.messages_[0] ~= false and data.ID ~= "Error" then
+if data and data.messages_ and data.messages_[0] ~= fRdoe and data.ID ~= "Error" then
 if data and data.messages_ and data.messages_[0].content_.sticker_ then
 SendText(DevId,'☆︙تم ارسال الملصق من ↫ ⤈\n['..string.sub(dp.first_name_,0, 40)..'](tg://user?id='..dp.id_..')',0,'md') 
-return false
+return fRdoe
 end;end;end,nil);end,nil);end,nil);end
 if SecondSudo(msg) and msg.reply_to_message_id_ ~= 0  then    
 tdcli_function({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},function(extra, result, success) 
@@ -3593,19 +3593,19 @@ if text == 'حظر' or text == 'حضر' then
 local Text = '☆︙العضو ↫ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n☆︙تم حظره من التواصل'
 SendText(DevId,Text,msg.id_/2097152/0.5,'md') 
 DevRdo:sadd(WAAD..'Rdo:Ban:Pv',data.id_)  
-return false  
+return fRdoe  
 end 
 if text == 'الغاء الحظر' or text == 'الغاء حظر' then
 local Text = '☆︙العضو ↫ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n☆︙تم الغاء حظره من التواصل'
 SendText(DevId,Text,msg.id_/2097152/0.5,'md') 
 DevRdo:srem(WAAD..'Rdo:Ban:Pv',data.id_)  
-return false  
+return fRdoe  
 end 
 tdcli_function({ID='GetChat',chat_id_ = id_user},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = id_user, action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,dp) 
 if dp.code_ == 400 or dp.code_ == 5 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙العضو قام بحظر البوت لا تستطيع ارسال الرسائل له', 1, 'md')
-return false  
+return fRdoe  
 end 
 if text then
 Dev_Rdo(id_user, 0, 1, text, 1, "md")  
@@ -3635,18 +3635,18 @@ if text and DevRdo:get(WAAD..'Rdo:Start:Bots'..msg.sender_user_id_) then
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ كليشة الستارت', 1, 'md')
 DevRdo:del(WAAD..'Rdo:Start:Bots'..msg.sender_user_id_) 
-return false
+return fRdoe
 end
 DevRdo:set(WAAD.."Rdo:Start:Bot",text)  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ كليشة الستارت', 1, 'md')
 DevRdo:del(WAAD..'Rdo:Start:Bots'..msg.sender_user_id_) 
-return false
+return fRdoe
 end
 if SecondSudo(msg) then
 if text == 'تعيين رد الخاص' and ChCheck(msg) or text == 'ضع كليشه ستارت' and ChCheck(msg) or text == '↫ تعيين رد الخاص ☆' and ChCheck(msg) then 
 DevRdo:set(WAAD..'Rdo:Start:Bots'..msg.sender_user_id_,true) 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ارسل لي كليشة الستارت الان', 1, 'md')
-return false
+return fRdoe
 end
 if text == 'حذف رد الخاص' and ChCheck(msg) or text == 'حذف كليشه ستارت' and ChCheck(msg) or text == '↫ حذف رد الخاص ☆' and ChCheck(msg) then 
 DevRdo:del(WAAD..'Start:Bot') 
@@ -3660,7 +3660,7 @@ else
 Start_Source = "☆︙مرحبا انا بوت اسمي "..NameBot.."\n☆︙اختصاصي حماية المجموعات\n☆︙من التفليش والسبام والخخ .. . ،\n☆︙تفعيلي سهل ومجانا فقط قم برفعي ادمن في مجموعتك وارسل امر ↫ تفعيل\n☆︙سيتم رفع الادمنيه والمنشئ تلقائيا"
 end 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, Start_Source, 1, 'md')
-return false
+return fRdoe
 end
 if text == 'تفعيل التواصل' and ChCheck(msg) or text == '↫ تفعيل التواصل ☆' and ChCheck(msg) then   
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل التواصل بنجاح'
@@ -3689,7 +3689,7 @@ if text == "حساب العمر" or text == "↫ حساب العمر ☆" then  
 if text == "الحمايه" or text == "↫ الحمايه ☆" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ اضف البوت في المجموعه ثم قم برفعه مشرف وارسل تفعيل \n☆︙ وتمتع بخدمات غير موجوده في باقي البوتات ', 1, 'md') end
 if text == "الزخرفه" or text == "↫ الزخرفه ☆" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙قم بأرسال أمر زخرفه وثم ارسال الاسم الذي تريد زخرفته بألانكليزي أو العربي', 1, 'md') end
 if text == "اهمس" and ChCheck(msg) or text == "↫ بوت الهمسه ☆" and ChCheck(msg) or text == "بوت الهمسه" and ChCheck(msg) or text == "همسه" and ChCheck(msg) or text == "اريد بوت الهمسه" and ChCheck(msg) or text == "دزلي بوت الهمسه" and ChCheck(msg) or text == "دزولي بوت الهمسه" and ChCheck(msg) then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙@XllHbot ', 1, 'md') end
-if text == "يوتيوب" and ChCheck(msg) or text == "اليوتيوب" and ChCheck(msg) or text == "↫ بوت اليوتيوب ☆" and ChCheck(msg) or text == "بوت اليوتيوب" and ChCheck(msg) or text == "اريد بوت يوتيوب" and ChCheck(msg) or text == "شمرلي بوت يوتيوب" and ChCheck(msg) or text == "يوت" and ChCheck(msg) then local inline = {{{text="‹ اضغط هنا ›",url="https://t.me/XiXbbot"}}} SendInline(msg.chat_id_,'*☆︙اضغط للحصول على بوت اليوتيوب*',nil,inline,msg.id_/2097152/0.5) return false end
+if text == "يوتيوب" and ChCheck(msg) or text == "اليوتيوب" and ChCheck(msg) or text == "↫ بوت اليوتيوب ☆" and ChCheck(msg) or text == "بوت اليوتيوب" and ChCheck(msg) or text == "اريد بوت يوتيوب" and ChCheck(msg) or text == "شمرلي بوت يوتيوب" and ChCheck(msg) or text == "يوت" and ChCheck(msg) then local inline = {{{text="‹ اضغط هنا ›",url="https://t.me/XiXbbot"}}} SendInline(msg.chat_id_,'*☆︙اضغط للحصول على بوت اليوتيوب*',nil,inline,msg.id_/2097152/0.5) return fRdoe end
 if text == "معاني الاسماء" or text == "↫ معاني الاسماء ☆" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ من خلال البوت يمكنك معرفه معنى اسمك \n☆︙ فقط قم بارسال امر معنى اسم + الاسم \n☆︙ مثال : معنى اسم ريو', 1, 'md') end
 if text == "عدد المسح" or text == "تعين عدد المسح" or text == "تعيين عدد المسح" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ فقط قم بارسال امر عدد المسح + عدد المسح \n☆︙ مثال : عدد المسح 100', 1, 'md') end
 if text == "انطق" then  Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ فقط قم بارسال امر انطق + الكلمه\n☆︙سيقوم البوت بنطق الكلمه \n☆︙ مثال : انطق هلو', 1, 'md') end
@@ -3698,7 +3698,7 @@ if text == "ايديي" and ChCheck(msg) or text == "↫ ايديي ☆" and ChC
 if text == 'نبذا' and ChCheck(msg) or text == '↫ نبذا ☆' then
 local WAADTeam = {'- Nothing stops him who wants you .','make them wish they had you !.','Maybe a magical girl','٫ 𝖡𝖾 𝗌𝗂𝗆𝗉𝗅𝖾 𝖺𝗇𝖽 𝖽𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍','. 𝖬𝖺𝗄𝖾 𝖽𝗋𝖾𝖺𝗆𝗌 𝖿𝗋𝗈𝗆 𝗒𝗈𝗎𝗋 𝗋𝖾𝖿𝗋𝖺𝖼𝗍𝗂𝗈𝗇𝗌 . .',':Life is lying .','𝖨 𝗐𝗂𝗅𝗅 𝖺𝗅𝗐𝖺𝗒𝗌 𝗅𝗈𝗏𝖾 𝗒𝗈𝗎 𝗇𝖾𝗏𝖾𝗋 𝖿𝗈𝗋𝗀𝖾𝗍'}  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, ''..WAADTeam[math.random(#WAADTeam)]..'' , 1, 'md')  
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text == "المطور" or text == "مطور" or text == "↫ المطور ☆" then
@@ -3750,7 +3750,7 @@ if text == "صورتي" or text == "↫ صورتي ☆" then
 local my_ph = DevRdo:get(WAAD.."Rdo:Photo:Profile"..msg.chat_id_)
 if not my_ph then
 send(msg.chat_id_, msg.id_," ☆︙الصوره معطله") 
-return false  
+return fRdoe  
 end
 local function getpro(extra, result, success)
 if result.photos_[0] then
@@ -3787,7 +3787,7 @@ keyboard.inline_keyboard = {
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end end
 --     Source WAAD     --
 if text and text:match("^غادر (-%d+)$")  then
@@ -3858,7 +3858,7 @@ end
 end
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and Bots == "ked" and not VipMem(msg) then
-HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_.."&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
+HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_.."&can_send_messages=fRdoe&can_send_media_messages=fRdoe&can_send_other_messages=fRdoe&can_add_web_page_previews=fRdoe")
 DevRdo:sadd(WAAD..'Rdo:Tkeed:'..msg.chat_id_, msg.sender_user_id_)
 GetInfo = https.request("https://api.telegram.org/bot"..TokenBot.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
 local JsonInfo = JSON.decode(GetInfo)
@@ -3896,7 +3896,7 @@ local NameChat = NameChat:gsub("*","")
 local NameChat = NameChat:gsub("{","") 
 local NameChat = NameChat:gsub("}","") 
 if not Sudo(msg) and not Bot(msg) then
-SendText(DevId,"☆︙تم طرد البوت من المجموعه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم طرد البوت من المجموعه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end,nil)
 end,nil)
@@ -3916,15 +3916,15 @@ if text ==('تفعيل') and not SudoBot(msg) and ChCheck(msg) then
 if not DevRdo:get(WAAD..'Rdo:Lock:FreeBot'..WAAD) then
 if ChatType == 'pv' then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لاتستطيع تفعيلي هنا يرجى اضافتي في مجموعه اولا', 1, 'md')
-return false
+return fRdoe
 end
 if ChatType ~= 'sp' then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ضاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي', 1, 'md')
-return false
+return fRdoe
 end
-if msg.can_be_deleted_ == false then 
+if msg.can_be_deleted_ == fRdoe then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙البوت ليس ادمن يرجى ترقيتي !', 1, 'md')
-return false  
+return fRdoe  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data)  
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -3942,10 +3942,10 @@ end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,Rdo) 
 local admins = Rdo.members_
 for i=0 , #admins do
-if Rdo.members_[i].bot_info_ == false and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
+if Rdo.members_[i].bot_info_ == fRdoe and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)
 end
 end,nil)   
@@ -3956,7 +3956,7 @@ if Rdo.members_[i].status_.ID == "ChatMemberStatusCreator" then
 DevRdo:sadd(WAAD.."Rdo:BasicConstructor:"..msg.chat_id_,admins[i].user_id_)
 DevRdo:sadd(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD.."Rdo:BasicConstructor:"..msg.chat_id_,admins[i].user_id_)
 DevRdo:srem(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,admins[i].user_id_)
 end
@@ -3969,7 +3969,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙المجموعه بالتاكيد مف�
 else
 if tonumber(data.member_count_) < tonumber(DevRdo:get(WAAD..'Rdo:Num:Add:Bot') or 0) and not SecondSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙عدد اعضاء المجموعه اقل من ↫ *'..(DevRdo:get(WAAD..'Rdo:Num:Add:Bot') or 0)..'* عضو', 1, 'md')
-return false
+return fRdoe
 end
 ReplyStatus(msg,result.id_,"ReplyBy","☆︙تم تفعيل المجموعه "..dp.title_)  
 DevRdo:sadd(WAAD.."Rdo:Groups",msg.chat_id_)
@@ -3997,7 +3997,7 @@ else
 LinkGroup = 'لا يوجد'
 end
 DevRdo:set(WAAD.."Rdo:Groups:Links"..msg.chat_id_,LinkGroup) 
-SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙موقعه في المجموعه ↫ "..status.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙موقعه في المجموعه ↫ "..status.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end end
 end,nil)
@@ -4010,14 +4010,14 @@ end
 end 
 --     Source WAAD     --
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-if data.username_ ~= false then
+if data.username_ ~= fRdoe then
 DevRdo:set(WAAD..'Save:UserName'..msg.sender_user_id_,data.username_)
 end;end,nil) 
 --     Source WAAD     --
-local ReFalse = tostring(msg.chat_id_)
-if not DevRdo:sismember(WAAD.."Rdo:Groups",msg.chat_id_) and not ReFalse:match("^(%d+)") and not SudoBot(msg) then
-print("Return False : The Bot Is Not Enabled In The Group")
-return false
+local ReFRdoe = tostring(msg.chat_id_)
+if not DevRdo:sismember(WAAD.."Rdo:Groups",msg.chat_id_) and not ReFRdoe:match("^(%d+)") and not SudoBot(msg) then
+print("Return FRdoe : The Bot Is Not Enabled In The Group")
+return fRdoe
 end
 --     Source WAAD     --
 -------- MSG TYPES ---------
@@ -4032,11 +4032,11 @@ keyboard.inline_keyboard = {{{text="اضغط هنا لفك تقيدك",callback_
 Msg_id = msg.id_/2097152/0.5
 HTTPS.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text='..URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
-return false
+return fRdoe
 end
 if DevRdo:get(WAAD.."Rdo:Lock:Join"..msg.chat_id_) then
 ChatKick(msg.chat_id_,msg.sender_user_id_) 
-return false  
+return fRdoe  
 end
 end
 if msg.content_.ID == "MessagePhoto" then
@@ -4046,7 +4046,7 @@ for k,v in pairs(filter) do
 if v == msg.content_.photo_.id_ then
 ReplyStatus(msg,msg.sender_user_id_,"WrongWay","☆︙الصوره التي ارسلتها تم منعها من المجموعه")  
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false   
+return fRdoe   
 end
 end
 end
@@ -4058,7 +4058,7 @@ for k,v in pairs(filter) do
 if v == msg.content_.animation_.animation_.persistent_id_ then
 ReplyStatus(msg,msg.sender_user_id_,"WrongWay","☆︙المتحركه التي ارسلتها تم منعها من المجموعه")  
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
-return false   
+return fRdoe   
 end
 end
 end
@@ -4070,7 +4070,7 @@ for k,v in pairs(filter) do
 if v == msg.content_.sticker_.sticker_.persistent_id_ then
 ReplyStatus(msg,msg.sender_user_id_,"WrongWay","☆︙الملصق الذي ارسلته تم منعه من المجموعه")  
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false   
+return fRdoe   
 end
 end
 end
@@ -4083,7 +4083,7 @@ if DelGpRedRedods == 'DelGpRedRedods' then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙الرد ↫ '..msg.content_.text_..' للكلمه ↫ '..GetGpTexts..' تم حذفها',  1, "html")
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:srem(WAAD..'Rdo:Text:GpTexts'..GetGpTexts..msg.chat_id_,msg.content_.text_)
-return false
+return fRdoe
 end
 end
 if text and text:match("^(.*)$") then
@@ -4093,7 +4093,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙الكلمه ( '..msg.content_.text_..' 
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Text:GpTexts'..msg.content_.text_..msg.chat_id_)
 DevRdo:srem(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_,msg.content_.text_)
-return false
+return fRdoe
 end
 end
 if text and text:match("^(.*)$") then
@@ -4110,7 +4110,7 @@ DevRdo:del(WAAD..'Rdo:Video:GpRed'..msg.content_.text_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:File:GpRed'..msg.content_.text_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Text:GpRed'..msg.content_.text_..msg.chat_id_)
 DevRdo:srem(WAAD..'Rdo:Manager:GpRed'..msg.chat_id_,msg.content_.text_)
-return false
+return fRdoe
 end
 end
 if text and text:match("^(.*)$") then
@@ -4127,7 +4127,7 @@ DevRdo:del(WAAD.."Rdo:Video:AllRed"..msg.content_.text_)
 DevRdo:del(WAAD.."Rdo:File:AllRed"..msg.content_.text_)
 DevRdo:del(WAAD.."Rdo:Text:AllRed"..msg.content_.text_)
 DevRdo:del(WAAD.."Rdo:Sudo:AllRed",msg.content_.text_)
-return false
+return fRdoe
 end
 end
 --     Source WAAD     --
@@ -4142,21 +4142,21 @@ DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Text:GpTexts'..GetGpTexts..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Add:GpTexts'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:srem(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_,GetGpTexts)
-return false
+return fRdoe
 end
 Text = text:gsub('"',""):gsub('"',""):gsub("`",""):gsub("*","")
 DevRdo:sadd(WAAD..'Rdo:Text:GpTexts'..GetGpTexts..msg.chat_id_,Text)
 if #List == 4 then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ ↫ 5 من الردود المتعدده للامر ↫ "..GetGpTexts ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 local Rdo = "☆︙تم حفظ الرد رقم ↫ "..(#List+1).."\n☆︙قم بارسال الرد رقم ↫ "..(#List+2)
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="انهاء وحفظ "..(#List+1).." من الردود",callback_data="/EndRedod:"..msg.sender_user_id_..GetGpTexts}},{{text="الغاء وحذف التخزين",callback_data="/DelRedod:"..msg.sender_user_id_..GetGpTexts}}} 
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Rdo).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 end
 if text and not DevRdo:get(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_) then
@@ -4177,21 +4177,21 @@ DevRdo:del(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Text:KtTexts'..GetKtTexts..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Add:KtTexts'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:srem(WAAD..'Rdo:Sudo:Kt'..msg.chat_id_,GetKtTexts)
-return false
+return fRdoe
 end
 Text = text:gsub('"',""):gsub('"',""):gsub("`",""):gsub("*","")
 DevRdo:sadd(WAAD..'Rdo:Text:KtTexts'..GetKtTexts..msg.chat_id_,Text)
 if #List == 100 then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ ↫ 100 من اسئلة الكت ↫ "..GetKtTexts ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 local Rdo = "☆︙تم حفظ الرد رقم ↫ "..(#List+1).."\n☆︙قم بارسال السؤال رقم ↫ "..(#List+2)
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="انهاء وحفظ "..(#List+1).." من الاسئله",callback_data="/EndKt:"..msg.sender_user_id_..GetKtTexts}},{{text="الغاء وحذف التخزين",callback_data="/DelAllKt:"..msg.sender_user_id_..GetKtTexts}}} 
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Rdo).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 end
 if text and not DevRdo:get(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_) then
@@ -4211,7 +4211,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ الرد', 1, 'm
 DevRdo:del(WAAD..'Rdo:Add:GpText'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'DelManagerRep'..msg.chat_id_)
-return false
+return fRdoe
 end
 DevRdo:del(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_)
 local SaveGpRed = DevRdo:get(WAAD..'Rdo:Add:GpText'..msg.sender_user_id_..msg.chat_id_)
@@ -4248,7 +4248,7 @@ end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ الرد الجديد', 1, 'md') 
 DevRdo:del(WAAD..'Rdo:Add:GpText'..msg.sender_user_id_..msg.chat_id_)
 DevRdo:del(WAAD..'DelManagerRep'..msg.chat_id_)
-return false 
+return fRdoe 
 end 
 end
 if msg.content_.text_ and not DevRdo:get(WAAD..'Rdo:Lock:GpRed'..msg.chat_id_) then 
@@ -4302,7 +4302,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ الرد', 1, 'm
 DevRdo:del(WAAD.."Rdo:Add:AllText"..msg.sender_user_id_)
 DevRdo:del(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_)
 DevRdo:del(WAAD.."DelSudoRep")
-return false
+return fRdoe
 end
 DevRdo:del(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_)
 local SaveAllRed = DevRdo:get(WAAD.."Rdo:Add:AllText"..msg.sender_user_id_)
@@ -4345,7 +4345,7 @@ end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ الرد الجديد', 1, 'md') 
 DevRdo:del(WAAD.."Rdo:Add:AllText"..msg.sender_user_id_)
 DevRdo:del(WAAD..'DelSudoRep')
-return false end end
+return fRdoe end end
 if msg.content_.text_ and not DevRdo:get(WAAD..'Rdo:Lock:AllRed'..msg.chat_id_) then
 if DevRdo:get(WAAD.."Rdo:Video:AllRed"..msg.content_.text_) then
 sendVideo(msg.chat_id_, msg.id_, 0, 1,nil, DevRdo:get(WAAD.."Rdo:Video:AllRed"..msg.content_.text_))
@@ -4397,7 +4397,7 @@ msgm = msg.id_
 local num = 100
 for i=1,tonumber(num) do
 tdcli_function ({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = {[0] = msgm}},function(arg,data) 
-if data.messages_[0] ~= false then
+if data.messages_[0] ~= fRdoe then
 if tonumber(my_ide) == (data.messages_[0].sender_user_id_) then
 DeleteMessage(msg.chat_id_, {[0] = data.messages_[0].id_})
 end;end;end, nil)
@@ -4405,11 +4405,11 @@ msgm = msgm - 1048576
 end
 Text = '☆︙العضو ↫ '..GetName..' \n☆︙قام بالتكرار المحدد تم طرده '
 SendText(msg.chat_id_,Text,0,'md')
-return false  
+return fRdoe  
 end 
 if Type == "del" then 
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})   
-return false  
+return fRdoe  
 end 
 if Type == "keed" and not DevRdo:sismember(WAAD..'Rdo:Tkeed:'..msg.chat_id_, msg.sender_user_id_) then
 https.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_.."") 
@@ -4419,7 +4419,7 @@ msgm = msg.id_
 local num = 100
 for i=1,tonumber(num) do
 tdcli_function ({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = {[0] = msgm}},function(arg,data) 
-if data.messages_[0] ~= false then
+if data.messages_[0] ~= fRdoe then
 if tonumber(my_ide) == (data.messages_[0].sender_user_id_) then
 DeleteMessage(msg.chat_id_, {[0] = data.messages_[0].id_})
 end;end;end, nil)
@@ -4427,7 +4427,7 @@ msgm = msgm - 1048576
 end
 Text = '☆︙العضو ↫ '..GetName..' \n☆︙قام بالتكرار المحدد تم تقيده '
 SendText(msg.chat_id_,Text,0,'md')
-return false  
+return fRdoe  
 end  
 if Type == "mute" and not DevRdo:sismember(WAAD..'Rdo:Muted:'..msg.chat_id_, msg.sender_user_id_) then
 DevRdo:sadd(WAAD..'Rdo:Muted:'..msg.chat_id_,msg.sender_user_id_)
@@ -4436,7 +4436,7 @@ msgm = msg.id_
 local num = 100
 for i=1,tonumber(num) do
 tdcli_function ({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = {[0] = msgm}},function(arg,data) 
-if data.messages_[0] ~= false then
+if data.messages_[0] ~= fRdoe then
 if tonumber(my_ide) == (data.messages_[0].sender_user_id_) then
 DeleteMessage(msg.chat_id_, {[0] = data.messages_[0].id_})
 end;end;end, nil)
@@ -4444,7 +4444,7 @@ msgm = msgm - 1048576
 end
 Text = '☆︙العضو ↫ '..GetName..' \n☆︙قام بالتكرار المحدد تم كتمه '
 SendText(msg.chat_id_,Text,0,'md')
-return false  
+return fRdoe  
 end
 end,nil)
 end  
@@ -4478,20 +4478,20 @@ end
 if msg.sender_user_id_ and Ban(msg.sender_user_id_, msg.chat_id_) then
 ChatKick(msg.chat_id_, msg.sender_user_id_)
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false
+return fRdoe
 end
 if msg.sender_user_id_ and BanAll(msg.sender_user_id_) then
 ChatKick(msg.chat_id_, msg.sender_user_id_)
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false
+return fRdoe
 end
 if msg.sender_user_id_ and Muted(msg.sender_user_id_, msg.chat_id_) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false
+return fRdoe
 end
 if msg.sender_user_id_ and MuteAll(msg.sender_user_id_) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
-return false
+return fRdoe
 end
 if msg.content_.ID == "MessagePinMessage" then
 if Constructor(msg) or tonumber(msg.sender_user_id_) == tonumber(WAAD) then
@@ -4659,7 +4659,7 @@ for i=0,#msg.content_.members_ do
 BotWelcome = msg.content_.members_[i].id_    
 if BotWelcome and BotWelcome == tonumber(WAAD) then 
 if DevRdo:sismember(WAAD..'Rdo:Groups',msg.chat_id_) then BotText = "مفعله في السابق\n☆︙ارسل ↫ الاوامر واستمتع بالمميزيات" else BotText = "معطله يجب رفعي مشرف\n☆︙بعد ذلك يرجى ارسال امر ↫ تفعيل\n☆︙سيتم رفع الادمنيه والمنشئ تلقائيا" end 
-if DevRdo:get(WAAD.."Rdo:Text:BotWelcome") then RdoText = DevRdo:get(WAAD.."Rdo:Text:BotWelcome") else RdoText = "☆︙مرحبا انا بوت اسمي "..NameBot.."\n☆︙حالة المجموعه ↫ "..BotText.."\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉" end 
+if DevRdo:get(WAAD.."Rdo:Text:BotWelcome") then RdoText = DevRdo:get(WAAD.."Rdo:Text:BotWelcome") else RdoText = "☆︙مرحبا انا بوت اسمي "..NameBot.."\n☆︙حالة المجموعه ↫ "..BotText.."\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉" end 
 if DevRdo:get(WAAD.."Rdo:Photo:BotWelcome") then RdoPhoto = DevRdo:get(WAAD.."Rdo:Photo:BotWelcome") elseif Rdo.photos_[0] then RdoPhoto = Rdo.photos_[0].sizes_[1].photo_.persistent_id_ else RdoPhoto = nil end 
 if RdoPhoto ~= nil then
 sendPhoto(msg.chat_id_,msg.id_,0,1,nil,RdoPhoto,RdoText)
@@ -4677,12 +4677,12 @@ end
 if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and Ban(msg.content_.members_[0].id_, msg.chat_id_) then
 ChatKick(msg.chat_id_, msg.content_.members_[0].id_)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_}) 
-return false
+return fRdoe
 end
 if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and BanAll(msg.content_.members_[0].id_) then
 ChatKick(msg.chat_id_, msg.content_.members_[0].id_)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_}) 
-return false
+return fRdoe
 end
 if DevRdo:get(WAAD.."Rdo:Lock:Welcome"..msg.chat_id_) then
 if DevRdo:get(WAAD..'Rdo:Groups:Welcomes'..msg.chat_id_) then
@@ -5014,14 +5014,14 @@ if DevRdo:get(WAAD.."Rdo:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_) t
 if text == "الغاء" then
 send(msg.chat_id_,msg.id_,"☆︙تم الغاء حفظ الرابط")       
 DevRdo:del(WAAD.."Rdo:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_) 
-return false
+return fRdoe
 end
 if msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)") then
 local Link = msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)")
 DevRdo:set(WAAD.."Rdo:Groups:Links"..msg.chat_id_,Link)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ الرابط بنجاح', 1, 'md')
 DevRdo:del(WAAD.."Rdo:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 end
 --     Source WAAD     --
@@ -5033,7 +5033,7 @@ if text and text:match("^الغاء$") then
 DevRdo:del('WAADTeam:'..WAAD..'id:user'..msg.chat_id_)  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء الامر', 1, 'md')
 DevRdo:del('WAADTeam:'..WAAD.."numadd:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
-return false  end 
+return fRdoe  end 
 DevRdo:del('WAADTeam:'..WAAD.."numadd:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
 local numadded = string.match(text, "(%d+)") 
 local iduserr = DevRdo:get('WAADTeam:'..WAAD..'id:user'..msg.chat_id_)  
@@ -5048,7 +5048,7 @@ if text and text:match("^الغاء$") then
 DevRdo:del('WAADTeam:'..WAAD..'ids:user'..msg.chat_id_)  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء الامر', 1, 'md')
 DevRdo:del('WAADTeam:'..WAAD.."nmadd:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
-return false  end 
+return fRdoe  end 
 DevRdo:del('WAADTeam:'..WAAD.."nmadd:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
 local numadded = string.match(text, "(%d+)") 
 local iduserr = DevRdo:get('WAADTeam:'..WAAD..'ids:user'..msg.chat_id_)  
@@ -5087,7 +5087,7 @@ end end
 if SecondSudo(msg) then
 if text == 'جلب نسخه الكروبات' and ChCheck(msg) or text == 'جلب نسخه احتياطيه' and ChCheck(msg) or text == 'جلب النسخه الاحتياطيه' and ChCheck(msg) or text == '↫ جلب نسخه احتياطيه ☆' and ChCheck(msg) then
 local List = DevRdo:smembers(WAAD..'Rdo:Groups') 
-local BotName = (DevRdo:get(WAAD.."Rdo:NameBot") or 'تروكس')
+local BotName = (DevRdo:get(WAAD.."Rdo:NameBot") or 'يوكا')
 local GetJson = '{"BotId": '..WAAD..',"BotName": "'..BotName..'","GroupsList":{'  
 for k,v in pairs(List) do 
 LinkGroups = DevRdo:get(WAAD.."Rdo:Groups:Links"..v)
@@ -5209,7 +5209,7 @@ if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
 Dev_Rdo( msg.chat_id_, msg.id_, 1,"☆︙يوجد فقط ( 6 ) اختيارات\n☆︙ارسل اختيارك مره اخرى", 1, "md")    
-return false  end 
+return fRdoe  end 
 local GETNUM = DevRdo:get(WAAD.."GAMES"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
 DevRdo:del(WAAD.."SET:GAME"..msg.chat_id_)   
@@ -5225,27 +5225,27 @@ if DevRdo:get(WAAD..'DevRdo4'..msg.sender_user_id_) then
 if text and text:match("^الغاء$") then 
 send(msg.chat_id_, msg.id_, "☆︙تم الغاء الامر")
 DevRdo:del(WAAD..'DevRdo4'..msg.sender_user_id_)
-return false  end 
+return fRdoe  end 
 DevRdo:del(WAAD..'DevRdo4'..msg.sender_user_id_)
 local username = string.match(text, "@[%a%d_]+") 
 tdcli_function({ID = "SearchPublicChat",username_ = username},function(arg,data) 
 if data and data.message_ and data.message_ == "USERNAME_NOT_OCCUPIED" then 
 send(msg.chat_id_, msg.id_, '☆︙المعرف لا يوجد فيه قناة')
-return false  end
+return fRdoe  end
 if data and data.type_ and data.type_.ID and data.type_.ID == 'PrivateChatInfo' then
 send(msg.chat_id_, msg.id_, '☆︙عذرا لا يمكنك وضع معرف حسابات في الاشتراك')
-return false  end
+return fRdoe  end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.is_supergroup_ == true then
 send(msg.chat_id_, msg.id_, '☆︙عذرا لا يمكنك وضع معرف مجموعه في الاشتراك')
-return false  end
-if data and data.type_ and data.type_.channel_ and data.type_.channel_.is_supergroup_ == false then
+return fRdoe  end
+if data and data.type_ and data.type_.channel_ and data.type_.channel_.is_supergroup_ == fRdoe then
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.ID and data.type_.channel_.status_.ID == 'ChatMemberStatusEditor' then
 send(msg.chat_id_, msg.id_,'☆︙البوت ادمن في القناة \n☆︙تم تفعيل الاشتراك الاجباري \n☆︙ايدي القناة ↫ '..data.id_..'\n☆︙معرف القناة ↫ [@'..data.type_.channel_.username_..']')
 DevRdo:set(WAAD..'Rdo:ChId',data.id_)
 else
 send(msg.chat_id_, msg.id_,'☆︙عذرا البوت ليس ادمن في القناة')
 end
-return false  
+return fRdoe  
 end
 end,nil)
 end
@@ -5254,7 +5254,7 @@ if DevRdo:get(WAAD.."Rdo:DevText"..msg.chat_id_..":" .. msg.sender_user_id_) the
 if text and text:match("^الغاء$") then 
 DevRdo:del(WAAD.."Rdo:DevText"..msg.chat_id_..":" .. msg.sender_user_id_)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء الامر', 1, 'md')
-return false 
+return fRdoe 
 end 
 DevRdo:del(WAAD.."Rdo:DevText"..msg.chat_id_..":" .. msg.sender_user_id_)
 local DevText = msg.content_.text_:match("(.*)")
@@ -5265,12 +5265,12 @@ if DevRdo:get(WAAD..'Rdo:NameBot'..msg.sender_user_id_) == 'msg' then
 if text and text:match("^الغاء$") then 
 DevRdo:del(WAAD..'Rdo:NameBot'..msg.sender_user_id_)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء الامر', 1, 'md')
-return false 
+return fRdoe 
 end 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ اسم البوت ', 1, 'html')
 DevRdo:del(WAAD..'Rdo:NameBot'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:NameBot', text)
-return false 
+return fRdoe 
 end
 --     Source WAAD     --
 if msg.chat_id_ then
@@ -5292,25 +5292,25 @@ end
 --     Source WAAD     --
 if ChatType == 'sp' or ChatType == 'gp' or ChatType == 'pv' then
 if text == 'بوت' or text == 'بوتت' then 
-NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس')
+NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'يوكا')
 local WAADTeam = {' كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' ',' اسمي القميل '..NameBot..' '}
 DevRdo2 = math.random(#WAADTeam) 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, WAADTeam[DevRdo2] , 1, 'html') 
-return false
+return fRdoe
 end
 if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه' then
-NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس') 
+NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'يوكا') 
 local WAADTeam = {"اسمي القميل "..NameBot.." "} 
 DevRdo2 = math.random(#WAADTeam) 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, WAADTeam[DevRdo2] , 1, 'html') 
-return false
+return fRdoe
 end
-if text and text == (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس') then 
-NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'تروكس')
+if text and text == (DevRdo:get(WAAD..'Rdo:NameBot') or 'يوكا') then 
+NameBot = (DevRdo:get(WAAD..'Rdo:NameBot') or 'يوكا')
 local namebot = {'كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' '} 
 name = math.random(#namebot) 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'html') 
-return false 
+return fRdoe 
 end
 if text =='نقاطي' and ChCheck(msg) then 
 if tonumber((DevRdo:get(WAAD..'Rdo:GamesNumber'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
@@ -5445,7 +5445,7 @@ name = string.gsub(name,'🎚','🎚')
 name = string.gsub(name,'☎️','☎️')
 WAADTeam = '☆︙اول واحد يدز هذا السمايل يربح ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5503,7 +5503,7 @@ name = string.gsub(name,'ساحه','ح ا ه س')
 name = string.gsub(name,'جسر','ر ج س')
 WAADTeam = '☆︙اول واحد يرتبها يربح ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5526,7 +5526,7 @@ TEST = [[
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, TEST, 1, "md") 
 DevRdo:setex(WAAD.."SET:GAME"..msg.chat_id_, 100, true)  
-return false  
+return fRdoe  
 end end
 if text == 'حزوره' and ChCheck(msg) or text == 'الحزوره' and ChCheck(msg) or text == '↫ حزوره ☆' and ChCheck(msg) then
 if not DevRdo:get(WAAD..'Rdo:Lock:Games'..msg.chat_id_) then
@@ -5569,7 +5569,7 @@ name = string.gsub(name,'الصوت','اسير بلا رجلين ولا ادخل
 name = string.gsub(name,'بلم','حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ')
 WAADTeam = '☆︙اول واحد يحلها يربح ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5612,7 +5612,7 @@ name = string.gsub(name,'تفاحه','🍎')
 name = string.gsub(name,'باذنجان','🍆')
 WAADTeam = '☆︙ما معنى هذا السمايل :؟ ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum2'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5655,7 +5655,7 @@ name = string.gsub(name,'اني','مطي')
 name = string.gsub(name,'هادئ','عصبي')
 WAADTeam = '☆︙ما هو عكس كلمة ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum3'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5671,7 +5671,7 @@ DevRdo2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥'
 name = DevRdo2[math.random(#DevRdo2)]
 DevRdo:set(WAAD..'Rdo:GameNum4'..msg.chat_id_,name)
 DevRdo:del(WAAD..'Rdo:Games:Ids'..msg.chat_id_)
-name = string.gsub(name,'😸','😹😹😹😸😹😹😹😹')
+name = string.gsub(name,'😸','😹😹😹😸😹😹??😹')
 name = string.gsub(name,'☠️','💀💀💀☠️💀💀💀💀')
 name = string.gsub(name,'🐼','👻👻👻👻👻👻👻🐼')
 name = string.gsub(name,'🐇','🕊🕊🕊🕊🕊🐇🕊🕊')
@@ -5701,7 +5701,7 @@ name = string.gsub(name,'👩‍⚖️','👨‍⚖️👨‍⚖️👨‍⚖️
 name = string.gsub(name,'👨‍🎨','👩‍🎨👩‍🎨👨‍🎨👩‍🎨👩‍🎨👩‍🎨👩‍🎨👩‍🎨')
 WAADTeam = '☆︙اول واحد يطلع المختلف يربح\n{'..name..'} '
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum4'..msg.chat_id_) and not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5741,7 +5741,7 @@ name = string.gsub(name,'القرد',' ___ بعين امه غزال')
 name = string.gsub(name,'يكحله','اجه ___ عماها')
 WAADTeam = '☆︙اكمل المثال التالي ↫ ['..name..']'
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum5'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5773,7 +5773,7 @@ name = string.gsub(name,'5','12 + 1 - 8 = ?')
 name = string.gsub(name,'16','16 + 16 - 16 = ?')
 WAADTeam = '☆︙اكمل المعادله التاليه ↫ ⤈\n{'..name..'} '
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum6'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5804,7 +5804,7 @@ name = string.gsub(name,'غبي','Stupid')
 name = string.gsub(name,'صداقه','Friendchip')
 WAADTeam = '☆︙ما معنى كلمة ↫ '..name
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum7'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5854,7 +5854,7 @@ name = string.gsub(name,'طوكيو','☆︙ماهي عاصمه اليابان �
 name = string.gsub(name,'خديجه','☆︙من هي زوجه الرسول الاكبر منه سنآ ؟\n1- حفضه\n2- زينب\n3- خديجه')
 WAADTeam = name..'\n☆︙ارسل الجواب الصحيح فقط'
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md')
-return false
+return fRdoe
 end end
 if text == DevRdo:get(WAAD..'Rdo:GameNum8'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Games:Ids'..msg.chat_id_) then 
@@ -5871,7 +5871,7 @@ if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 20 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,"☆︙عذرا لا يمكنك تخمين عدد اكبر من الـ20 خمن رقم ما بين الـ1 والـ20", 1, 'md')
-return false  end 
+return fRdoe  end 
 local GETNUM = DevRdo:get(WAAD.."GAMES:NUM"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
 DevRdo:del(WAAD..'Set:Num'..msg.chat_id_..msg.sender_user_id_)
@@ -5899,9 +5899,9 @@ if text == 'خمن' and ChCheck(msg) or text == 'تخمين' and ChCheck(msg) or
 if not DevRdo:get(WAAD..'Rdo:Lock:Games'..msg.chat_id_) then
 Num = math.random(1,20)
 DevRdo:set(WAAD.."GAMES:NUM"..msg.chat_id_,Num) 
-Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙اهلا بك عزيزي في لعبة التخمين ↫ ⤈\n ┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙سيتم تخمين عدد ما بين الـ1 والـ20 اذا تعتقد انك تستطيع الفوز جرب واللعب الان .\n☆︙ملاحظه لديك ثلاث محاولات فقط فكر قبل ارسال تخمينك !', 1, 'md')
+Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙اهلا بك عزيزي في لعبة التخمين ↫ ⤈\n ┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙سيتم تخمين عدد ما بين الـ1 والـ20 اذا تعتقد انك تستطيع الفوز جرب واللعب الان .\n☆︙ملاحظه لديك ثلاث محاولات فقط فكر قبل ارسال تخمينك !', 1, 'md')
 DevRdo:setex(WAAD.."GAME:TKMEN"..msg.chat_id_.."" .. msg.sender_user_id_, 100, true)  
-return false  
+return fRdoe  
 end
 end
 --     Source WAAD     --
@@ -5911,7 +5911,7 @@ DevRdo:del(WAAD.."Rdo:NumRolet"..msg.chat_id_..msg.sender_user_id_)
 DevRdo:del(WAAD..'Rdo:ListRolet'..msg.chat_id_)  
 DevRdo:setex(WAAD.."Rdo:StartRolet"..msg.chat_id_..msg.sender_user_id_,3600,true)  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙حسنا لنلعب , ارسل عدد اللاعبين للروليت .', 1, 'md')
-return false  
+return fRdoe  
 end
 end
 if text and text:match("^(%d+)$") and DevRdo:get(WAAD.."Rdo:StartRolet"..msg.chat_id_..msg.sender_user_id_) then
@@ -5923,17 +5923,17 @@ Text = '☆︙تم بدء تسجيل اللسته يرجى ارسال المعر
 end
 DevRdo:del(WAAD.."Rdo:StartRolet"..msg.chat_id_..msg.sender_user_id_)
 send(msg.chat_id_,msg.id_,Text)
-return false
+return fRdoe
 end
 if text and text:match('^(@[%a%d_]+)$') and DevRdo:get(WAAD.."Rdo:NumRolet"..msg.chat_id_..msg.sender_user_id_) then 
 if DevRdo:sismember(WAAD..'Rdo:ListRolet'..msg.chat_id_,text) then
 send(msg.chat_id_,msg.id_,'☆︙المعرف ↫ ['..text..'] موجود اساسا')
-return false
+return fRdoe
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text},function(extra, res, success) 
 if res and res.message_ and res.message_ == "USERNAME_NOT_OCCUPIED" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙المعرف غير صحيح يرجى ارسال معرف صحيح', 1, 'md')
-return false 
+return fRdoe 
 end
 DevRdo:sadd(WAAD..'Rdo:ListRolet'..msg.chat_id_,text)
 local CountAdd = DevRdo:get(WAAD.."Rdo:NumRolet"..msg.chat_id_..msg.sender_user_id_)
@@ -5965,7 +5965,7 @@ local WAADTeam = {
 'كيف تشوف الجيل ذا؟','ردة فعلك لو مزح معك شخص م تعرفه ؟','احقر الناس هو من ...','تحب ابوك ولا امك','آخر فيلم مسلسل والتقييم🎥؟','أقبح القبحين في العلاقة: الغدر أو الإهمال🤷🏼؟','كلمة لأقرب شخص لقلبك🤍؟','حط@منشن لشخص وقوله "حركتك مالها داعي"😼!','اذا جاك خبر مفرح اول واحد تعلمه فيه مين💃🏽؟','طبع يمكن يخليك تكره شخص حتى لو كنت تُحبه🙅🏻‍♀️؟','افضل ايام الاسبوع عندك🔖؟','يقولون ان الحياة دروس ، ماهو أقوى درس تعلمته من الحياة🏙؟','تاريخ لن تنساه📅؟','تحب الصيف والا الشتاء❄️☀️؟','شخص تحب تستفزه😈؟','شنو ينادونك وانت صغير (عيارتك)👼🏻؟','عقل يفهمك/ج ولا قلب يحبك/ج❤️؟','اول سفره لك وين رح تكون✈️؟','كم عدد اللي معطيهم بلوك👹؟','نوعية من الأشخاص تتجنبهم في حياتك❌؟','شاركنا صورة او فيديو من تصويرك؟📸','كم من عشره تعطي حظك📩؟','اكثر برنامج تواصل اجتماعي تحبه😎؟','من اي دوله انت🌍؟','اكثر دوله ودك تسافر لها🏞؟','مقولة "نكبر وننسى" هل تؤمن بصحتها🧓🏼؟','تعتقد فيه أحد يراقبك👩🏼‍💻؟','لو بيدك تغير الزمن ، تقدمه ولا ترجعه🕰؟','مشروبك المفضل🍹؟','‏قم بلصق آخر اقتباس نسخته؟💭','كم وزنك/ج طولك/ج؟🌚','كم كان عمرك/ج قبل ٨ سنين😈؟','دوله ندمت انك سافرت لها😁؟','لو قالو لك ٣ أمنيات راح تتحقق عالسريع شنو تكون🧞‍♀️؟','‏- نسبة احتياجك للعزلة من 10📊؟','شخص تحبه حظرك بدون سبب واضح، ردة فعلك🧐؟','مبدأ في الحياة تعتمد عليه دائما🕯؟',
 }  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, ''..WAADTeam[math.random(#WAADTeam)]..'' , 1, 'md')  
-return false
+return fRdoe
 end
 end
 --     Source WAAD     --
@@ -5984,13 +5984,13 @@ if text and (text == "التسليه" or text == "اوامر التسليه" or 
 local Tsl = DevRdo:get(WAAD..'Rdo:Tsl')
 local Text = [[
 *☆︙اهلا بك في قائمة اوامر التسليه ↫ ⤈*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙غنيلي*
 *☆︙اغنيه*
 *☆︙متحركه*
 *☆︙ريمكس*
 *☆︙ميمز*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -6002,9 +6002,9 @@ end
 if text ==('تحكم') and ChCheck(msg) and Admin(msg) then
 function prom_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الحساب محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local Text = '☆︙قم باستعمال الازرار للتحكم العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
@@ -6021,9 +6021,9 @@ end
 if text ==('رفع') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الحساب محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local Text = '☆︙قم باستعمال الازرار لرفع العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
@@ -6058,9 +6058,9 @@ end
 if text ==('تنزيل') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الحساب محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local Text = '☆︙قم باستعمال الازرار لتنزيل العضو ↫ ⤈\n☆︙العضو ↫ ['..dp.first_name_..'](t.me/'..(dp.username_ or 'CXRCX')..')'
 keyboard = {} 
@@ -6108,7 +6108,7 @@ if not DevRdo:get(WAAD..'Rdo:Lock:Games'..msg.chat_id_) then
 local Games = DevRdo:get(WAAD..'Rdo:Games')
 local Text = [[
 ☆︙قائمة العاب المجموعه ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙لعبة التخمين ↫ خمن
 ☆︙لعبة الامثله ↫ امثله
 ☆︙لعبة العكس ↫ العكس
@@ -6123,9 +6123,9 @@ local Text = [[
 ☆︙لعبة المحيبس ↫ المحيبس
 ☆︙لعبة الرياضيات ↫ رياضيات
 ☆︙لعبة الانكليزيه ↫ انكليزيه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙نقاطي • بيع نقاطي
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 keyboard = {} 
@@ -6151,11 +6151,11 @@ tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100"
 local num = 0
 local admins = Rdo.members_  
 for i=0 , #admins do   
-if Rdo.members_[i].bot_info_ == false and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
+if Rdo.members_[i].bot_info_ == fRdoe and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)   
 num = num + 1
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 DevRdo:srem(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)   
 end
 end,nil)   
@@ -6210,7 +6210,7 @@ else
 DevRdo:setex(WAAD..'DevRdo4'..msg.sender_user_id_,360,true)
 send(msg.chat_id_, msg.id_, '☆︙ارسل لي معرف قناة الاشتراك الان')
 end
-return false  
+return fRdoe  
 end
 if text == "تفعيل الاشتراك الاجباري" or text == "↫  تفعيل الاشتراك الاجباري ☆" then  
 if not Sudo(msg) then
@@ -6225,7 +6225,7 @@ DevRdo:setex(WAAD..'DevRdo4'..msg.sender_user_id_,360,true)
 send(msg.chat_id_, msg.id_,"☆︙لاتوجد قناة لتفعيل الاشتراك\n☆︙ارسل لي معرف قناة الاشتراك الان")
 end
 end
-return false  
+return fRdoe  
 end
 if text == "تعطيل الاشتراك الاجباري" or text == "↫  تعطيل الاشتراك الاجباري ☆" then  
 if not Sudo(msg) then
@@ -6235,7 +6235,7 @@ DevRdo:del(WAAD..'Rdo:ChId')
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل الاشتراك الاجباري'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 end
-return false  
+return fRdoe  
 end
 if text == "حذف قناة الاشتراك" or text == "حذف قناه الاشتراك" or text == "↫ حذف قناة الاشتراك ☆" then
 if not SecondSudo(msg) then
@@ -6254,7 +6254,7 @@ send(msg.chat_id_, msg.id_, "☆︙قناة الاشتراك ↫ [@"..GetInfo.re
 else
 send(msg.chat_id_, msg.id_, "☆︙لاتوجد قناة في الاشتراك الاجباري")
 end
-return false  
+return fRdoe  
 end end
 --     Source WAAD     --
 if SudoBot(msg) then
@@ -6262,7 +6262,7 @@ if text == 'اذاعه للكل بالتوجيه' and tonumber(msg.reply_to_mess
 function WAADTeam(extra,result,success)
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 local GpList = DevRdo:smembers(WAAD.."Rdo:Groups")
 for k,v in pairs(GpList) do
@@ -6287,32 +6287,33 @@ if text == "سورس" and ChCheck(msg) or text == "السورس" and ChCheck(msg
 Text = [[
 Welcome To Source
 ☆︙[𝚆𝚎𝚕𝚌𝚘𝚖 𝚝𝚘 𝙱𝚛𝙰𝚗𝚍 𝚃𝚎𝙰𝚖 ](https://t.me/CXRCX)
+☆︙[𝚖𝚞𝚛𝚝𝚊𝚍𝚊 𝚖𝚘𝚑𝚊𝚖𝚖𝚎𝚍](https://t.me/BBBVVBV)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '☆ Source Channel',url="https://t.me/CXRCX"}},{{text = '☆ Developer',url="t.me/BBBVVBV"},{text = '☆ Tws WAAD',url="https://t.me/CXRCX"}},{{text= '☆ Exp Source .',url="https://t.me/CXRCX"}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if text == "اطردني" and ChCheck(msg) or text == "ادفرني" and ChCheck(msg) then
 if DevRdo:get(WAAD.."Rdo:Kick:Me"..msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙عذرا هذه الخاصيه معطله ', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:set(WAAD..'yes'..msg.sender_user_id_, 'delyes')
 DevRdo:set(WAAD..'no'..msg.sender_user_id_, 'delno')
-local Text = '☆︙هل انت متأكد من المغادره'
+local Text = '☆︙صدك عود. تريد تغادر'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text="نعم",callback_data="/delyes"},{text="لا",callback_data="/delno"}}} 
+keyboard.inline_keyboard = {{{text="ايوالله",callback_data="/delyes"},{text="لا باي",callback_data="/delno"}}} 
 Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --     Source WAAD     --
 if text == 'تعطيل اطردني' and Manager(msg) and ChCheck(msg) then
 DevRdo:set(WAAD.."Rdo:Kick:Me"..msg.chat_id_, true)
-local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل امر اطردني'
+local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ايوالله شلون جان غثه'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 end
 if text == 'تفعيل اطردني' and Manager(msg) and ChCheck(msg) then
@@ -6324,7 +6325,7 @@ end
 if text == "نزلني" and ChCheck(msg) then
 if DevRdo:get(WAAD.."Rdo:Del:Me"..msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙عذرا هذه الخاصيه معطله ', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:set(WAAD..'yesdel'..msg.sender_user_id_, 'delyes')
 DevRdo:set(WAAD..'nodel'..msg.sender_user_id_, 'delno')
@@ -6360,7 +6361,7 @@ if Admin(msg) then
 if text == "تاك للكل" and ChCheck(msg) then
 if not DevRdo:get(WAAD..'Rdo:Lock:TagAll'..msg.chat_id_) then
 function TagAll(dp1,dp2)
-local text = "☆︙وينكم يالربع \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+local text = "☆︙وينكم يالربع \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 i = 0
 for k, v in pairs(dp2.members_) do
 i = i + 1
@@ -6380,7 +6381,7 @@ if text and text:match("^كللهم (.*)$") and ChCheck(msg) then
 local txt = {string.match(text, "^(كللهم) (.*)$")}
 if not DevRdo:get(WAAD..'Rdo:Lock:TagAll'..msg.chat_id_) then
 function TagAll(dp1,dp2)
-local text = "☆︙"..txt[2].." \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+local text = "☆︙"..txt[2].." \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 i = 0
 for k, v in pairs(dp2.members_) do
 i = i + 1
@@ -6452,19 +6453,19 @@ function WAADTeam(extra,result,success)
 if result.id_ then  
 if tonumber(result.id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'شو تمضرط اكو واحد يهين نفسه؟🤔👌🏿', 1, 'md')  
-return false 
+return fRdoe 
 end  
 if tonumber(result.id_) == tonumber(DevId) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md') 
-return false  
+return fRdoe  
 end  
 if tonumber(result.id_) == tonumber(1659386058) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md') 
-return false  
+return fRdoe  
 end  
 if DevRdo:sismember(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,result.id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
-return false
+return fRdoe
 end 
 local WAADTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md') 
@@ -6483,19 +6484,19 @@ if not DevRdo:get(WAAD..'Rdo:Lock:Stupid'..msg.chat_id_) then
 function hena(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'شو تمضرط اكو واحد يهين نفسه؟🤔👌🏿', 1, 'md') 
-return false  
+return fRdoe  
 end  
 if tonumber(result.sender_user_id_) == tonumber(DevId) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
-return false
+return fRdoe
 end 
 if tonumber(result.sender_user_id_) == tonumber(1659386058) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
-return false
+return fRdoe
 end 
 if DevRdo:sismember(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,result.sender_user_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'دي لكك تريد اهينن تاج راسكك؟😏🖕🏿', 1, 'md')
-return false
+return fRdoe
 end 
 local WAADTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md') 
@@ -6513,11 +6514,11 @@ if not DevRdo:get(WAAD..'Rdo:Lock:Stupid'..msg.chat_id_) then
 function bosh(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح ابوس نفسيي؟😶💔', 1, 'md') 
-return false  
+return fRdoe  
 end  
 if tonumber(result.sender_user_id_) == tonumber(DevId) then  
 Dev_Rdo(msg.chat_id_, result.id_, 1, 'مواححح احلاا بوسةة المطوريي😻🔥💗', 1, 'html')
-return false
+return fRdoe
 end 
 local WAADTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md') 
@@ -6535,11 +6536,11 @@ if not DevRdo:get(WAAD..'Rdo:Lock:Stupid'..msg.chat_id_) then
 function seha(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md') 
-return false  
+return fRdoe  
 end  
 if tonumber(result.sender_user_id_) == tonumber(DevId) then  
 Dev_Rdo(msg.chat_id_, result.id_, 1, 'تعال مطوريي محتاجيكك🏃🏻‍♂️♥️', 1, 'html')
-return false
+return fRdoe
 end 
 local WAADTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md') 
@@ -6560,11 +6561,11 @@ function WAADTeam(extra,result,success)
 if result.id_ then  
 if tonumber(result.id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'فهمنيي شلوون راحح اصيح نفسيي؟😶💔', 1, 'md')  
-return false 
+return fRdoe 
 end  
 if tonumber(result.id_) == tonumber(DevId) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, 'تعال مطوريي محتاجيكك🏃🏻‍♂️♥️ @'..username, 1, 'html') 
-return false  
+return fRdoe  
 end  
 local WAADTeam = "صارر ستاذيي 🏃🏻‍♂️♥️" 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,WAADTeam, 1, 'md') 
@@ -6583,7 +6584,7 @@ if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager
 function promote_by_reply(extra, result, success)
 if SudoId(result.sender_user_id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لاتستطيع تنزيل المطور الاساسي", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.sender_user_id_) then
 Rdosudo = 'المطورين الاساسيين • ' else Rdosudo = '' end
@@ -6606,7 +6607,7 @@ vipmem = 'المميزين • ' else vipmem = '' end
 if DevRdo:sismember(WAAD..'Rdo:Cleaner:'..msg.chat_id_, result.sender_user_id_) then
 cleaner = 'المنظفين • ' else cleaner = ''
 end
-if RankChecking(result.sender_user_id_,msg.chat_id_) ~= false then
+if RankChecking(result.sender_user_id_,msg.chat_id_) ~= fRdoe then
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم تنزيله من ↫ ⤈\n~ ( "..Rdosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙لم تتم ترقيته مسبقا")  
@@ -6679,7 +6680,7 @@ function remm(extra, result, success)
 if result.id_ then
 if SudoId(result.id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لاتستطيع تنزيل المطور الاساسي", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.id_) then
 Rdosudo = 'المطورين الاساسيين • ' else Rdosudo = '' end
@@ -6702,7 +6703,7 @@ vipmem = 'المميزين • ' else vipmem = '' end
 if DevRdo:sismember(WAAD..'Rdo:Cleaner:'..msg.chat_id_, result.id_) then
 cleaner = 'المنظفين • ' else cleaner = ''
 end
-if RankChecking(result.id_,msg.chat_id_) ~= false then
+if RankChecking(result.id_,msg.chat_id_) ~= fRdoe then
 ReplyStatus(msg,result.id_,"Reply","☆︙تم تنزيله من ↫ ⤈\n~ ( "..Rdosudo..secondsudo..sudobot..owner..basicconstructor..constructor..manager..admins..vipmem..cleaner.." ) ~")  
 else 
 ReplyStatus(msg,result.id_,"Reply","☆︙لم تتم ترقيته مسبقا")  
@@ -7022,7 +7023,7 @@ if text ==('رفع منشئ اساسي') and ChCheck(msg) then
 function raf_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:BasicConstructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه منشئ اساسي")  
@@ -7035,7 +7036,7 @@ local username = text:match('^رفع منشئ اساسي @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:BasicConstructor:'..msg.chat_id_,result.id_)
@@ -7049,7 +7050,7 @@ if text and text:match('^رفع منشئ اساسي (%d+)') and ChCheck(msg) the
 local user = text:match('رفع منشئ اساسي (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:BasicConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه منشئ اساسي")  
@@ -7090,7 +7091,7 @@ if text ==('رفع منشئ') and ChCheck(msg) then
 function raf_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Constructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه في قائمة المنشئين")  
@@ -7103,7 +7104,7 @@ local username = text:match('^رفع منشئ @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:Constructor:'..msg.chat_id_,result.id_)
@@ -7117,7 +7118,7 @@ if text and text:match('^رفع منشئ (%d+)') and ChCheck(msg) then
 local user = text:match('رفع منشئ (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Constructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه في قائمة المنشئين")  
@@ -7156,7 +7157,7 @@ if text ==('رفع مدير') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Managers:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه في قائمة المدراء")  
@@ -7169,7 +7170,7 @@ local username = text:match('^رفع مدير @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:Managers:'..msg.chat_id_,result.id_)
@@ -7183,7 +7184,7 @@ if text and text:match('^رفع مدير (%d+)') and ChCheck(msg) then
 local user = text:match('رفع مدير (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Managers:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه في قائمة المدراء")  
@@ -7220,7 +7221,7 @@ if text ==('رفع منظف') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Cleaner:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه في قائمة المنظفين")  
@@ -7233,7 +7234,7 @@ local username = text:match('^رفع منظف @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:Cleaner:'..msg.chat_id_,result.id_)
@@ -7247,7 +7248,7 @@ if text and text:match('^رفع منظف (%d+)') and ChCheck(msg) then
 local user = text:match('رفع منظف (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Cleaner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه في قائمة المنظفين")  
@@ -7285,7 +7286,7 @@ if text ==('رفع ادمن') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه في قائمة الادمنيه")  
@@ -7298,7 +7299,7 @@ local username = text:match('^رفع ادمن @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_,result.id_)
@@ -7312,7 +7313,7 @@ if text and text:match('^رفع ادمن (%d+)') and ChCheck(msg) then
 local user = text:match('رفع ادمن (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه في قائمة الادمنيه")  
@@ -7350,7 +7351,7 @@ if text ==('رفع مميز') and ChCheck(msg) then
 function prom_reply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:VipMem:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه في قائمة المميزين")  
@@ -7363,7 +7364,7 @@ local username = text:match('^رفع مميز @(.*)')
 function promreply(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:VipMem:'..msg.chat_id_,result.id_)
@@ -7377,7 +7378,7 @@ if text and text:match('^رفع مميز (%d+)') and ChCheck(msg) then
 local user = text:match('رفع مميز (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:ProSet"..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع رفع احد وذالك بسبب تعطيل الرفع', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:sadd(WAAD..'Rdo:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","☆︙تم رفعه في قائمة المميزين")  
@@ -7415,7 +7416,7 @@ function promote_by_reply(extra, result, success)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..WAAD)
 local GetInfo = JSON.decode(Check)
 if GetInfo.result.can_promote_members == true then 
-HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=false")
+HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=fRdoe")
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفعه مشرف في المجموعه")  
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙ليست لدي صلاحية اضافة مشرفين جدد يرجى التحقق من الصلاحيات', 1, 'md')
@@ -7428,7 +7429,7 @@ function promote_by_reply(extra, result, success)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..WAAD)
 local GetInfo = JSON.decode(Check)
 if GetInfo.result.can_promote_members == true then 
-HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
+HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=fRdoe&can_delete_messages=fRdoe&can_invite_users=fRdoe&can_restrict_members=fRdoe&can_pin_messages=fRdoe&can_promote_members=fRdoe")
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم تنزيله من مشرفين المجموعه")  
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙ليست لدي صلاحية اضافة مشرفين جدد يرجى التحقق من الصلاحيات', 1, 'md')
@@ -7455,7 +7456,7 @@ function ReplySet(extra, result, success)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..WAAD)
 local GetInfo = JSON.decode(Check)
 if GetInfo.result.can_promote_members == true then 
-https.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=True&can_restrict_members=false&can_pin_messages=True&can_promote_members=false")
+https.request("https://api.telegram.org/bot"..TokenBot.."/promoteChatMember?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&can_change_info=fRdoe&can_delete_messages=fRdoe&can_invite_users=True&can_restrict_members=fRdoe&can_pin_messages=True&can_promote_members=fRdoe")
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم اضافة ↫ "..Rdo.." كلقب له")  
 https.request("https://api.telegram.org/bot"..TokenBot.."/setChatAdministratorCustomTitle?chat_id="..msg.chat_id_.."&user_id=" ..result.sender_user_id_.."&custom_title="..Rdo)
 else
@@ -7469,7 +7470,7 @@ end
 end
 if text == 'لقبه' and ChCheck(msg) then
 function ReplyGet(extra, result, success)
-if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) == false then
+if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) == fRdoe then
 send(msg.chat_id_, msg.id_,'☆︙ليس لديه لقب هنا') 
 else
 send(msg.chat_id_, msg.id_,'☆︙لقبه ↫ '..GetCustomTitle(result.sender_user_id_,msg.chat_id_)) 
@@ -7480,7 +7481,7 @@ getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),ReplyGet)
 end
 end
 if text == 'لقبي' and ChCheck(msg) then
-if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) == false then
+if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) == fRdoe then
 send(msg.chat_id_, msg.id_,'☆︙ليس لديك لقب هنا') 
 else
 send(msg.chat_id_, msg.id_,'☆︙لقبك ↫ '..GetCustomTitle(msg.sender_user_id_,msg.chat_id_)) 
@@ -7563,7 +7564,7 @@ if text ==('طرد') and ChCheck(msg) then
 function KickReply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع طرد ↫ '..IdRank(result.sender_user_id_, msg.chat_id_), 1, 'md')
@@ -7571,11 +7572,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=result.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع طرد مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(result.chat_id_, result.sender_user_id_)
 text = "☆︙تم طرده من المجموعه" 
@@ -7594,7 +7595,7 @@ local username = text:match('^طرد @(.*)')
 function KickUser(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if result.id_ then
 if RankChecking(result.id_, msg.chat_id_) then
@@ -7603,11 +7604,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=result.id_,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع طرد مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(msg.chat_id_, result.id_)
 ReplyStatus(msg,result.id_,"Reply","☆︙تم طرده من المجموعه")  
@@ -7622,7 +7623,7 @@ if text and text:match('^طرد (%d+)') and ChCheck(msg) then
 local user = text:match('طرد (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if RankChecking(user, msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع طرد ↫ '..IdRank(user, msg.chat_id_), 1, 'md')
@@ -7630,11 +7631,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=user,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع طرد مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(msg.chat_id_, user)
 ReplyStatus(msg,user,"Reply","☆︙تم طرده من المجموعه")  
@@ -7649,7 +7650,7 @@ if text ==('حضر') or text ==('حظر') and ChCheck(msg) then
 function BanReply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع حظر ↫ '..IdRank(result.sender_user_id_, msg.chat_id_), 1, 'md')
@@ -7657,11 +7658,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=result.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع حظر مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(result.chat_id_, result.sender_user_id_)
 DevRdo:sadd(WAAD..'Rdo:Ban:'..msg.chat_id_, result.sender_user_id_)
@@ -7681,7 +7682,7 @@ local username = text:match('^حضر @(.*)') or text:match('^حظر @(.*)')
 function BanUser(extra,result,success)
 if not Constructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if result.id_ then
 if RankChecking(result.id_, msg.chat_id_) then
@@ -7690,11 +7691,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=result.id_,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع حظر مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(msg.chat_id_, result.id_)
 DevRdo:sadd(WAAD..'Rdo:Ban:'..msg.chat_id_, result.id_)
@@ -7710,7 +7711,7 @@ if text and (text:match('^حضر (%d+)') or text:match('^حظر (%d+)')) and ChC
 local user = text:match('حضر (%d+)') or text:match('حظر (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:KickBan"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الطرد والحظر من قبل مالك المجموعه')
-return false
+return fRdoe
 end
 if RankChecking(user, msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع حظر ↫ '..IdRank(user, msg.chat_id_), 1, 'md')
@@ -7718,11 +7719,11 @@ else
 tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=user,status_={ID="ChatMemberStatusKicked"},},function(arg,dp) 
 if (dp and dp.code_ and dp.code_ == 400 and dp.message_ == "CHAT_ADMIN_REQUIRED") then 
 send(msg.chat_id_,msg.id_,"☆︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !") 
-return false  
+return fRdoe  
 end
 if dp and dp.code_ and dp.code_ == 400 and dp.message_ == "USER_ADMIN_INVALID" then 
 send(msg.chat_id_,msg.id_,"☆︙لا استطيع حظر مشرفين المجموعه") 
-return false  
+return fRdoe  
 end
 ChatKick(msg.chat_id_, user)
 DevRdo:sadd(WAAD..'Rdo:Ban:'..msg.chat_id_, user)
@@ -7767,7 +7768,7 @@ if text ==('كتم') and ChCheck(msg) then
 function MuteReply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع كتم ↫ '..IdRank(result.sender_user_id_, msg.chat_id_), 1, 'md')
@@ -7792,7 +7793,7 @@ local username = text:match('^كتم @(.*)')
 function MuteUser(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if result.id_ then
 if RankChecking(result.id_, msg.chat_id_) then
@@ -7814,7 +7815,7 @@ if text and text:match('^كتم (%d+)') and ChCheck(msg) then
 local user = text:match('كتم (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if RankChecking(user, msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع كتم ↫ '..IdRank(user, msg.chat_id_), 1, 'md')
@@ -7873,7 +7874,7 @@ if text ==('تقييد') or text ==('تقيد') and ChCheck(msg) then
 function TkeedReply(extra, result, success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if RankChecking(result.sender_user_id_, result.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع تقيد ↫ '..IdRank(result.sender_user_id_, msg.chat_id_), 1, 'md')
@@ -7895,7 +7896,7 @@ local username = text:match('^تقييد @(.*)') or text:match('^تقيد @(.*)'
 function TkeedUser(extra,result,success)
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if result.id_ then
 if RankChecking(result.id_, msg.chat_id_) then
@@ -7914,7 +7915,7 @@ if text and (text:match('^تقييد (%d+)') or text:match('^تقيد (%d+)')) a
 local user = text:match('تقييد (%d+)') or text:match('تقيد (%d+)')
 if not RdoConstructor(msg) and DevRdo:get(WAAD.."Rdo:Lock:MuteTked"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'☆︙لقد تم تعطيل الكتم والتقيد')
-return false
+return fRdoe
 end
 if RankChecking(user, msg.chat_id_) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا تستطيع تقيد ↫ '..IdRank(user, msg.chat_id_), 1, 'md')
@@ -7962,19 +7963,19 @@ if text ==('حضر عام') or text ==('حظر عام') and ChCheck(msg) then
 function BanAllReply(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(result.sender_user_id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.sender_user_id_) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',result.sender_user_id_) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 ChatKick(result.chat_id_, result.sender_user_id_)
 DevRdo:sadd(WAAD..'Rdo:BanAll:', result.sender_user_id_)
@@ -7993,19 +7994,19 @@ local username = text:match('^حضر عام @(.*)') or text:match('^حظر عا�
 function BanAllUser(extra,result,success)
 if tonumber(result.id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(result.id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.id_) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',result.id_) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 if result.id_ then
 ChatKick(msg.chat_id_, result.id_)
@@ -8020,19 +8021,19 @@ if text and (text:match('^حضر عام (%d+)') or text:match('^حظر عام (%
 local user = text:match('حضر عام (%d+)') or text:match('حظر عام (%d+)')
 if tonumber(user) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(tonumber(user)) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',user) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',user) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع حظر المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 ChatKick(msg.chat_id_, user)
 DevRdo:sadd(WAAD..'Rdo:BanAll:', user)
@@ -8044,19 +8045,19 @@ if text ==('كتم عام') and ChCheck(msg) then
 function MuteAllReply(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(result.sender_user_id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.sender_user_id_) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',result.sender_user_id_) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 DevRdo:sadd(WAAD..'Rdo:MuteAll:', result.sender_user_id_)          
 text = "☆︙تم كتمه عام من المجموعات" 
@@ -8074,19 +8075,19 @@ local username = text:match('^كتم عام @(.*)')
 function MuteAllUser(extra,result,success)
 if tonumber(result.id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(result.id_) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',result.id_) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',result.id_) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 if result.id_ then
 DevRdo:sadd(WAAD..'Rdo:MuteAll:', result.id_)
@@ -8100,19 +8101,19 @@ if text and text:match('^كتم عام (%d+)') and ChCheck(msg) then
 local user = text:match('كتم عام (%d+)')
 if tonumber(user) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم البوت عام*", 1, 'md')
-return false 
+return fRdoe 
 end
 if SudoId(tonumber(user)) == true then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:RdoSudo:',user) and not Sudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي*", 1, 'md')
-return false 
+return fRdoe 
 end
 if DevRdo:sismember(WAAD..'Rdo:SecondSudo:',user) and not RdoSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتستطيع كتم المطور الاساسي²*", 1, 'md')
-return false 
+return fRdoe 
 end
 DevRdo:sadd(WAAD..'Rdo:MuteAll:', user)
 ReplyStatus(msg,user,"Reply","☆︙تم كتمه عام من المجموعات")  
@@ -8157,14 +8158,14 @@ if DevRdo:get(WAAD.."Rdo:EditDev"..msg.sender_user_id_) then
 if text and text:match("^الغاء$") then 
 send(msg.chat_id_, msg.id_,'☆︙تم الغاء امر تغير المطور الاساسي')
 DevRdo:del(WAAD.."Rdo:EditDev"..msg.sender_user_id_)
-return false
+return fRdoe
 end
 if text and text:match("^(%d+)$") then 
 tdcli_function ({ID = "GetUser",user_id_ = text},function(arg,dp) 
-if dp.first_name_ ~= false then
+if dp.first_name_ ~= fRdoe then
 DevRdo:del(WAAD.."Rdo:EditDev"..msg.sender_user_id_)
 DevRdo:set(WAAD.."Rdo:NewDev"..msg.sender_user_id_,dp.id_)
-if dp.username_ ~= false then DevUser = '\n☆︙المعرف ↫ [@'..dp.username_..']' else DevUser = '' end
+if dp.username_ ~= fRdoe then DevUser = '\n☆︙المعرف ↫ [@'..dp.username_..']' else DevUser = '' end
 local Text = '☆︙الايدي ↫ '..dp.id_..DevUser..'\n☆︙الاسم ↫ ['..dp.first_name_..'](tg://user?id='..dp.id_..')\n☆︙تم حفظ المعلومات بنجاح\n☆︙استخدم الازرار للتاكيد ↫ ⤈'
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="نعم",callback_data="/setyes"},{text="لا",callback_data="/setno"}}} 
@@ -8175,7 +8176,7 @@ send(msg.chat_id_, msg.id_,"☆︙المعلومات خاطئه قم بالتا�
 DevRdo:del(WAAD.."Rdo:EditDev"..msg.sender_user_id_)
 end
 end,nil)
-return false
+return fRdoe
 end
 end
 --     Source WAAD     --
@@ -8270,7 +8271,7 @@ DevRdo:incrby(WAAD..'Rdo:UsersMsgs'..msg.chat_id_..':'..result.sender_user_id_,N
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم اضافة "..Num..' رساله', 1, 'md') 
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},Reply, nil)
-return false
+return fRdoe
 end
 if text and text:match("^اضف نقاط (%d+)$") and msg.reply_to_message_id_ == 0 and ChCheck(msg) then  
 if Constructor(msg) then
@@ -8290,7 +8291,7 @@ DevRdo:incrby(WAAD..'Rdo:GamesNumber'..msg.chat_id_..result.sender_user_id_,Num)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم اضافة "..Num..' نقطه', 1, 'md') 
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},Reply, nil)
-return false
+return fRdoe
 end
 if DevRdo:get(WAAD..'Rdo:Lock:Clean'..msg.chat_id_) then if msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.photo_ or msg.content_.animation_ or msg.content_.animated_ then if msg.reply_to_message_id_ ~= 0 then DevRdo:sadd(WAAD.."Rdo:cleaner"..msg.chat_id_, msg.id_) else DevRdo:sadd(WAAD.."Rdo:cleaner"..msg.chat_id_, msg.id_) end end end
 if DevRdo:get(WAAD..'Rdo:Lock:CleanNum'..msg.chat_id_) then if msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.photo_ or msg.content_.animation_ or msg.content_.animated_ then if msg.reply_to_message_id_ ~= 0 then DevRdo:sadd(WAAD.."Rdo:cleanernum"..msg.chat_id_, msg.id_) else DevRdo:sadd(WAAD.."Rdo:cleanernum"..msg.chat_id_, msg.id_) end end end
@@ -8299,22 +8300,22 @@ if Manager(msg) and msg.reply_to_message_id_ ~= 0 then
 if text and text:match("^تثبيت$") and ChCheck(msg) then 
 if DevRdo:sismember(WAAD.."Rdo:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_Rdo(msg.chat_id_,msg.id_, 1, "☆︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
-return false  
+return fRdoe  
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100",""),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
 DevRdo:set(WAAD..'Rdo:PinnedMsg'..msg.chat_id_,msg.reply_to_message_id_)
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تثبيت الرساله بنجاح'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false  
+return fRdoe  
 end
 if data.code_ == 6 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙البوت ليس ادمن هنا !', 1, 'md')
-return false  
+return fRdoe  
 end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙ليست لدي صلاحية التثبيت يرجى التحقق من الصلاحيات', 1, 'md')
-return false  
+return fRdoe  
 end
 end,nil)
 end 
@@ -8323,7 +8324,7 @@ end
 if Admin(msg) then
 if text == "المميزين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:VipMem:'..msg.chat_id_)
-text = "☆︙قائمة المميزين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المميزين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8344,7 +8345,7 @@ if Manager(msg) then
 if text == "الادمنيه" and ChCheck(msg) or text == "الادمنية" and ChCheck(msg) then 
 local Rdo =  'Rdo:Admins:'..msg.chat_id_
 local List = DevRdo:smembers(WAAD..Rdo)
-text = "☆︙قائمة الادمنيه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة الادمنيه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8364,7 +8365,7 @@ end end
 if Constructor(msg) then
 if text == "المدراء" and ChCheck(msg) or text == "مدراء" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Managers:'..msg.chat_id_)
-text = "☆︙قائمة المدراء ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المدراء ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8382,7 +8383,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='.
 end 
 if text == "المنظفين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Cleaner:'..msg.chat_id_)
-text = "☆︙قائمة المنظفين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المنظفين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8402,7 +8403,7 @@ end end
 if BasicConstructor(msg) then
 if text == "المنشئين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Constructor:'..msg.chat_id_)
-text = "☆︙قائمة المنشئين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المنشئين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8422,7 +8423,7 @@ end end
 if Owner(msg) then
 if text == "المالكين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Owner:'..msg.chat_id_)
-text = "☆︙قائمة المالكين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المالكين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8440,7 +8441,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='.
 end
 if text == "المنشئين الاساسيين" and ChCheck(msg) or text == "منشئين اساسيين" and ChCheck(msg) or text == "المنشئين الاساسين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:BasicConstructor:'..msg.chat_id_)
-text = "☆︙قائمة المنشئين الاساسيين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المنشئين الاساسيين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8461,9 +8462,9 @@ for i=0 , #admins do
 if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 Manager_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حساب المنشئ محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 tdcli_function ({ID="GetUserProfilePhotos",user_id_=Manager_id,offset_=0,limit_=1},function(arg,getpro) 
 if getpro.photos_[0] then
@@ -8485,7 +8486,7 @@ end
 if Admin(msg) then
 if text == "المكتومين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Muted:'..msg.chat_id_)
-text = "☆︙قائمة المكتومين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المكتومين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8504,7 +8505,7 @@ end
 --     Source WAAD     --
 if text == "المقيدين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Tkeed:'..msg.chat_id_)
-text = "☆︙قائمة المقيدين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المقيدين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8523,7 +8524,7 @@ end
 --     Source WAAD     --
 if text == "المحظورين" and ChCheck(msg) or text == "المحضورين" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:Ban:'..msg.chat_id_)
-text = "☆︙قائمة المحظورين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المحظورين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8542,7 +8543,7 @@ end
 --     Source WAAD     --
 if text == "المطايه" and ChCheck(msg) or text == "المطاية" and ChCheck(msg) then
 local List = DevRdo:smembers(WAAD..'User:Donky:'..msg.chat_id_)
-text = "☆︙قائمة مطاية المجموعه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة مطاية المجموعه ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8558,7 +8559,7 @@ end
 --     Source WAAD     --
 if text == "قائمه المنع" and RdoConstructor(msg) and ChCheck(msg) then
 local List = DevRdo:hkeys(WAAD..'Rdo:Filters:'..msg.chat_id_)
-text = "☆︙قائمة المنع ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المنع ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k, v in pairs(List) do
 text = text..k..'~ ❨ '..v..' ❩\n'
 end
@@ -8574,7 +8575,7 @@ end
 --     Source WAAD     --
 if text == "المطورين الاساسيين" and ChCheck(msg) and RdoSudo(msg) or text == "الاساسيين" and RdoSudo(msg) and ChCheck(msg) or text == "↫ الاساسيين ☆" and RdoSudo(msg) and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:RdoSudo:')
-text = "☆︙قائمة المطورين الاساسيين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المطورين الاساسيين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8593,7 +8594,7 @@ end
 --     Source WAAD     --
 if text == "المطورين الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "↫ الثانويين ☆" and SecondSudo(msg) and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:SecondSudo:')
-text = "☆︙قائمة المطورين الثانويين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المطورين الثانويين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8615,7 +8616,7 @@ if text == "قائمه العام" and ChCheck(msg) or text == "المحظوري
 local BanAll = DevRdo:smembers(WAAD..'Rdo:BanAll:')
 local MuteAll = DevRdo:smembers(WAAD..'Rdo:MuteAll:')
 if #BanAll ~= 0 then 
-text = "☆︙قائمة المحظورين عام ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المحظورين عام ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(BanAll) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8627,7 +8628,7 @@ else
 text = ""
 end
 if #MuteAll ~= 0 then 
-text = text.."☆︙قائمة المكتومين عام ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = text.."☆︙قائمة المكتومين عام ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(MuteAll) do
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
 if username then
@@ -8651,7 +8652,7 @@ end
 --     Source WAAD     --
 if text == "المطورين" and ChCheck(msg) or text == "↫ المطورين ☆" and ChCheck(msg) then 
 local List = DevRdo:smembers(WAAD..'Rdo:SudoBot:')
-text = "☆︙قائمة المطورين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+text = "☆︙قائمة المطورين ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local sudouser = DevRdo:get(WAAD..'Rdo:Sudos'..v) 
 local username = DevRdo:get(WAAD..'Save:UserName'..v)
@@ -8678,9 +8679,9 @@ Manager_id = admins[i].user_id_
 end
 end
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,dp) 
-if dp.first_name_ == false then
+if dp.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حساب المنشئ محذوف", 1, "md")
-return false  
+return fRdoe  
 end
 local UserName = (dp.username_ or "CXRCX")
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم رفع مالك المجموعه ↫ ["..dp.first_name_.."](T.me/"..UserName..")", 1, "md") 
@@ -8697,19 +8698,19 @@ if result.content_.sticker_ then
 local idsticker = result.content_.sticker_.sticker_.persistent_id_
 DevRdo:sadd(WAAD.."Rdo:FilterSteckr"..msg.chat_id_,idsticker)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم منع الملصق بنجاح لن يتم ارساله مجددا', 1, 'md')
-return false
+return fRdoe
 end
 if result.content_.ID == "MessagePhoto" then
 local photo = result.content_.photo_.id_
 DevRdo:sadd(WAAD.."Rdo:FilterPhoto"..msg.chat_id_,photo)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم منع الصوره بنجاح لن يتم ارسالها مجددا', 1, 'md')
-return false
+return fRdoe
 end
 if result.content_.animation_ then
 local idanimation = result.content_.animation_.animation_.persistent_id_
 DevRdo:sadd(WAAD.."Rdo:FilterAnimation"..msg.chat_id_,idanimation)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم منع المتحركه بنجاح لن يتم ارسالها مجددا', 1, 'md')
-return false
+return fRdoe
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,filter_by_reply) 
@@ -8721,19 +8722,19 @@ if result.content_.sticker_ then
 local idsticker = result.content_.sticker_.sticker_.persistent_id_
 DevRdo:srem(WAAD.."Rdo:FilterSteckr"..msg.chat_id_,idsticker)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء منع الملصق يمكنهم ارساله الان', 1, 'md')
-return false
+return fRdoe
 end
 if result.content_.ID == "MessagePhoto" then
 local photo = result.content_.photo_.id_
 DevRdo:srem(WAAD.."Rdo:FilterPhoto"..msg.chat_id_,photo)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء منع الصوره يمكنهم ارسالها الان', 1, 'md')
-return false
+return fRdoe
 end
 if result.content_.animation_.animation_ then
 local idanimation = result.content_.animation_.animation_.persistent_id_
 DevRdo:srem(WAAD.."Rdo:FilterAnimation"..msg.chat_id_,idanimation)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء منع المتحركه يمكنهم ارسالها الان', 1, 'md')
-return false
+return fRdoe
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unfilter_by_reply) 
@@ -8798,9 +8799,9 @@ Tkeed = 'مكتوم'
 elseif DevRdo:sismember(WAAD..'Rdo:Tkeed:'..msg.chat_id_,result.sender_user_id_) then
 Tkeed = 'مقيد'
 else
-Tkeed = false
+Tkeed = fRdoe
 end
-if Tkeed ~= false then
+if Tkeed ~= fRdoe then
 Tked = '\n☆︙القيود ↫ '..Tkeed
 else 
 Tked = '' 
@@ -8810,15 +8811,15 @@ sudobot = '\n☆︙عدد الكروبات ↫ '..(DevRdo:get(WAAD..'Rdo:Sudos'.
 else 
 sudobot = '' 
 end
-if GetCustomTitle(result.sender_user_id_,msg.chat_id_) ~= false then
+if GetCustomTitle(result.sender_user_id_,msg.chat_id_) ~= fRdoe then
 CustomTitle = '\n☆︙لقبه ↫ '..GetCustomTitle(result.sender_user_id_,msg.chat_id_)
 else 
 CustomTitle = '' 
 end
-if data.first_name_ == false then 
+if data.first_name_ == fRdoe then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙الحساب محذوف', 1, 'md')
-return false  end
-if data.username_ == false then
+return fRdoe  end
+if data.username_ == fRdoe then
 Text = '☆︙اسمه ↫ ['..data.first_name_..'](tg://user?id='..result.sender_user_id_..')\n☆︙ايديه ↫ ❨ `'..result.sender_user_id_..'` ❩\n☆︙رتبته ↫ '..IdRank(result.sender_user_id_, msg.chat_id_)..sudobot..'\n☆︙رسائله ↫ ❨ '..user_msgs..' ❩\n☆︙تفاعله ↫ '..formsgs(user_msgs)..CustomTitle..'\n☆︙نقاطه ↫ ❨ '..user_nkt..' ❩'..Tked
 SendText(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
 else
@@ -8833,9 +8834,9 @@ local username = text:match('^كشف @(.*)') or text:match('^ايدي @(.*)')
 tdcli_function ({ID = "SearchPublicChat",username_ = username},function(extra, res, success) 
 if res and res.message_ and res.message_ == "USERNAME_NOT_OCCUPIED" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙*المعرف غير صحيح*', 1, 'md')
-return false  end
+return fRdoe  end
 if res.type_.ID == "ChannelChatInfo" then 
-if res.type_.channel_.is_supergroup_ == false then
+if res.type_.channel_.is_supergroup_ == fRdoe then
 local ch = 'قناة'
 local chn = '☆︙نوع الحساب ↫ ❨ '..ch..' ❩\n☆︙الايدي ↫ ❨ `'..res.id_..'` ❩\n☆︙المعرف ↫ ❨ [@'..username..'] ❩\n☆︙الاسم ↫ ❨ ['..res.title_..'] ❩'
 Dev_Rdo(msg.chat_id_, msg.id_, 1,chn, 1, 'md')
@@ -8844,7 +8845,7 @@ local gr = 'مجموعه'
 local grr = '☆︙نوع الحساب ↫ ❨ '..gr..' ❩\n☆︙الايدي ↫ ❨ '..res.id_..' ❩\n☆︙المعرف ↫ ❨ [@'..username..'] ❩\n☆︙الاسم ↫ ❨ ['..res.title_..'] ❩'
 Dev_Rdo(msg.chat_id_, msg.id_, 1,grr, 1, 'md')
 end
-return false  end
+return fRdoe  end
 if res.id_ then  
 tdcli_function ({ID = "GetUser",user_id_ = res.id_},function(arg,data) 
 local user_msgs = DevRdo:get(WAAD..'Rdo:UsersMsgs'..msg.chat_id_..':'..res.id_) or 0
@@ -8860,9 +8861,9 @@ Tkeed = 'مكتوم'
 elseif DevRdo:sismember(WAAD..'Rdo:Tkeed:'..msg.chat_id_,res.id_) then
 Tkeed = 'مقيد'
 else
-Tkeed = false
+Tkeed = fRdoe
 end
-if Tkeed ~= false then
+if Tkeed ~= fRdoe then
 Tked = '\n☆︙القيود ↫ '..Tkeed
 else 
 Tked = '' 
@@ -8872,26 +8873,26 @@ sudobot = '\n☆︙عدد الكروبات ↫ '..(DevRdo:get(WAAD..'Rdo:Sudos'.
 else 
 sudobot = '' 
 end
-if GetCustomTitle(res.id_,msg.chat_id_) ~= false then
+if GetCustomTitle(res.id_,msg.chat_id_) ~= fRdoe then
 CustomTitle = '\n☆︙لقبه ↫ '..GetCustomTitle(res.id_,msg.chat_id_)
 else 
 CustomTitle = '' 
 end
-if data.first_name_ == false then
+if data.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙الحساب محذوف', 1, 'md')
-return false  end
+return fRdoe  end
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙معرفه ↫ [@'..data.username_..']\n☆︙ايديه ↫ ❨ `'..res.id_..'` ❩\n☆︙رتبته ↫ '..IdRank(res.id_, msg.chat_id_)..sudobot..'\n☆︙رسائله ↫ ❨ '..user_msgs..' ❩\n☆︙تفاعله ↫ '..formsgs(user_msgs)..CustomTitle..'\n☆︙نقاطه ↫ ❨ '..user_nkt..' ❩'..Tked, 1, 'md')
 end,nil)
 end 
 end,nil)
-return false 
+return fRdoe 
 end
 if text and text:match('كشف (%d+)') and ChCheck(msg) or text and text:match('ايدي (%d+)') and ChCheck(msg) then 
 local iduser = text:match('كشف (%d+)') or text:match('ايدي (%d+)')  
 tdcli_function ({ID = "GetUser",user_id_ = iduser},function(arg,data) 
 if data.message_ == "User not found" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لم يتم التعرف على الحساب', 1, 'md')
-return false  
+return fRdoe  
 end
 local user_msgs = DevRdo:get(WAAD..'Rdo:UsersMsgs'..msg.chat_id_..':'..iduser) or 0
 local user_nkt = tonumber(DevRdo:get(WAAD..'Rdo:GamesNumber'..msg.chat_id_..iduser) or 0)
@@ -8906,9 +8907,9 @@ Tkeed = 'مكتوم'
 elseif DevRdo:sismember(WAAD..'Rdo:Tkeed:'..msg.chat_id_,iduser) then
 Tkeed = 'مقيد'
 else
-Tkeed = false
+Tkeed = fRdoe
 end
-if Tkeed ~= false then
+if Tkeed ~= fRdoe then
 Tked = '\n☆︙القيود ↫ '..Tkeed
 else 
 Tked = '' 
@@ -8918,22 +8919,22 @@ sudobot = '\n☆︙عدد الكروبات ↫ '..(DevRdo:get(WAAD..'Rdo:Sudos'.
 else 
 sudobot = '' 
 end
-if GetCustomTitle(iduser,msg.chat_id_) ~= false then
+if GetCustomTitle(iduser,msg.chat_id_) ~= fRdoe then
 CustomTitle = '\n☆︙لقبه ↫ '..GetCustomTitle(iduser,msg.chat_id_)
 else 
 CustomTitle = '' 
 end
-if data.first_name_ == false then
+if data.first_name_ == fRdoe then
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙الحساب محذوف', 1, 'md')
-return false  end
-if data.username_ == false then
+return fRdoe  end
+if data.username_ == fRdoe then
 Text = '☆︙اسمه ↫ ['..data.first_name_..'](tg://user?id='..iduser..')\n☆︙ايديه ↫ ❨ `'..iduser..'` ❩\n☆︙رتبته ↫ '..IdRank(data.id_, msg.chat_id_)..sudobot..'\n☆︙رسائله ↫ ❨ '..user_msgs..' ❩\n☆︙تفاعله ↫ '..formsgs(user_msgs)..CustomTitle..'\n☆︙نقاطه ↫ ❨ '..user_nkt..' ❩'..Tked
 SendText(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙معرفه ↫ [@'..data.username_..']\n☆︙ايديه ↫ ❨ `'..iduser..'` ❩\n☆︙رتبته ↫ '..IdRank(data.id_, msg.chat_id_)..sudobot..'\n☆︙رسائله ↫ ❨ '..user_msgs..' ❩\n☆︙تفاعله ↫ '..formsgs(user_msgs)..CustomTitle..'\n☆︙نقاطه ↫ ❨ '..user_nkt..' ❩'..Tked, 1, 'md')
 end
 end,nil)
-return false 
+return fRdoe 
 end 
 --     Source WAAD     --
 if text == 'كشف القيود' and tonumber(msg.reply_to_message_id_) > 0 and Admin(msg) and ChCheck(msg) then 
@@ -8967,7 +8968,7 @@ if text == 'رفع القيود' and tonumber(msg.reply_to_message_id_) > 0 and 
 function unbanreply(extra, result, success) 
 if tonumber(result.sender_user_id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙انا البوت وليس لدي قيود', 1, 'md')  
-return false  
+return fRdoe  
 end 
 ReplyStatus(msg,result.sender_user_id_,"Reply","☆︙تم رفع قيوده") 
 if SecondSudo(msg) then
@@ -8984,12 +8985,12 @@ if text and text:match('^رفع القيود (%d+)') and Admin(msg) and ChCheck(
 local user = text:match('رفع القيود (%d+)') 
 if tonumber(user) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙انا البوت وليس لدي قيود', 1, 'md')  
-return false  
+return fRdoe  
 end 
 tdcli_function ({ID = "GetUser",user_id_ = user},function(arg,data) 
 if data and data.code_ and data.code_ == 6 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لم استطع استخراج المعلومات', 1, 'md') 
-return false  
+return fRdoe  
 end
 ReplyStatus(msg,user,"Reply","☆︙تم رفع قيوده") 
 if SecondSudo(msg) then
@@ -9006,20 +9007,20 @@ local username = text:match('رفع القيود @(.*)')
 function unbanusername(extra,result,success)  
 if result and result.message_ and result.message_ == "USERNAME_NOT_OCCUPIED" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙*المعرف غير صحيح*', 1, 'md')  
-return false  
+return fRdoe  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙هذا معرف قناة وليس معرف حساب', 1, 'md') 
-return false  
+return fRdoe  
 end
 if tonumber(result.id_) == tonumber(WAAD) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙انا البوت وليس لدي قيود', 1, 'md')  
-return false  
+return fRdoe  
 end 
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(arg,data) 
 if data and data.code_ and data.code_ == 6 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لم استطع استخراج المعلومات', 1, 'md') 
-return false  
+return fRdoe  
 end
 ReplyStatus(msg,result.id_,"Reply","☆︙تم رفع قيوده") 
 if SecondSudo(msg) then
@@ -9125,7 +9126,7 @@ end
 --     Source WAAD     --
 if SecondSudo(msg) then
 if text and text:match("^تعيين الايدي العام$") or text and text:match("^تعين الايدي العام$") or text and text:match("^تعيين كليشة الايدي$") then
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙رجائا اتبع التعليمات للتعيين \n☆︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙رجائا اتبع التعليمات للتعيين \n☆︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
 DevRdo:set("WAAD:New:id:"..WAAD..msg.sender_user_id_,'WAADTeam')
 return "WAADTeam"
 end
@@ -9133,12 +9134,12 @@ if text and DevRdo:get("WAAD:New:id:"..WAAD..msg.sender_user_id_) then
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ كليشة الايدي', 1, 'md')
 DevRdo:del("WAAD:New:id:"..WAAD..msg.sender_user_id_)
-return false
+return fRdoe
 end
 DevRdo:del("WAAD:New:id:"..WAAD..msg.sender_user_id_)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ كليشة الايدي العامه', 1, 'md')
 DevRdo:set(WAAD.."Rdo:AllIds:Text",text)
-return false
+return fRdoe
 end
 if text and text:match("^حذف الايدي العام$") or text and text:match("^مسح الايدي العام$") or text and text:match("^حذف كليشة الايدي$") and ChCheck(msg) then
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف كليشة الايدي العامه")  
@@ -9147,7 +9148,7 @@ end
 end
 --     Source WAAD     --
 if text and text:match("^تعيين الايدي$") and ChCheck(msg) or text and text:match("^تعين الايدي$") and ChCheck(msg) then
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙رجائا اتبع التعليمات للتعيين \n☆︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙رجائا اتبع التعليمات للتعيين \n☆︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
 DevRdo:set("WAAD:New:id:"..WAAD..msg.chat_id_..msg.sender_user_id_,'WAADTeam')
 return "WAADTeam"
 end
@@ -9155,12 +9156,12 @@ if text and Manager(msg) and DevRdo:get("WAAD:New:id:"..WAAD..msg.chat_id_..msg.
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ كليشة الايدي', 1, 'md')
 DevRdo:del("WAAD:New:id:"..WAAD..msg.chat_id_..msg.sender_user_id_)
-return false
+return fRdoe
 end
 DevRdo:del("WAAD:New:id:"..WAAD..msg.chat_id_..msg.sender_user_id_)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ الكليشه الجديده', 1, 'md')
 DevRdo:set(WAAD.."Rdo:GpIds:Text"..msg.chat_id_,text)
-return false
+return fRdoe
 end
 if text and text:match("^حذف الايدي$") and ChCheck(msg) or text and text:match("^مسح الايدي$") and ChCheck(msg) then
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف كليشة الايدي")  
@@ -9174,7 +9175,7 @@ else
 if text and (text:match("^ايدي$") or text:match("^id$") or text:match("^Id$")) and ChCheck(msg) then
 function WAADTeam(extra,Rdo,success)
 if Rdo.username_ then username = '@'..Rdo.username_ else username = 'لا يوجد' end
-if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) ~= false then CustomTitle = GetCustomTitle(msg.sender_user_id_,msg.chat_id_) else CustomTitle = 'لا يوجد' end
+if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) ~= fRdoe then CustomTitle = GetCustomTitle(msg.sender_user_id_,msg.chat_id_) else CustomTitle = 'لا يوجد' end
 local function getpro(extra, Rdo, success) 
 local msgsday = DevRdo:get(WAAD..'Rdo:UsersMsgs'..WAAD..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
 local edit_msg = DevRdo:get(WAAD..'Rdo:EditMsg'..msg.chat_id_..msg.sender_user_id_) or 0
@@ -9203,7 +9204,7 @@ newpicid = newpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 newpicid = newpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 newpicid = newpicid:gsub('#Description',(Description or 'لا يوجد'))
 else
-newpicid = "☆︙"..Description.."\n☆︙معرفك ↫ ❨ "..username.." ❩\n☆︙ايديك ↫ ❨ "..msg.sender_user_id_.." ❩\n☆︙رتبتك ↫ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n☆︙رسائلك ↫ ❨ "..user_msgs.." ❩\n☆︙سحكاتك ↫ ❨ "..edit_msg.." ❩\n☆︙تفاعلك ↫ "..formsgs(msguser).."\n☆︙نقاطك ↫ ❨ "..user_nkt.." ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+newpicid = "☆︙"..Description.."\n☆︙معرفك ↫ ❨ "..username.." ❩\n☆︙ايديك ↫ ❨ "..msg.sender_user_id_.." ❩\n☆︙رتبتك ↫ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n☆︙رسائلك ↫ ❨ "..user_msgs.." ❩\n☆︙سحكاتك ↫ ❨ "..edit_msg.." ❩\n☆︙تفاعلك ↫ "..formsgs(msguser).."\n☆︙نقاطك ↫ ❨ "..user_nkt.." ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 end 
 if not DevRdo:get(WAAD.."Rdo:GpIds:Text"..msg.chat_id_) then 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, Rdo.photos_[0].sizes_[1].photo_.persistent_id_,newpicid,msg.id_,msg.id_.."")
@@ -9283,7 +9284,7 @@ notpicid = notpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 notpicid = notpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 notpicid = notpicid:gsub('#Description',(Description or 'لا يوجد'))
 else
-notpicid = "☆︙لا استطيع عرض صورتك لانك قمت بحظر البوت او انك لاتمتلك صوره في بروفايلك\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙معرفك ↫ ❨ "..username.." ❩\n☆︙ايديك ↫ ❨ "..msg.sender_user_id_.." ❩\n☆︙رتبتك ↫ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n☆︙رسائلك ↫ ❨ "..user_msgs.." ❩\n☆︙سحكاتك ↫ ❨ "..edit_msg.." ❩\n☆︙تفاعلك ↫ "..formsgs(msguser).."\n☆︙نقاطك ↫ ❨ "..user_nkt.." ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+notpicid = "☆︙لا استطيع عرض صورتك لانك قمت بحظر البوت او انك لاتمتلك صوره في بروفايلك\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙معرفك ↫ ❨ "..username.." ❩\n☆︙ايديك ↫ ❨ "..msg.sender_user_id_.." ❩\n☆︙رتبتك ↫ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n☆︙رسائلك ↫ ❨ "..user_msgs.." ❩\n☆︙سحكاتك ↫ ❨ "..edit_msg.." ❩\n☆︙تفاعلك ↫ "..formsgs(msguser).."\n☆︙نقاطك ↫ ❨ "..user_nkt.." ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 end 
 if not DevRdo:get(WAAD..'Rdo:Lock:Id'..msg.chat_id_) then
 if not DevRdo:get(WAAD..'Rdo:Lock:Id:Photo'..msg.chat_id_) then
@@ -9490,13 +9491,13 @@ if DevRdo:get(WAAD..'Rdo:setwelcome'..msg.chat_id_..':'..msg.sender_user_id_) th
 if text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ كليشة الترحيب', 1, 'md')
 DevRdo:del(WAAD..'Rdo:setwelcome'..msg.chat_id_..':'..msg.sender_user_id_)
-return false  
+return fRdoe  
 end 
 DevRdo:del(WAAD..'Rdo:setwelcome'..msg.chat_id_..':'..msg.sender_user_id_)
 Welcomes = text:gsub('"',"") Welcomes = text:gsub("'","") Welcomes = text:gsub(",","") Welcomes = text:gsub("*","") Welcomes = text:gsub(";","") Welcomes = text:gsub("`","") Welcomes = text:gsub("{","") Welcomes = text:gsub("}","") 
 DevRdo:set(WAAD..'Rdo:Groups:Welcomes'..msg.chat_id_,Welcomes)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ كليشة الترحيب', 1, 'md')
-return false   
+return fRdoe   
 end
 if text and text:match("^ضع ترحيب$") and ChCheck(msg) or text and text:match("^وضع ترحيب$") and ChCheck(msg) or text and text:match("^اضف ترحيب$") and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ارسل لي الترحيب الان\n☆︙تستطيع اضافة مايلي ↫ ⤈\n☆︙دالة عرض الاسم ↫ firstname\n☆︙دالة عرض المعرف ↫ username', 1, 'md')
@@ -9519,12 +9520,12 @@ if DevRdo:get(WAAD..'Rdo:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_
 if text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء حفظ الوصف", 1, 'md')
 DevRdo:del(WAAD..'Rdo:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
-return false  
+return fRdoe  
 end 
 DevRdo:del(WAAD..'Rdo:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
 https.request('https://api.telegram.org/bot'..TokenBot..'/setChatDescription?chat_id='..msg.chat_id_..'&description='..text) 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم تغيير وصف المجموعه', 1, 'md')
-return false  
+return fRdoe  
 end 
 if text and text:match("^ضع وصف$") and ChCheck(msg) or text and text:match("^وضع وصف$") and ChCheck(msg) then  
 DevRdo:set(WAAD..'Rdo:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_,true)
@@ -9534,29 +9535,29 @@ end
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and ChCheck(msg) then       
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل لي الكلمه الان", 1, 'md') 
 DevRdo:set(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_,"add")  
-return false  
+return fRdoe  
 end    
 if DevRdo:get(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_) == "add" then
 if text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر المنع', 1, 'md')
 DevRdo:del(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_)  
-return false  
+return fRdoe  
 end   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم منع الكلمه ↫ "..text, 1, 'html')
 DevRdo:del(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_)  
 DevRdo:hset(WAAD..'Rdo:Filters:'..msg.chat_id_, text,'newword')
-return false
+return fRdoe
 end
 if text and text == "الغاء منع" and msg.reply_to_message_id_ == 0 and ChCheck(msg) then       
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل لي الكلمه الان", 1, 'md') 
 DevRdo:set(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_,"del")  
-return false  
+return fRdoe  
 end    
 if DevRdo:get(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_) == "del" then   
 if text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر الغاء المنع', 1, 'md')
 DevRdo:del(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_)  
-return false  
+return fRdoe  
 end   
 if not DevRdo:hget(WAAD..'Rdo:Filters:'..msg.chat_id_, text) then  
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الكلمه ↫ "..text.." غير ممنوعه", 1, 'html')
@@ -9566,7 +9567,7 @@ DevRdo:hdel(WAAD..'Rdo:Filters:'..msg.chat_id_, text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙الكلمه ↫ "..text.." تم الغاء منعها", 1, 'html')
 DevRdo:del(WAAD.."Rdo:SetFilters"..msg.sender_user_id_..msg.chat_id_)  
 end
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if SudoBot(msg) then
@@ -9604,7 +9605,7 @@ if not DevRdo:get(WAAD..'Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_) t
 local Number = tonumber(text:match('^تنظيف (%d+)$') or text:match('^مسح (%d+)$')) 
 if Number > 5000 then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لاتستطيع تنظيف اكثر من 5000 رساله', 1, 'md')
-return false  
+return fRdoe  
 end  
 local Message = msg.id_
 for i=1,tonumber(Number) do
@@ -9639,7 +9640,7 @@ end
 end,nil)
 end,nil)
 end
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text == "تنظيف الكروبات" and SecondSudo(msg) and ChCheck(msg) or text == "تنظيف المجموعات" and SecondSudo(msg) and ChCheck(msg) or text == "↫ تنظيف المجموعات ☆" and SecondSudo(msg) and ChCheck(msg) then 
@@ -9685,7 +9686,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙عدد الكروبات الان ↫ { '
 end end
 end,nil)
 end
-return false
+return fRdoe
 end 
 end
 --     Source WAAD     --
@@ -10346,7 +10347,7 @@ if GetInfo.result.can_invite_users == true then INV = '✔️' else INV = '✖�
 if GetInfo.result.can_pin_messages == true then PIN = '✔️' else PIN = '✖️' end
 if GetInfo.result.can_restrict_members == true then BAN = '✔️' else BAN = '✖️' end
 if GetInfo.result.can_promote_members == true then VIP = '✔️' else VIP = '✖️' end 
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙صلاحيات البوت هي ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙حذف الرسائل ↫ '..DEL..'\n☆︙دعوة المستخدمين ↫ '..INV..'\n☆︙حظر المستخدمين ↫ '..BAN..'\n☆︙تثبيت الرسائل ↫ '..PIN..'\n☆︙تغيير المعلومات ↫ '..EDT..'\n☆︙اضافة مشرفين ↫ '..VIP..'\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙صلاحيات البوت هي ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙حذف الرسائل ↫ '..DEL..'\n☆︙دعوة المستخدمين ↫ '..INV..'\n☆︙حظر المستخدمين ↫ '..BAN..'\n☆︙تثبيت الرسائل ↫ '..PIN..'\n☆︙تغيير المعلومات ↫ '..EDT..'\n☆︙اضافة مشرفين ↫ '..VIP..'\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉', 1, 'md')
 end end
 if text and text:match("^تغير رد المطور (.*)$") and ChCheck(msg) then
 local Text = text:match("^تغير رد المطور (.*)$") 
@@ -10404,7 +10405,7 @@ end
 if text == "كشف البوتات" and ChCheck(msg) then 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = '☆︙*قائمة البوتات* ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+text = '☆︙*قائمة البوتات* ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -10420,9 +10421,9 @@ end
 text = text.."~ [@"..data.username_..']'..ab.."\n"
 if #admins == 0 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙*لاتوجد بوتات هنا*", 1, 'md')
-return false end
+return fRdoe end
 if #admins == i then 
-local a = '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙*عدد البوتات هنا* ↫ '..n..'\n'
+local a = '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙*عدد البوتات هنا* ↫ '..n..'\n'
 local f = '☆︙*عدد البوتات المرفوعه* ↫ '..t..'\n☆︙*ملاحضه علامة الـ*✯ *تعني ان البوت ادمن في هذه المجموعه*'
 Dev_Rdo(msg.chat_id_, msg.id_, 1, text..a..f, 1, 'md')
 end
@@ -10662,7 +10663,7 @@ if DevRdo:get(WAAD..'Rdo:Lock:Taf'..msg.chat_id_) then lock_taf = 'مفتوحه'
 if DevRdo:get(WAAD..'Rdo:Lock:Farsi'..msg.chat_id_) then lock_farsi = 'مقفله' else lock_farsi = 'مفتوحه' end
 local Flood_Num = DevRdo:hget(WAAD.."Rdo:Spam:Group:User"..msg.chat_id_,"Num:Spam") or 5
 --     Source WAAD     --
-local TXTE = "☆︙اعدادات المجموعه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+local TXTE = "☆︙اعدادات المجموعه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 .."☆︙الروابط ↫ "..mute_links.."\n"
 .."☆︙المعرف ↫ "..lock_tag.."\n"
 .."☆︙البوتات ↫ "..lock_bots.."\n"
@@ -10695,7 +10696,7 @@ local TXTE = "☆︙اعدادات المجموعه ↫ ⤈\n┉ ┉ ┉ .•♫
 .."☆︙التكرار ↫ "..flood.."\n"
 .."☆︙عدد التكرار ↫ "..Flood_Num.."\n"
 .."☆︙عدد السبام ↫ "..spam_c.."\n"
-.."┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙[Source Channel](https://t.me/CXRCX)\n"
+.."┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙[Source Channel](https://t.me/CXRCX)\n"
 Dev_Rdo(msg.chat_id_, msg.id_, 1, TXTE, 1, 'md')
 end
 end
@@ -10718,7 +10719,7 @@ end
 if text and text:match("^انطق (.*)$") and not DevRdo:get(WAAD..'Rdo:Antk:Rdo'..msg.chat_id_) and ChCheck(msg) then
 local UrlAntk = https.request('https://apiabs.ml/Antk.php?abs='..URL.escape(text:match("^انطق (.*)$")))
 Antk = JSON.decode(UrlAntk)
-if UrlAntk.ok ~= false then
+if UrlAntk.ok ~= fRdoe then
 download_to_file("https://translate"..Antk.result.google..Antk.result.code.."UTF-8"..Antk.result.utf..Antk.result.translate.."&tl=ar-IN",Antk.result.translate..'.mp3') 
 sendAudio(msg.chat_id_, msg.id_, 0, 1,nil, './'..Antk.result.translate..'.mp3')  
 os.execute('rm -rf ./'..Antk.result.translate..'.mp3') 
@@ -10729,12 +10730,12 @@ if DevRdo:get(WAAD..'Rdo:setrules'..msg.chat_id_..':'..msg.sender_user_id_) then
 if text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء حفظ قوانين المجموعه', 1, 'md')
 DevRdo:del(WAAD..'Rdo:setrules'..msg.chat_id_..':'..msg.sender_user_id_)
-return false  
+return fRdoe  
 end 
 DevRdo:del(WAAD..'Rdo:setrules'..msg.chat_id_..':'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:rules'..msg.chat_id_,text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حفظ قوانين المجموعه', 1, 'md')
-return false   
+return fRdoe   
 end
 if text and text:match("^ضع قوانين$") and ChCheck(msg) or text and text:match("^وضع قوانين$") and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ارسل لي القوانين الان', 1, 'md')
@@ -10771,11 +10772,11 @@ if DevRdo:get(WAAD..'Zrf:Rdo'..msg.chat_id_..msg.sender_user_id_) then
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر الزخرفه', 1, 'md')
 DevRdo:del(WAAD..'Zrf:Rdo'..msg.chat_id_..msg.sender_user_id_)
-return false  
+return fRdoe  
 end 
 UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)) 
 Zrf = JSON.decode(UrlZrf) 
-t = "☆︙قائمة الزخرفه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+t = "☆︙قائمة الزخرفه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 i = 0
 for k,v in pairs(Zrf.ok) do
 i = i + 1
@@ -10783,7 +10784,7 @@ t = t..i.."~ `"..v.."` \n"
 end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, t, 1, 'md')
 DevRdo:del(WAAD..'Zrf:Rdo'..msg.chat_id_..msg.sender_user_id_)
-return false   
+return fRdoe   
 end
 if not DevRdo:get(WAAD..'Rdo:Zrf:Rdo'..msg.chat_id_) then
 if text == 'زخرفه' and ChCheck(msg) or text == 'الزخرفه' and ChCheck(msg) then  
@@ -10796,7 +10797,7 @@ if text and text:match("^زخرفه (.*)$") and ChCheck(msg) or text and text:ma
 local TextZrf = text:match("^زخرفه (.*)$") or text:match("^زخرف (.*)$") 
 UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(TextZrf)) 
 Zrf = JSON.decode(UrlZrf) 
-t = "☆︙قائمة الزخرفه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+t = "☆︙قائمة الزخرفه ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 i = 0
 for k,v in pairs(Zrf.ok) do
 i = i + 1
@@ -10846,12 +10847,12 @@ if text and text ~= "نسبه الحب" and text ~= "نسبة الحب" and DevR
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الحب ', 1, 'md')
 DevRdo:del(WAAD..'LoveNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة الحب بين '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'LoveNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text == "نسبه الخيانه" and ChCheck(msg) or text == "نسبة الخيانه" and ChCheck(msg) or text == "↫ نسبه الخيانه ☆" and ChCheck(msg) then
@@ -10863,12 +10864,12 @@ if text and text ~= "نسبه الخيانه" and text ~= "نسبة الخيان
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الخيانه ', 1, 'md')
 DevRdo:del(WAAD..'RyNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة الخيانه بين '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'RyNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text and (text == "نسبه الجمال" or text == "نسبة الجمال" or text == "↫ نسبه الجمال ☆") and ChCheck(msg) then
@@ -10880,12 +10881,12 @@ if text and text ~= "نسبه الجمال" and text ~= "نسبة الجمال" 
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الجمال ', 1, 'md')
 DevRdo:del(WAAD..'JNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة جمال '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'JNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text == "نسبه الكره" and ChCheck(msg) or text == "نسبة الكره" and ChCheck(msg) or text == "↫ نسبه الكره ☆" and ChCheck(msg) then
@@ -10897,12 +10898,12 @@ if text and text ~= "نسبه الكره" and text ~= "نسبة الكره" and 
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الكره ', 1, 'md')
 DevRdo:del(WAAD..'HataNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة الكره بين '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'HataNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text and (text == "نسبه الرجوله" or text == "نسبة الرجوله" or text == "نسبه رجوله" or text == "نسبة رجوله" or text == "↫ نسبه الرجوله ☆") and ChCheck(msg) then
@@ -10914,12 +10915,12 @@ if text and text ~= "نسبه الرجوله" and text ~= "نسبة الرجول
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الرجوله ', 1, 'md')
 DevRdo:del(WAAD..'RjolaNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة رجولة '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'RjolaNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text and (text == "نسبه الانوثه" or text == "نسبة الانوثه" or text == "نسبه انوثه" or text == "نسبة انوثه" or text == "↫ نسبه الانوثه ☆") and ChCheck(msg) then
@@ -10931,12 +10932,12 @@ if text and text ~= "نسبه الانوثه" and text ~= "نسبة الانوث
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الانوثه ', 1, 'md')
 DevRdo:del(WAAD..'AnothaNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة انوثة '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'AnothaNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 if not DevRdo:get(WAAD..'Rdo:Nsba:Rdo'..msg.chat_id_) then
 if text and (text == "نسبه الغباء" or text == "نسبة الغباء" or text == "↫ نسبه الغباء ☆") and ChCheck(msg) then
@@ -10948,12 +10949,12 @@ if text and text ~= "نسبه الغباء" and text ~= "نسبة الغباء" 
 if text and text == 'الغاء' then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم الغاء امر نسبة الغباء ', 1, 'md')
 DevRdo:del(WAAD..'StupidNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end 
 Rdo = math.random(0,100);
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙نسبة غباء '..text..' هي : '..Rdo..'%', 1, 'md')
 DevRdo:del(WAAD..'StupidNsba:Rdo'..msg.chat_id_..msg.sender_user_id_) 
-return false 
+return fRdoe 
 end
 --     Source WAAD     --
 if text == "تفعيل حساب العمر" and Manager(msg) and ChCheck(msg) then
@@ -11269,7 +11270,7 @@ local txt = {string.match(text, "^(ضع اسم) (.*)$")}
 tdcli_function ({ ID = "ChangeChatTitle",chat_id_ = msg.chat_id_,title_ = txt[2] },function(arg,data) 
 if data.message_ == "Channel chat title can be changed by administrators only" then
 send(msg.chat_id_,msg.id_,"☆︙البوت ليس ادمن يرجى ترقيتي !")  
-return false  
+return fRdoe  
 end 
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"☆︙ليست لدي صلاحية تغير معلومات المجموعه يرجى التحقق من الصلاحيات")  
@@ -11291,7 +11292,7 @@ tdcli_function ({ID = "ChangeChatPhoto",chat_id_ = msg.chat_id_,photo_ = getInpu
 if data.code_ == 3 then
 send(msg.chat_id_, msg.id_,"☆︙عذرا البوت ليس ادمن يرجى ترقيتي والمحاوله لاحقا") 
 DevRdo:del(WAAD..'Rdo:SetPhoto'..msg.chat_id_..':'..msg.sender_user_id_)
-return false  end
+return fRdoe  end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then 
 send(msg.chat_id_, msg.id_,"☆︙ليست لدي صلاحية تغير معلومات المجموعه يرجى التحقق من الصلاحيات") 
 DevRdo:del(WAAD..'Rdo:SetPhoto'..msg.chat_id_..':'..msg.sender_user_id_)
@@ -11311,29 +11312,29 @@ end
 if text and text:match("^حذف الصوره$") and ChCheck(msg) or text and text:match("^مسح الصوره$") and ChCheck(msg) then
 https.request("https://api.telegram.org/bot"..TokenBot.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف صورة المجموعه")  
-return false  
+return fRdoe  
 end
 --     Source WAAD     --
 if Manager(msg) then
 if text and text:match("^الغاء تثبيت$") and ChCheck(msg) or text and text:match("^الغاء التثبيت$") and ChCheck(msg) then
 if DevRdo:sismember(WAAD.."Rdo:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_Rdo(msg.chat_id_,msg.id_, 1, "☆︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
-return false  
+return fRdoe  
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 if data.ID == "Ok" then
 DevRdo:del(WAAD..'Rdo:PinnedMsg'..msg.chat_id_)
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم الغاء تثبيت الرساله'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false  
+return fRdoe  
 end
 if data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"☆︙انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
-return false  
+return fRdoe  
 end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"☆︙ليست لدي صلاحية التثبيت يرجى التحقق من الصلاحيات")  
-return false  
+return fRdoe  
 end
 end,nil)
 end
@@ -11341,7 +11342,7 @@ end
 if text and text:match("^الغاء تثبيت الكل$") and ChCheck(msg) then  
 if DevRdo:sismember(WAAD.."Rdo:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_Rdo(msg.chat_id_,msg.id_, 1, "☆︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
-return false  
+return fRdoe  
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 if data.ID == "Ok" then
@@ -11349,15 +11350,15 @@ local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم 
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 https.request('https://api.telegram.org/bot'..TokenBot..'/unpinAllChatMessages?chat_id='..msg.chat_id_)
 DevRdo:del(WAAD.."Rdo:PinnedMsg"..msg.chat_id_)
-return false  
+return fRdoe  
 end
 if data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"☆︙انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
-return false  
+return fRdoe  
 end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"☆︙ليست لدي صلاحية التثبيت يرجى التحقق من الصلاحيات")  
-return false  
+return fRdoe  
 end
 end,nil)
 end
@@ -11365,7 +11366,7 @@ end
 if text and text:match("^اعاده تثبيت$") and ChCheck(msg) or text and text:match("^اعاده التثبيت$") and ChCheck(msg) or text and text:match("^اعادة التثبيت$") and ChCheck(msg) then
 if DevRdo:sismember(WAAD.."Rdo:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_Rdo(msg.chat_id_,msg.id_, 1, "☆︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
-return false  
+return fRdoe  
 end
 local PinId = DevRdo:get(WAAD..'Rdo:PinnedMsg'..msg.chat_id_)
 if PinId then
@@ -11379,7 +11380,7 @@ if text == 'طرد المحذوفين' and ChCheck(msg) or text == 'مسح ال�
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),offset_ = 0,limit_ = 1000}, function(arg,del)
 for k, v in pairs(del.members_) do
 tdcli_function({ID = "GetUser",user_id_ = v.user_id_},function(b,data) 
-if data.first_name_ == false then
+if data.first_name_ == fRdoe then
 ChatKick(msg.chat_id_, data.id_)
 end
 end,nil)
@@ -11411,7 +11412,7 @@ if text and text:match("^معلومات المجموعه$") and ChCheck(msg) or 
 local Muted = DevRdo:scard(WAAD.."Rdo:Muted:"..msg.chat_id_) or "0"
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
 tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙المجموعه ↫ ❨ '..dp.title_..' ❩\n☆︙الايدي ↫ ❨ '..msg.chat_id_..' ❩\n☆︙عدد الاعضاء ↫ ❨ *'..data.member_count_..'* ❩\n☆︙عدد الادمنيه ↫ ❨ *'..data.administrator_count_..'* ❩\n☆︙عدد المطرودين ↫ ❨ *'..data.kicked_count_..'* ❩\n☆︙عدد المكتومين ↫ ❨ *'..Muted..'* ❩\n☆︙عدد رسائل المجموعه ↫ ❨ *'..(msg.id_/2097152/0.5)..'* ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n', 1, 'md') 
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙المجموعه ↫ ❨ '..dp.title_..' ❩\n☆︙الايدي ↫ ❨ '..msg.chat_id_..' ❩\n☆︙عدد الاعضاء ↫ ❨ *'..data.member_count_..'* ❩\n☆︙عدد الادمنيه ↫ ❨ *'..data.administrator_count_..'* ❩\n☆︙عدد المطرودين ↫ ❨ *'..data.kicked_count_..'* ❩\n☆︙عدد المكتومين ↫ ❨ *'..Muted..'* ❩\n☆︙عدد رسائل المجموعه ↫ ❨ *'..(msg.id_/2097152/0.5)..'* ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n', 1, 'md') 
 end,nil)
 end,nil)
 end
@@ -11438,7 +11439,7 @@ for i=0 , #admins do
 if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 Manager_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,Rdo) 
-if Rdo.first_name_ ~= false then
+if Rdo.first_name_ ~= fRdoe then
 ConstructorRdo = "["..Rdo.first_name_.."](T.me/"..(Rdo.username_ or "CXRCX")..")"
 else 
 ConstructorRdo = "حساب محذوف"
@@ -11515,7 +11516,7 @@ if Admin(msg) then
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل جلب رابط المجموعه'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:del(WAAD.."Rdo:Lock:GpLinks"..msg.chat_id_)
-return false  
+return fRdoe  
 end
 end
 if text == "تعطيل الرابط" and ChCheck(msg) or text == "تعطيل جلب الرابط" and ChCheck(msg) then 
@@ -11523,7 +11524,7 @@ if Admin(msg) then
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل جلب رابط المجموعه'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:set(WAAD.."Rdo:Lock:GpLinks"..msg.chat_id_,"ok")
-return false  
+return fRdoe  
 end
 end
 if text == "تعطيل الرابط انلاين" and ChCheck(msg) or text == "تعطيل جلب الرابط انلاين" and ChCheck(msg) then 
@@ -11531,7 +11532,7 @@ if Admin(msg) then
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل جلب رابط انلاين المجموعه'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:set(WAAD.."Rdo:Lock:GpLinksinline"..msg.chat_id_,"ok")
-return false  
+return fRdoe  
 end
 end
 if text == "تفعيل الرابط انلاين" and ChCheck(msg) or text == "تفعيل جلب الرابط انلاين" and ChCheck(msg) then 
@@ -11539,7 +11540,7 @@ if Admin(msg) then
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل جلب رابط انلاين المجموعه'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:del(WAAD.."Rdo:Lock:GpLinksinline"..msg.chat_id_)
-return false  
+return fRdoe  
 end
 end
 if text and (text == "تفعيل حذف الردود" or text == "تفعيل مسح الردود") and ChCheck(msg) then 
@@ -11549,7 +11550,7 @@ else
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل حذف ردود المدير'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:del(WAAD.."Rdo:Lock:GpRd"..msg.chat_id_)
-return false  
+return fRdoe  
 end
 end
 if text and (text == "تعطيل حذف الردود" or text == "تعطيل مسح الردود") and ChCheck(msg) then 
@@ -11559,7 +11560,7 @@ else
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل حذف ردود المدير'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:set(WAAD.."Rdo:Lock:GpRd"..msg.chat_id_,true)
-return false  
+return fRdoe  
 end
 end
 if text and (text == "تفعيل اضف رد" or text == "تفعيل اضافه رد" or text == "تفعيل حذف رد" or text == "تفعيل حذف رد عام" or text == "تفعيل اضف رد عام") and ChCheck(msg) then 
@@ -11569,7 +11570,7 @@ else
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل اضف رد'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:del(WAAD.."Rdo:Lock:Rd"..msg.chat_id_)
-return false  
+return fRdoe  
 end
 end
 if text and (text == "تعطيل اضف رد" or text == "تعطيل اضافه رد" or text == "تعطيل حذف رد" or text == "تعطيل حذف رد عام" or text == "تعطيل اضف رد عام") and ChCheck(msg) then 
@@ -11579,33 +11580,33 @@ else
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل اضف رد'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:set(WAAD.."Rdo:Lock:Rd"..msg.chat_id_,true)
-return false  
+return fRdoe  
 end
 end
 --     Source WAAD     --
 if text and text:match('^تفعيل$') and SudoBot(msg) and ChCheck(msg) then
 if ChatType ~='sp' then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ضاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي', 1, 'md')
-return false
+return fRdoe
 end
-if msg.can_be_deleted_ == false then 
+if msg.can_be_deleted_ == fRdoe then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙البوت ليس ادمن يرجى ترقيتي !', 1, 'md')
-return false  
+return fRdoe  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data)  
 if tonumber(data.member_count_) < tonumber(DevRdo:get(WAAD..'Rdo:Num:Add:Bot') or 0) and not SecondSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙عدد اعضاء المجموعه اقل من ↫ *'..(DevRdo:get(WAAD..'Rdo:Num:Add:Bot') or 0)..'* عضو', 1, 'md')
-return false
+return fRdoe
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,Rdo) 
 local admins = Rdo.members_
 for i=0 , #admins do
-if Rdo.members_[i].bot_info_ == false and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
+if Rdo.members_[i].bot_info_ == fRdoe and Rdo.members_[i].status_.ID == "ChatMemberStatusEditor" then
 DevRdo:sadd(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD..'Rdo:Admins:'..msg.chat_id_, admins[i].user_id_)
 end
 end,nil)
@@ -11616,7 +11617,7 @@ if Rdo.members_[i].status_.ID == "ChatMemberStatusCreator" then
 DevRdo:sadd(WAAD.."Rdo:BasicConstructor:"..msg.chat_id_,admins[i].user_id_)
 DevRdo:sadd(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,admins[i].user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,ba) 
-if ba.first_name_ == false then
+if ba.first_name_ == fRdoe then
 DevRdo:srem(WAAD.."Rdo:BasicConstructor:"..msg.chat_id_,admins[i].user_id_)
 DevRdo:srem(WAAD.."Rdo:RdoConstructor:"..msg.chat_id_,admins[i].user_id_)
 end
@@ -11659,7 +11660,7 @@ LinkGroup ='لا يوجد'
 end
 DevRdo:set(WAAD.."Rdo:Groups:Links"..msg.chat_id_,LinkGroup) 
 if not Sudo(msg) then
-SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم تفعيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙عدد اعضاء المجموعه ↫ ❨ *"..NumMem.."* ❩\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end
 end,nil)
@@ -11699,7 +11700,7 @@ LinkGroup ='لا يوجد'
 end
 DevRdo:set(WAAD.."Rdo:Groups:Links"..msg.chat_id_,LinkGroup) 
 if not Sudo(msg) then
-SendText(DevId,"☆︙تم تعطيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙تم تعطيل مجموعه جديده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙بواسطة ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n☆︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGroup.."] ❩\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end
 end,nil)
@@ -11733,7 +11734,7 @@ else
 LinkGroup = '☆︙ليست لدي صلاحية الدعوه لهذه المجموعه !'
 end
 if not Sudo(msg) then
-SendText(DevId,"☆︙هناك من بحاجه الى مساعده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الشخص ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n"..LinkGroup.."\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
+SendText(DevId,"☆︙هناك من بحاجه الى مساعده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الشخص ↫ "..Name.."\n☆︙اسم المجموعه ↫ ["..NameChat.."]\n☆︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id_.."` ❩\n"..LinkGroup.."\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الوقت ↫ "..os.date("%I:%M%p").."\n☆︙التاريخ ↫ "..os.date("%Y/%m/%d").."",0,'md')
 end
 end,nil)
 end,nil)
@@ -11748,12 +11749,12 @@ if #List == 0 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙لا توجد مجموعات مفعله', 1, 'md')
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙جاري ارسال نسخه تحتوي على ↫ '..#List..' مجموعه', 1, 'md')
-local Text = "☆︙Source WAAD\n☆︙File Bot Groups\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+local Text = "☆︙Source WAAD\n☆︙File Bot Groups\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 for k,v in pairs(List) do
 local GroupsManagers = DevRdo:scard(WAAD.."Rdo:Managers:"..v) or 0
 local GroupsAdmins = DevRdo:scard(WAAD.."Rdo:Admins:"..v) or 0
 local Groupslink = DevRdo:get(WAAD.."Rdo:Groups:Links" ..v)
-Text = Text..k.." ↬ ⤈ \n☆︙Group ID ↬ "..v.."\n☆︙Group Link ↬ "..(Groupslink or "Not Found").."\n☆︙Group Managers ↬ "..GroupsManagers.."\n☆︙Group Admins ↬ "..GroupsAdmins.."\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
+Text = Text..k.." ↬ ⤈ \n☆︙Group ID ↬ "..v.."\n☆︙Group Link ↬ "..(Groupslink or "Not Found").."\n☆︙Group Managers ↬ "..GroupsManagers.."\n☆︙Group Admins ↬ "..GroupsAdmins.."\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
 end
 local File = io.open('GroupsBot.txt', 'w')
 File:write(Text)
@@ -11767,18 +11768,18 @@ end
 if text == "اذاعه خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "↫ اذاعه خاص ☆" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 DevRdo:setex(WAAD.."Rdo:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ارسل لي سواء ↫ ⤈ \n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙للخروج ارسل ↫ ( الغاء ) \n ✓'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false
+return fRdoe
 end 
 if DevRdo:get(WAAD.."Rdo:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء امر الاذاعه بنجاح", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false
+return fRdoe
 end 
 List = DevRdo:smembers(WAAD..'Rdo:Users') 
 if msg.content_.text_ then
@@ -11834,18 +11835,18 @@ end
 if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "↫ اذاعه عام ☆" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 DevRdo:setex(WAAD.."Rdo:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ارسل لي سواء ↫ ⤈ \n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙للخروج ارسل ↫ ( الغاء ) \n ✓'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false
+return fRdoe
 end 
 if DevRdo:get(WAAD.."Rdo:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء امر الاذاعه بنجاح", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false
+return fRdoe
 end 
 List = DevRdo:smembers(WAAD..'Rdo:Groups') 
 if msg.content_.text_ then
@@ -11901,18 +11902,18 @@ end
 if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "↫ اذاعه عام بالتوجيه ☆" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 DevRdo:setex(WAAD.."Rdo:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ارسل الرساله الان لتوجيها \n☆︙للخروج ارسل ↫ ( الغاء ) \n ✓'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false
+return fRdoe
 end 
 if DevRdo:get(WAAD.."Rdo:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء امر الاذاعه بنجاح", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false  
+return fRdoe  
 end 
 local List = DevRdo:smembers(WAAD..'Rdo:Groups')   
 for k,v in pairs(List) do  
@@ -11925,18 +11926,18 @@ end
 if text == "اذاعه خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "↫ اذاعه خاص بالتوجيه ☆" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 DevRdo:setex(WAAD.."Rdo:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ارسل الرساله الان لتوجيها \n☆︙للخروج ارسل ↫ ( الغاء ) \n ✓'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false
+return fRdoe
 end 
 if DevRdo:get(WAAD.."Rdo:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء امر الاذاعه بنجاح", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false  
+return fRdoe  
 end 
 local List = DevRdo:smembers(WAAD..'Rdo:Users')   
 for k,v in pairs(List) do  
@@ -11949,18 +11950,18 @@ end
 if text == "اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "↫ اذاعه بالتثبيت ☆" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevRdo:get(WAAD.."Rdo:Send:Bot"..WAAD) and not RdoSudo(msg) then 
 send(msg.chat_id_, msg.id_,"☆︙الاذاعه معطله من قبل المطور الاساسي")
-return false
+return fRdoe
 end
 DevRdo:setex(WAAD.."Rdo:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙ارسل لي سواء ↫ ⤈ \n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙للخروج ارسل ↫ ( الغاء ) \n ✓'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
-return false
+return fRdoe
 end 
 if DevRdo:get(WAAD.."Rdo:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == "الغاء" then   
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء امر الاذاعه بنجاح", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false
+return fRdoe
 end 
 local List = DevRdo:smembers(WAAD.."Rdo:Groups") 
 if msg.content_.text_ then
@@ -12019,13 +12020,13 @@ end
 end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم اذاعة "..RdoText.." بالتثبيت \n☆︙‏في ↫ ❨ "..#List.." ❩ مجموعه \n ✓", 1, 'md')
 DevRdo:del(WAAD.."Rdo:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) 
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text and (text == 'حذف رد من متعدد' or text == 'مسح رد من متعدد') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
@@ -12033,11 +12034,11 @@ else
 local List = DevRdo:smembers(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_)
 if #List == 0 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لا توجد ردود متعدده مضافه" ,  1, "md")
-return false
+return fRdoe
 end end
 DevRdo:set(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_,'DelGpRedRedod')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل كلمة الرد اولا" ,  1, "md")
-return false
+return fRdoe
 end
 if text and text:match("^(.*)$") then
 local DelGpRedRedod = DevRdo:get(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
@@ -12045,21 +12046,21 @@ if DelGpRedRedod == 'DelGpRedRedod' then
 if text == "الغاء" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر" ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 if not DevRdo:sismember(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_,text) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لايوجد رد متعدد لهذه الكلمه ↫ "..text ,  1, "md")
-return false
+return fRdoe
 end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙قم بارسال الرد المتعدد الذي تريد حذفه من الكلمه ↫ "..text ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_,'DelGpRedRedods')
 DevRdo:set(WAAD..'Rdo:Add:GpTexts'..msg.sender_user_id_..msg.chat_id_,text)
-return false
+return fRdoe
 end end
 if text and (text == 'حذف رد متعدد' or text == 'مسح رد متعدد') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
@@ -12067,23 +12068,23 @@ else
 local List = DevRdo:smembers(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_)
 if #List == 0 then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙لا توجد ردود متعدده مضافه" ,  1, "md")
-return false
+return fRdoe
 end end
 DevRdo:set(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_,'DelGpRedod')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه لحذفها" ,  1, "md")
-return false
+return fRdoe
 end
 if text == 'اضف رد متعدد' and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع اضافه رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
 else
 DevRdo:set(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_,'SetGpRedod')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه الان" ,  1, "md")
-return false
+return fRdoe
 end end
 if text and text:match("^(.*)$") then
 local SetGpRedod = DevRdo:get(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
@@ -12091,7 +12092,7 @@ if SetGpRedod == 'SetGpRedod' then
 if text == "الغاء" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر" ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 if DevRdo:sismember(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_,text) then
 local Rdo = "☆︙لاتستطيع اضافة رد بالتاكيد مضاف في القائمه قم بحذفه اولا !"
@@ -12100,19 +12101,19 @@ keyboard.inline_keyboard = {{{text="حذف الرد ↫ "..text,callback_data="/
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Rdo).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 DevRdo:del(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الامر ارسل الرد الاول\n☆︙للخروج ارسل ↫ ( الغاء )" ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_,'SaveGpRedod')
 DevRdo:set(WAAD..'Rdo:Add:GpTexts'..msg.sender_user_id_..msg.chat_id_,text)
 DevRdo:sadd(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_,text)
-return false
+return fRdoe
 end end
 --     Source WAAD     --
 if text == 'اضف كت' and ChCheck(msg) then
 DevRdo:set(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_,'SetKt')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل امر `كت تويت` الان" ,  1, "md")
-return false
+return fRdoe
 end
 if text and text:match("^(.*)$") then
 local SetKt = DevRdo:get(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_)
@@ -12120,39 +12121,39 @@ if SetKt == 'SetKt' then
 if text == "الغاء" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر" ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الامر ارسل السؤال الاول\n☆︙للخروج ارسل ↫ ( الغاء )" ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Add:Kt'..msg.sender_user_id_..msg.chat_id_,'SaveKt')
 DevRdo:set(WAAD..'Rdo:Add:KtTexts'..msg.sender_user_id_..msg.chat_id_,text)
 DevRdo:sadd(WAAD..'Rdo:Sudo:Kt'..msg.chat_id_,text)
-return false
+return fRdoe
 end end
 --     Source WAAD     --
 if text and (text == 'حذف رد' or text == 'مسح رد') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:set(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'DelGpRed')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه لحذفها " ,  1, "md")
-return false
+return fRdoe
 end
 if text and (text == 'اضف رد' or text == 'اضافه رد' or text == 'اضافة رد') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع اضافه رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
 else
 DevRdo:set(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'SetGpRed')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه الان " ,  1, "md")
-return false
+return fRdoe
 end end
 if text and text:match("^(.*)$") then
 local SetGpRed = DevRdo:get(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_)
@@ -12160,9 +12161,9 @@ if SetGpRed == 'SetGpRed' then
 if text == "الغاء" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر" ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_)
-return false
+return fRdoe
 end
-Text = "☆︙ارسل لي الرد سواء كان ↫ ⤈\n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙يمكنك اضافة الى النص ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ معرف المستخدم\n `#msgs` ↬ عدد الرسائل\n `#name` ↬ اسم المستخدم\n `#id` ↬ ايدي المستخدم\n `#stast` ↬ رتبة المستخدم\n `#edit` ↬ عدد السحكات\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙للخروج ارسل ↫ ( الغاء )\n ✓"
+Text = "☆︙ارسل لي الرد سواء كان ↫ ⤈\n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙يمكنك اضافة الى النص ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ معرف المستخدم\n `#msgs` ↬ عدد الرسائل\n `#name` ↬ اسم المستخدم\n `#id` ↬ ايدي المستخدم\n `#stast` ↬ رتبة المستخدم\n `#edit` ↬ عدد السحكات\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙للخروج ارسل ↫ ( الغاء )\n ✓"
 DevRdo:set(WAAD..'Rdo:Add:GpRed'..msg.sender_user_id_..msg.chat_id_,'SaveGpRed')
 DevRdo:set(WAAD..'Rdo:Add:GpText'..msg.sender_user_id_..msg.chat_id_,text)
 DevRdo:sadd(WAAD..'Rdo:Manager:GpRed'..msg.chat_id_,text)
@@ -12171,33 +12172,33 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="• الغاء •",callback_data="/CancelRed:"..msg.sender_user_id_}}}
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end end
 --     Source WAAD     --
 if text and (text == 'حذف رد عام' or text == '↫ حذف رد عام ☆' or text == 'مسح رد عام' or text == 'حذف رد للكل' or text == 'مسح رد للكل' or text == 'مسح رد مطور' or text == 'حذف رد مطور') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not SecondSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمطور الثانوي واعلى فقط ', 1, 'md')
-return false
+return fRdoe
 end
 DevRdo:set(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_,'DelAllRed')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه لحذفها " ,  1, "md")
-return false
+return fRdoe
 end
 if text and (text == 'اضف رد عام' or text == '↫ اضف رد عام ☆' or text == 'اضف رد للكل' or text == 'اضف رد مطور') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:Rd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع اضافه رد وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not SecondSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمطور الثانوي واعلى فقط ', 1, 'md')
 else
 DevRdo:set(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_,'SetAllRed')
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙حسنا ارسل الكلمه الان " ,  1, "md")
-return false
+return fRdoe
 end end
 if text and text:match("^(.*)$") then
 local SetAllRed = DevRdo:get(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_)
@@ -12205,9 +12206,9 @@ if SetAllRed == 'SetAllRed' then
 if text == "الغاء" then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر" ,  1, "md")
 DevRdo:del(WAAD..'Rdo:Add:AllRed'..msg.sender_user_id_)
-return false
+return fRdoe
 end
-Text = "☆︙ارسل لي الرد سواء كان ↫ ⤈\n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙يمكنك اضافة الى النص ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ معرف المستخدم\n `#msgs` ↬ عدد الرسائل\n `#name` ↬ اسم المستخدم\n `#id` ↬ ايدي المستخدم\n `#stast` ↬ رتبة المستخدم\n `#edit` ↬ عدد السحكات\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙للخروج ارسل ↫ ( الغاء )\n ✓"
+Text = "☆︙ارسل لي الرد سواء كان ↫ ⤈\n❨ ملف • ملصق • متحركه • صوره\n • فيديو • بصمه • صوت • رساله ❩\n☆︙يمكنك اضافة الى النص ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n `#username` ↬ معرف المستخدم\n `#msgs` ↬ عدد الرسائل\n `#name` ↬ اسم المستخدم\n `#id` ↬ ايدي المستخدم\n `#stast` ↬ رتبة المستخدم\n `#edit` ↬ عدد السحكات\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙للخروج ارسل ↫ ( الغاء )\n ✓"
 DevRdo:set(WAAD.."Rdo:Add:AllRed"..msg.sender_user_id_,'SaveAllRed')
 DevRdo:set(WAAD.."Rdo:Add:AllText"..msg.sender_user_id_, text)
 DevRdo:sadd(WAAD.."Rdo:Sudo:AllRed",text)
@@ -12216,7 +12217,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="• الغاء •",callback_data="/CancelAllRed:"..msg.sender_user_id_}}}
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end end
 --     Source WAAD     --
 if text == 'الردود المتعدده' and ChCheck(msg) then
@@ -12224,7 +12225,7 @@ if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير واعلى فقط ', 1, 'md')
 else
 local redod = DevRdo:smembers(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_)
-MsgRep = '☆︙قائمة الردود المتعدده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+MsgRep = '☆︙قائمة الردود المتعدده ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 for k,v in pairs(redod) do
 MsgRep = MsgRep..k..'~ (`'..v..'`) • {*العدد ↫ '..#DevRdo:smembers(WAAD..'Rdo:Text:GpTexts'..v..msg.chat_id_)..'*}\n' 
 end
@@ -12236,7 +12237,7 @@ end
 if text and (text == 'حذف الردود المتعدده' or text == 'مسح الردود المتعدده') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:GpRd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف ردود المتعدده وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير او اعلى فقط ', 1, 'md')
@@ -12250,7 +12251,7 @@ DevRdo:del(WAAD..'Rdo:Text:GpTexts'..v..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Manager:GpRedod'..msg.chat_id_)
 end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف الردود المتعدده")  
-return false
+return fRdoe
 end
 end
 end
@@ -12258,7 +12259,7 @@ end
 --     Source WAAD     --
 if text == 'الردود' and Manager(msg) and ChCheck(msg) or text == 'ردود المدير' and Manager(msg) and ChCheck(msg) then
 local redod = DevRdo:smembers(WAAD..'Rdo:Manager:GpRed'..msg.chat_id_)
-MsgRep = '☆︙ردود المدير ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+MsgRep = '☆︙ردود المدير ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 for k,v in pairs(redod) do
 if DevRdo:get(WAAD.."Rdo:Gif:GpRed"..v..msg.chat_id_) then
 dp = 'متحركه 🎭'
@@ -12290,7 +12291,7 @@ end
 if text and (text =='حذف الردود' or text == 'مسح الردود' or text == 'حذف ردود المدير' or text == 'مسح ردود المدير') and ChCheck(msg) then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:GpRd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف ردود المدير وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not Manager(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمدير او اعلى فقط ', 1, 'md')
@@ -12311,14 +12312,14 @@ DevRdo:del(WAAD..'Rdo:Text:GpRed'..v..msg.chat_id_)
 DevRdo:del(WAAD..'Rdo:Manager:GpRed'..msg.chat_id_)
 end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف ردود المدير")  
-return false
+return fRdoe
 end
 end
 end
 --     Source WAAD     --
 if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "ردود العام" and SecondSudo(msg) or text == "↫ الردود العام ☆" and SecondSudo(msg) then
 local redod = DevRdo:smembers(WAAD.."Rdo:Sudo:AllRed")
-MsgRep = '☆︙ردود المطور ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+MsgRep = '☆︙ردود المطور ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 for k,v in pairs(redod) do
 if DevRdo:get(WAAD.."Rdo:Gif:AllRed"..v) then
 dp = 'متحركه 🎭'
@@ -12350,7 +12351,7 @@ end
 if text and (text == "حذف ردود المطور" or text == "حذف ردود العام" or text == "مسح ردود المطور" or text == "↫ مسح ردود العام ☆") then
 if not Bot(msg) and DevRdo:get(WAAD..'Rdo:Lock:GpRd'..msg.chat_id_) then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1,'☆︙لاتستطيع حذف ردود المطور وذالك بسبب تعطيله', 1, 'md')
-return false
+return fRdoe
 end
 if not SecondSudo(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمطور الثانوي او اعلى فقط ', 1, 'md')
@@ -12372,7 +12373,7 @@ DevRdo:del(WAAD.."Rdo:Text:AllRed"..v)
 DevRdo:del(WAAD.."Rdo:Sudo:AllRed")
 end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","☆︙تم حذف ردود المطور")  
-return false
+return fRdoe
 end
 end 
 end
@@ -12383,7 +12384,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمطور الاساسي فقط ', 1
 else
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل لي اسم البوت الان" ,  1, "md") 
 DevRdo:set(WAAD..'Rdo:NameBot'..msg.sender_user_id_, 'msg')
-return false 
+return fRdoe 
 end
 end
 if text and text == 'حذف اسم البوت' and ChCheck(msg) or text == 'مسح اسم البوت' and ChCheck(msg) then
@@ -12405,7 +12406,7 @@ end
 if text == "تعيين الاوامر" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر الاوامر" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (الاوامر) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help0'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help0'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12413,20 +12414,20 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help0'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده " ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "الاوامر" and ChCheck(msg) or text == "اوامر" and ChCheck(msg) or text == "مساعده" and ChCheck(msg) then
 local Help = DevRdo:get(WAAD..'Rdo:Help')
 local Text = [[
 ☆︙اهلا بك في قائمة الاوامر ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙م1 ↫ اوامر الحمايه
 ☆︙م2 ↫ اوامر الادمنيه
 ☆︙م3 ↫ اوامر المدراء
 ☆︙م4 ↫ اوامر المنشئين
 ☆︙م5 ↫ اوامر المطورين
 ☆︙م6 ↫ اوامر الاعضاء
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -12437,7 +12438,7 @@ end
 if text == "تعيين امر م1" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م١" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م1) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help01'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help01'..msg.sender_user_id_)
 if WAADTeam == 'msg' then 
@@ -12445,7 +12446,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help01'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help1', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده " ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م1" or text == "م١" or text == "اوامر1" or text == "اوامر١" then
 if not Admin(msg) then
@@ -12454,7 +12455,7 @@ else
 local Help = DevRdo:get(WAAD..'Rdo:Help1')
 local Text = [[
 ☆︙اوامر حماية المجموعه ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙قفل • فتح ↫ الروابط
 ☆︙قفل • فتح ↫ المعرفات
 ☆︙قفل • فتح ↫ البوتات
@@ -12487,9 +12488,9 @@ local Text = [[
 ☆︙قفل • فتح ↫ الانكليزيه
 ☆︙قفل • فتح ↫ الفارسيه
 ☆︙قفل • فتح ↫ التفليش
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر حمايه اخرى ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙قفل • فتح + الامر ↫ ⤈
 ☆︙التكرار بالطرد
 ☆︙التكرار بالكتم
@@ -12497,7 +12498,7 @@ local Text = [[
 ☆︙الفارسيه بالطرد
 ☆︙البوتات بالطرد
 ☆︙البوتات بالتقيد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12505,7 +12506,7 @@ end end
 if text == "تعيين امر م2" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٢" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م2) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help21'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help21'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12513,7 +12514,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help21'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help2', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده " ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م2" and ChCheck(msg) or text == "م٢" and ChCheck(msg) or text == "اوامر2" and ChCheck(msg) or text == "اوامر٢" and ChCheck(msg) then
 if not Admin(msg) then
@@ -12522,7 +12523,7 @@ else
 local Help = DevRdo:get(WAAD..'Rdo:Help2')
 local Text = [[
 ☆︙اوامر الادمنيه ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙الاعدادت
 ☆︙تاك للكل 
 ☆︙انشاء رابط
@@ -12540,25 +12541,25 @@ local Text = [[
 ☆︙ضع • حذف ↫ قوانين
 ☆︙اضف • حذف ↫ صلاحيه
 ☆︙الصلاحيات • حذف الصلاحيات
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙ضع سبام + العدد
 ☆︙ضع تكرار + العدد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع مميز • تنزيل مميز
 ☆︙المميزين • حذف المميزين
 ☆︙كشف القيود • رفع القيود
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙حذف • مسح + بالرد
 ☆︙منع • الغاء منع
 ☆︙قائمه المنع
 ☆︙حذف قائمه المنع
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل • تعطيل ↫ الرابط
 ☆︙تفعيل • تعطيل ↫ الالعاب
 ☆︙تفعيل • تعطيل ↫ الترحيب
 ☆︙تفعيل • تعطيل ↫ التاك للكل
 ☆︙تفعيل • تعطيل ↫ كشف الاعدادات
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙طرد المحذوفين
 ☆︙طرد ↫ بالرد • بالمعرف • بالايدي
 ☆︙كتم • الغاء كتم
@@ -12567,12 +12568,12 @@ local Text = [[
 ☆︙المكتومين • حذف المكتومين
 ☆︙المقيدين • حذف المقيدين
 ☆︙المحظورين • حذف المحظورين
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تقييد دقيقه + عدد الدقائق
 ☆︙تقييد ساعه + عدد الساعات
 ☆︙تقييد يوم + عدد الايام
 ☆︙الغاء تقييد ↫ لالغاء التقييد بالوقت
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12580,7 +12581,7 @@ end end
 if text == "تعيين امر م3" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٣" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م3) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help31'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help31'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12588,7 +12589,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help31'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help3', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده " ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م3" and ChCheck(msg) or text == "م٣" and ChCheck(msg) or text == "اوامر3" and ChCheck(msg) or text == "اوامر٣" and ChCheck(msg) then
 if not Admin(msg) then
@@ -12597,7 +12598,7 @@ else
 local Help = DevRdo:get(WAAD..'Rdo:Help3')
 local Text = [[
 ☆︙اوامر المدراء ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙فحص البوت
 ☆︙ضع اسم + الاسم
 ☆︙اضف • حذف ↫ رد
@@ -12611,33 +12612,33 @@ local Text = [[
 ☆︙منع ↫ بالرد على ( ملصق • صوره • متحركه )
 ☆︙حذف قائمه منع + ↫ ⤈
 ( الصور • المتحركات • الملصقات )
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تنزيل الكل
 ☆︙رفع ادمن • تنزيل ادمن
 ☆︙الادمنيه • حذف الادمنيه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تثبيت
 ☆︙الغاء التثبيت
 ☆︙اعاده التثبيت
 ☆︙الغاء تثبيت الكل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تغير رد + اسم الرتبه + النص ↫ ⤈
 ☆︙المطور • منشئ الاساسي
 ☆︙المنشئ • المدير • الادمن
 ☆︙المميز • المنظف • العضو
 ☆︙حذف ردود الرتب
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تغيير الايدي ↫ لتغيير الكليشه
 ☆︙تعيين الايدي ↫ لتعيين الكليشه
 ☆︙حذف الايدي ↫ لحذف الكليشه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙اطردني • الايدي بالصوره • الابراج
 ☆︙معاني الاسماء • اوامر النسب • انطق
 ☆︙الايدي • تحويل الصيغ • اوامر التحشيش
 ☆︙ردود المدير • ردود المطور • التحقق
 ☆︙ضافني • حساب العمر • الزخرفه
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12645,7 +12646,7 @@ end end
 if text == "تعيين امر م4" and ChCheck(msg) and SecondSudo(msg) or text == "تعيين امر م٤" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م4) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help41'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help41'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12653,7 +12654,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help41'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help4', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده" ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م٤" and ChCheck(msg) or text == "م4" and ChCheck(msg) or text == "اوامر4" and ChCheck(msg) or text == "اوامر٤" and ChCheck(msg) then
 if not Admin(msg) then
@@ -12662,7 +12663,7 @@ else
 local Help = DevRdo:get(WAAD..'Rdo:Help4')
 local Text = [[
 ☆︙اوامر المنشئين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تنزيل الكل
 ☆︙الميديا • امسح
 ☆︙تعين عدد الحذف
@@ -12679,9 +12680,9 @@ local Text = [[
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙نزلني • امسح
 ☆︙الحظر • الكتم
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المنشئين الاساسيين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙وضع لقب + اللقب
 ☆︙تفعيل • تعطيل ↫ الرفع
 ☆︙رفع منشئ • تنزيل منشئ
@@ -12689,14 +12690,14 @@ local Text = [[
 ☆︙رفع • تنزيل ↫ مشرف
 ☆︙رفع بكل الصلاحيات
 ☆︙حذف القوائم
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المالكين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع • تنزيل ↫ منشئ اساسي
 ☆︙حذف المنشئين الاساسيين 
 ☆︙المنشئين الاساسيين 
 ☆︙حذف جميع الرتب
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12704,7 +12705,7 @@ end end
 if text == "تعيين امر م5" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٥" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م5) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help51'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help51'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12712,7 +12713,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help51'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help5', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده " ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م٥" and ChCheck(msg) or text == "م5" and ChCheck(msg) or text == "اوامر5" and ChCheck(msg) or text == "اوامر٥" and ChCheck(msg) then
 if not SudoBot(msg) then
@@ -12721,7 +12722,7 @@ else
 local Help = DevRdo:get(WAAD..'Rdo:Help5')
 local Text = [[
 ☆︙اوامر المطورين ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙الكروبات
 ☆︙المطورين
 ☆︙المشتركين
@@ -12732,16 +12733,16 @@ local Text = [[
 ☆︙كشف + -ايدي المجموعه
 ☆︙رفع مالك • تنزيل مالك
 ☆︙المالكين • حذف المالكين
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙رفع • تنزيل ↫ مدير عام
 ☆︙حذف • المدراء العامين 
 ☆︙رفع • تنزيل ↫ ادمن عام
 ☆︙حذف • الادمنيه العامين 
 ☆︙رفع • تنزيل ↫ مميز عام
 ☆︙حذف • المميزين عام 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙اوامر المطور الاساسي ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تحديث
 ☆︙السيرفر
 ☆︙روابط الكروبات
@@ -12773,14 +12774,14 @@ local Text = [[
 ☆︙الثانويين • حذف الثانويين
 ☆︙تعيين • حذف ↫ كليشة الايدي
 ☆︙اذاعه للكل بالتوجيه ↫ بالرد
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙تفعيل ملف + اسم الملف
 ☆︙تعطيل ملف + اسم الملف
 ☆︙تفعيل • تعطيل + الامر ↫ ⤈
 ☆︙الاذاعه • الاشتراك الاجباري
 ☆︙ترحيب البوت • المغادره
 ☆︙البوت الخدمي • التواصل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12788,7 +12789,7 @@ end end
 if text == "تعيين امر م6" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٦" and SecondSudo(msg) and ChCheck(msg) then
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙ارسل كليشة (م6) الان " ,  1, "md")
 DevRdo:set(WAAD..'Rdo:Help61'..msg.sender_user_id_, 'msg')
-return false end
+return fRdoe end
 if text and text:match("^(.*)$") then
 local WAADTeam =  DevRdo:get(WAAD..'Rdo:Help61'..msg.sender_user_id_)
 if WAADTeam == 'msg' then
@@ -12796,13 +12797,13 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 DevRdo:del(WAAD..'Rdo:Help61'..msg.sender_user_id_)
 DevRdo:set(WAAD..'Rdo:Help6', text)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ الكليشه الجديده" ,  1, "md")
-return false end
+return fRdoe end
 end
 if text == "م٦" and ChCheck(msg) or text == "م6" and ChCheck(msg) or text == "اوامر6" and ChCheck(msg) or text == "اوامر٦" and ChCheck(msg) then
 local Help = DevRdo:get(WAAD..'Rdo:Help6')
 local Text = [[
 ☆︙اوامر الاعضاء ↫ ⤈
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙السورس • موقعي • رتبتي • معلوماتي 
 ☆︙رقمي • لقبي • نبذتي • صلاحياتي • غنيلي
 ☆︙رسائلي • حذف رسائلي • اسمي • معرفي 
@@ -12813,7 +12814,7 @@ local Text = [[
 ☆︙ايدي المجموعه • معلومات المجموعه 
 ☆︙نسبه الحب • نسبه الكره • نسبه الغباء 
 ☆︙نسبه الرجوله • نسبه الانوثه • التفاعل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙لقبه + بالرد
 ☆︙كول + الكلمه
 ☆︙زخرفه + اسمك
@@ -12826,7 +12827,7 @@ local Text = [[
 ☆︙ايدي • كشف  ↫ بالرد • بالمعرف • بالايدي
 ☆︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ☆︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]]
 Dev_Rdo(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
@@ -12836,9 +12837,9 @@ if text == "مسح الرتب" and Admin(msg) then
 local Del = DevRdo:get(WAAD..'Rdo:Del')
 local Text = [[
 ☆︙اهلا بك في قائمة اوامر الرتب ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙يمكنك مسح رتب المجموعه من خلال الازرار اسفل*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -12851,9 +12852,9 @@ if text == "مسح قائمه المنع" and RdoConstructor(msg) then
 local Filter = DevRdo:get(WAAD..'Rdo:Filter')
 local Text = [[
 ☆︙اهلا بك في قائمة المنع ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙يمكنك مسح الممنوعات من خلال الازرار اسفل*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -12867,9 +12868,9 @@ if text == "قفل" or text == "القفل" or text == "قفل" or text == "فت
 local locklist = DevRdo:get(WAAD..'Rdo:locklist')
 local Text = [[
 ☆︙اهلا بك في قائمة القفل والفتح ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 *☆︙يمكنك قفل وفتح الاوامر من خلال الازرار اسفل*
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -12883,9 +12884,9 @@ if text == "التعطيل" or text == "التفعيل" or text == "اوامر �
 local order = DevRdo:get(WAAD..'Rdo:order')
 local Text = [[
 ☆︙اهلا بك في قائمة اوامر التعطيل والتفعيل ↫ ⤈ 
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙يمكنك التعطيل والتفعيل عن طريق الازرار بلاسفل
-┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉
+┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉
 ☆︙[Source Channel](https://t.me/CXRCX)
 ]] 
 keyboard = {} 
@@ -12933,13 +12934,13 @@ if text == 'تفعيل اليوتيوب' and Manager(msg) then
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تفعيل اليوتيوب بنجاح'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:del(WAAD.."Rdo:WhyTube"..msg.chat_id_) 
-return false  
+return fRdoe  
 end
 if text == 'تعطيل اليوتيوب' and Manager(msg) then  
 local WAADTeam = '☆︙اهلا عزيزي ↫ '..RdoRank(msg)..' \n☆︙تم تعطيل اليوتيوب بنجاح'
 Rdomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, WAADTeam, 14, string.len(msg.sender_user_id_))
 DevRdo:set(WAAD.."Rdo:WhyTube"..msg.chat_id_,true) 
-return false  
+return fRdoe  
 end 
 if text and text:match('^بحث (.*)$') and not DevRdo:get(WAAD.."Rdo:WhyTube"..msg.chat_id_) and ChCheck(msg) then            
 local Text = text:match('^بحث (.*)$') 
@@ -12949,7 +12950,7 @@ end
 --     Source WAAD     --
 if SecondSudo(msg) then
 if text == "تحديث السورس" and ChCheck(msg) or text == "تحديث سورس" and ChCheck(msg) or text == "↫ تحديث السورس ☆" and ChCheck(msg) then 
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙جاري تحديث سورس تروكس', 1, 'md') 
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙جاري تحديث سورس يوكا', 1, 'md') 
 os.execute('rm -rf WAAD.lua') 
 os.execute('wget https://raw.githubusercontent.com/CUKURTEAM/WAAD/main/WAAD.lua') 
 dofile('WAAD.lua') 
@@ -12969,7 +12970,7 @@ local Users = DevRdo:smembers(WAAD.."User_Bot")
 local Groups = DevRdo:smembers(WAAD..'Chek:Groups')
 local Sudos = DevRdo:smembers(WAAD.."Sudo:User")
 if DevRdo:get(WAAD..'Name:Bot') then
-DevRdo:set(WAAD..'Rdo:NameBot',(DevRdo:get(WAAD..'Name:Bot') or 'تروكس'))
+DevRdo:set(WAAD..'Rdo:NameBot',(DevRdo:get(WAAD..'Name:Bot') or 'يوكا'))
 end
 for i = 1, #Users do
 local id = Users[i]
@@ -13019,7 +13020,7 @@ end
 end
 --     Source WAAD     --
 if text == 'الملفات' and ChCheck(msg) and SecondSudo(msg) then
-Files = '\n☆︙الملفات المفعله في البوت ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+Files = '\n☆︙الملفات المفعله في البوت ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 i = 0
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
@@ -13033,13 +13034,13 @@ end
 send(msg.chat_id_, msg.id_,Files)
 end
 if text == "متجر الملفات" and SecondSudo(msg) and ChCheck(msg) or text == 'المتجر' and ChCheck(msg) and SecondSudo(msg) or text == '↫  المتجر ☆' and ChCheck(msg) and SecondSudo(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_WAAD/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n☆︙قائمة ملفات متجر سورس تروكس\n☆︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n"
-local TextE = "┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙علامة ↫ (✔) تعني الملف مفعل\n☆︙علامة ↫ (✖️) تعني الملف معطل\n"
+local TextS = "\n☆︙قائمة ملفات متجر سورس يوكا\n☆︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n"
+local TextE = "┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙علامة ↫ (✔) تعني الملف مفعل\n☆︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local CheckFileisFound = io.open("Files/"..name,"r")
@@ -13065,7 +13066,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") and ChCheck(msg) and SecondSudo(msg) then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_WAAD/main/Files_WAAD/"..FileName)
 if Res == 200 then
 os.execute("rm -fr Files/"..FileName)
 send(msg.chat_id_, msg.id_,"\n☆︙الملف ↫ *"..FileName.."*\n☆︙تم تعطيله وحذفه من البوت بنجاح") 
@@ -13077,7 +13078,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and ChCheck(msg) and SecondSudo(msg) then
 local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/WAADFiles/main/WAADFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_WAAD/main/Files_WAAD/"..FileName)
 if Res == 200 then
 local ChekAuto = io.open("Files/"..FileName,'w+')
 ChekAuto:write(GetJson)
@@ -13087,55 +13088,55 @@ dofile('WAAD.lua')
 else
 send(msg.chat_id_, msg.id_,"☆︙لا يوجد ملف بهذا الاسم") 
 end
-return false
+return fRdoe
 end
 --     Source WAAD    --
 if text and (text == 'حذف معلومات الترحيب' or text == 'مسح معلومات الترحيب') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم حذف معلومات الترحيب', 1, 'md')   
 DevRdo:del(WAAD..'Rdo:Text:BotWelcome')
 DevRdo:del(WAAD..'Rdo:Photo:BotWelcome')
-return false
+return fRdoe
 end 
 if text and (text == 'تفعيل ترحيب البوت' or text == 'تفعيل معلومات الترحيب' or text == '↫ تفعيل ترحيب البوت ☆') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم تفعيل الترحيب عند اضافة البوت في المجموعه', 1, 'md')   
 DevRdo:del(WAAD..'Rdo:Lock:BotWelcome')
-return false
+return fRdoe
 end 
 if text and (text == 'تعطيل ترحيب البوت' or text == 'تعطيل معلومات الترحيب' or text == '↫ تعطيل ترحيب البوت ☆') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙تم تعطيل الترحيب عند اضافة البوت في المجموعه', 1, 'md')   
 DevRdo:set(WAAD..'Rdo:Lock:BotWelcome',true)
-return false
+return fRdoe
 end 
 if text and (text == 'تغير معلومات الترحيب' or text == 'تغيير معلومات الترحيب' or text == '↫ تغير معلومات الترحيب ☆') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙ارسل لي نص الترحيب', 1, 'md') 
 DevRdo:del(WAAD..'Rdo:Text:BotWelcome')
 DevRdo:del(WAAD..'Rdo:Photo:BotWelcome')
 DevRdo:set(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_,"Text") 
-return false
+return fRdoe
 end 
 if text and DevRdo:get(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_) == 'Text' then 
 if text and text:match("^الغاء$") then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر", 1, "md") 
 DevRdo:del(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_)   
-return false
+return fRdoe
 end 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ النص ارسل لي صورة الترحيب\n☆︙ارسل ↫ الغاء لحفظ النص فقط", 1, 'md')   
 DevRdo:set(WAAD.."Rdo:Text:BotWelcome",text) 
 DevRdo:set(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_,"Photo") 
-return false 
+return fRdoe 
 end 
 if DevRdo:get(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_) == 'Photo' then 
 if text and text:match("^الغاء$") then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ النص والغاء حفظ صورة الترحيب", 1, "md") 
 DevRdo:del(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_)    
-return false
+return fRdoe
 end 
 if msg.content_.photo_ and msg.content_.photo_.sizes_[1] then   
 DevRdo:set(WAAD.."Rdo:Photo:BotWelcome",msg.content_.photo_.sizes_[1].photo_.persistent_id_)
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم حفظ النص وصورة الترحيب", 1, 'md')   
 DevRdo:del(WAAD.."Rdo:Set:BotWelcome"..msg.sender_user_id_)   
 end
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text and text:match("^ضع كليشه المطور$") or text and text:match("^وضع كليشه المطور$") or text and text:match("^تغيير كليشه المطور$") or text and text:match("^↫ تغيير كليشه المطور ☆$") and ChCheck(msg) then
@@ -13157,7 +13158,7 @@ if DevRdo:get(WAAD.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_) then
 if text and text:match("^الغاء$") then 
 Dev_Rdo(msg.chat_id_, msg.id_, 1, "☆︙تم الغاء الامر", 1, "md") 
 DevRdo:del(WAAD.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
-return false  end 
+return fRdoe  end 
 DevRdo:del(WAAD.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_)  
 local texxt = string.match(text, "(.*)") 
 DevRdo:set(WAAD..'Rdo:ChText',texxt)
@@ -13182,7 +13183,7 @@ Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙للمطور الاساسي فقط ', 1
 else
 local chtext = DevRdo:get(WAAD.."Rdo:ChText")
 if chtext then
-Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙كليشة الاشتراك ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n['..chtext..']', 1, 'md')
+Dev_Rdo(msg.chat_id_, msg.id_, 1, '☆︙كليشة الاشتراك ↫ ⤈ \n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n['..chtext..']', 1, 'md')
 else
 if DevRdo:get(WAAD.."Rdo:ChId") then
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..DevRdo:get(WAAD.."Rdo:ChId"))
@@ -13211,20 +13212,20 @@ keyboard.inline_keyboard = {
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+return fRdoe
 end
 --     Source WAAD     --
 if text == "مبرمج السورس" and ChCheck(msg) or text == "مطور السورس" and ChCheck(msg) or text == "وين المبرمج" and ChCheck(msg) or text == "المبرمج" and ChCheck(msg) or text == "↫ مبرمج السورس ☆" and ChCheck(msg) then 
 Text = [[
-☆︙[مبرمج السورس](https://t.me/EEEEEL)
+☆︙[مبرمج السورس](https://t.me/BBBVVBV)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☆ مبرمج السورس',url="t.me/EEEEEL"}},
+{{text = '☆ مبرمج السورس',url="t.me/BBBVVBV"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EEEEEL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/BBBVVBV&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return fRdoe
 end
 --     Source WAAD     --
 if text == 'معلومات السيرفر' or text == 'السيرفر' or text == '↫ السيرفر ☆' then 
@@ -13238,16 +13239,16 @@ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 Percentage=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 UpTime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}'`
 echo '☆︙نظام التشغيل ↫ ⤈\n`'"$LinuxVersion"'`' 
-echo '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
-echo '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
-echo '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
-echo '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙الدخول ↫ ⤈\n`'`whoami`'`'
-echo '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
+echo '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
+echo '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
+echo '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
+echo '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙الدخول ↫ ⤈\n`'`whoami`'`'
+echo '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
 ]]):read('*a'), 1, 'md')
 end
 end
 --     Source WAAD     --
-WAADFiles(msg)
+Files_WAAD(msg)
 --     Source WAAD     --
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
@@ -13266,14 +13267,14 @@ tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,
 local Rdoname = '☆︙العضو ↫ ['..dp.first_name_..'](tg://user?id='..dp.id_..')'
 local Rdoid = '☆︙ايديه ↫ `'..dp.id_..'`'
 local Rdotext = '☆︙قام بالتعديل على '..Media
-local Rdotxt = '┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n☆︙تعالو يامشرفين اكو مخرب'
+local Rdotxt = '┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n☆︙تعالو يامشرفين اكو مخرب'
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,Rdo) 
 local admins = Rdo.members_  
-text = '\n┉ ┉ ┉ .•♫•♬•𝗪𝗔𝗔𝗗•♬•♫•.┉ ┉ ┉ ┉\n'
+text = '\n┉ ┉ ┉ .•♫•♬•Rdo•♬•♫•.┉ ┉ ┉ ┉\n'
 for i=0 , #admins do 
 if not Rdo.members_[i].bot_info_ then
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,data) 
-if data.first_name_ ~= false then
+if data.first_name_ ~= fRdoe then
 text = text.."~ [@"..data.username_.."]\n"
 end
 if #admins == i then 
